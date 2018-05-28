@@ -8,6 +8,10 @@ libglisseo_utils_la_SOURCES = \
     Conversion.h \
     GenericThread.cpp \
     GenericThread.h \
+    Invocation.cpp \
+    Invocation.h \
+    InvocationArgument.cpp \
+    InvocationArgument.h \
     Log.cpp \
     Log.h \
     LogLevel.cpp \

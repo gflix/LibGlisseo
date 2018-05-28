@@ -11,6 +11,7 @@ AM_LDFLAGS = \
 TESTS = \
     conversion \
     glisseo \
+    invocation \
     protocol \
     select \
     sha1 \
@@ -21,6 +22,7 @@ check_PROGRAMS = $(TESTS)
 
 conversion_SOURCES = TestConversion.cpp
 glisseo_SOURCES = TestGlisseo.cpp
+invocation_SOURCES = TestInvocation.cpp
 protocol_SOURCES = TestProtocol.cpp
 select_SOURCES = TestSelect.cpp
 sha1_SOURCES = TestSha1.cpp
