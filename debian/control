@@ -1,0 +1,23 @@
+Source: libglisseo
+Priority: optional
+Maintainer: Felix Mellmann <felix.mellmann@funkwerk-itk.com>
+Build-Depends: debhelper (>= 10), autotools-dev
+Standards-Version: 4.1.2
+Section: libs
+Vcs-Git: git@benfm.de:Support/LibGlisseo
+
+Package: libglisseo-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libglisseo1 (= ${binary:Version}), ${misc:Depends}
+Description: Library for common tasks - development files
+ Library which provides simple solutions for common tasks.
+ This package contains the files needed for development.
+
+Package: libglisseo1
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Library for common tasks
+ Library which provides simple solutions for common tasks.
