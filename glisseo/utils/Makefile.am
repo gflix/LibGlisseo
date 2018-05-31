@@ -26,6 +26,8 @@ headerdir = $(includedir)/glisseo/utils
 header_HEADERS = \
     Conversion.h \
     GenericThread.h \
+    Invocation.h \
+    InvocationArgument.h \
     Log.h \
     LogLevel.h \
     Select.h
