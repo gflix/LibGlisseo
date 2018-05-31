@@ -93,16 +93,67 @@ void Invocation::printHelp(
     if (hasFlags)
     {
         stream << "Flags:" << std::endl;
+        for (auto& argument: arguments)
+        {
+            if (argument.parameter.empty())
+            {
+                stream << "  ";
+                if (!argument.shortArgument.empty())
+                    stream << "-" << argument.shortArgument;
+                if (!argument.shortArgument.empty() && !argument.longArgument.empty())
+                    stream << ", ";
+                if (!argument.longArgument.empty())
+                    stream << "--" << argument.longArgument;
+
+                stream << "  " << argument.helpText << std::endl;
+            }
+        }
         stream << std::endl;
     }
     if (hasOptionalArguments)
     {
         stream << "Optional arguments:" << std::endl;
+        for (auto& argument: arguments)
+        {
+            if (!argument.parameter.empty() && !argument.parameterIsRequired)
+            {
+                stream << "  ";
+                if (!argument.shortArgument.empty())
+                    stream << "-" << argument.shortArgument;
+                if (!argument.shortArgument.empty() && !argument.longArgument.empty())
+                    stream << ", ";
+                if (!argument.longArgument.empty())
+                    stream << "--" << argument.longArgument;
+
+                stream << " " << argument.parameter << "  " << argument.helpText << std::endl;
+            }
+        }
         stream << std::endl;
     }
     if (hasRequiredArguments)
     {
         stream << "Required arguments:" << std::endl;
+        for (auto& argument: arguments)
+        {
+            if (!argument.parameter.empty() && argument.parameterIsRequired)
+            {
+                stream << "  ";
+                if (!argument.shortArgument.empty())
+                    stream << "-" << argument.shortArgument;
+                if (!argument.shortArgument.empty() && !argument.longArgument.empty())
+                    stream << ", ";
+                if (!argument.longArgument.empty())
+                    stream << "--" << argument.longArgument;
+
+                stream << " " << argument.parameter << "  " << argument.helpText << std::endl;
+            }
+        }
+        stream << std::endl;
+    }
+    if (!remainingArgumentsParameter.empty())
+    {
+        stream << "Remaining arguments:" << std::endl;
+        stream << "  " << remainingArgumentsParameter << "  " << remainingArgumentsHelpText << std::endl;
         stream << std::endl;
     }
     if (!versionInformation.empty())

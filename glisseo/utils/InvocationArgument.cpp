@@ -14,11 +14,15 @@ InvocationArgument::InvocationArgument(
     helpText(helpText),
     argumentIsPresent(false),
     parameter(parameter),
-    parameterIsRequired(false)
+    parameterIsRequired(parameterIsRequired)
 {
     if (shortArgument.size() > 1)
     {
         throw std::invalid_argument("short argument shall be empty or one character long");
+    }
+    if (!longArgument.empty())
+    {
+        throw std::invalid_argument("long arguments are currently not supported");
     }
     if (shortArgument.empty() &&
         longArgument.empty())
