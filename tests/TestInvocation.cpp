@@ -339,3 +339,21 @@ TEST(Invocation, EvaluateRequiredArguments)
     invocation.addArgument("e", "", "Eee", "EEE", true);
     EXPECT_ANY_THROW(invocation.evaluate(argcA, argvA));
 }
+
+TEST(Invocation, EvaluateRemainingArguments)
+{
+    int argcA = 5;
+    char* const argvA[] = { "programName", "-b", "-c", "FOO", "BAR" };
+
+    Flix::Invocation invocation;
+    invocation.addArgument("a", "", "Aaa");
+    invocation.addArgument("b", "", "Bbb");
+    invocation.addArgument("c", "", "Ccc");
+    invocation.addArgument("d", "", "Ddd");
+
+    EXPECT_NO_THROW(invocation.evaluate(argcA, argvA));
+    Flix::Arguments remainingArguments = invocation.getRemainingArguments();
+    EXPECT_EQ(remainingArguments.size(), 2);
+    EXPECT_EQ(remainingArguments[0], "FOO");
+    EXPECT_EQ(remainingArguments[1], "BAR");
+}

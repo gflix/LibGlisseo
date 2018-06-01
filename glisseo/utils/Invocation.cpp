@@ -28,12 +28,31 @@ void Invocation::addArgument(
     arguments.push_back(argument);
 }
 
+const InvocationArgument& Invocation::getArgument(const std::string& argument) const
+{
+    for (auto& element: arguments)
+    {
+        if (element.shortArgument == argument ||
+            element.longArgument == argument)
+        {
+            return element;
+        }
+    }
+
+    throw std::invalid_argument("argument \"" + argument + "\" was not found");
+}
+
 void Invocation::setupRemainingArguments(
     const std::string& parameter,
     const std::string& helpText)
 {
     remainingArgumentsParameter = parameter;
     remainingArgumentsHelpText = helpText;
+}
+
+const Arguments& Invocation::getRemainingArguments(void) const
+{
+    return remainingArguments;
 }
 
 void Invocation::printHelp(
@@ -236,20 +255,11 @@ void Invocation::evaluate(int argc, char* const argv[])
             throw std::invalid_argument("argument \"-" + argument.shortArgument + "\" is required but was not found");
         }
     }
-}
 
-const InvocationArgument& Invocation::getArgument(const std::string& argument)
-{
-    for (auto& element: arguments)
+    for (auto i = optind; i < argc; ++i)
     {
-        if (element.shortArgument == argument ||
-            element.longArgument == argument)
-        {
-            return element;
-        }
+        remainingArguments.push_back(argv[i]);
     }
-
-    throw std::invalid_argument("argument \"" + argument + "\" was not found");
 }
 
 int Invocation::max(int a, int b) const

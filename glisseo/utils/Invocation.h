@@ -19,17 +19,20 @@ public:
         const std::string& helpText,
         const std::string& parameter = std::string(),
         bool parameterIsRequired = false);
+    const InvocationArgument& getArgument(const std::string& argument) const;
+
     void setupRemainingArguments(
         const std::string& parameter,
         const std::string& helpText);
+    const Arguments& getRemainingArguments(void) const;
+
     void printHelp(
         std::ostream& stream,
         const std::string& programName,
         const std::string& versionInformation = std::string()) const;
+
     std::string getGetOptString(void) const;
     void evaluate(int argc, char* const argv[]);
-
-    const InvocationArgument& getArgument(const std::string& argument);
 
 private:
     InvocationArguments arguments;
