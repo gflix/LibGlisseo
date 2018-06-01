@@ -244,7 +244,7 @@ void Invocation::evaluate(int argc, char* const argv[])
 
         if (!foundArgument)
         {
-            throw std::invalid_argument("argument \"-" + optString + "\" is not allowed");
+            throw std::invalid_argument("invalid argument");
         }
     }
 
