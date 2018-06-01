@@ -12,12 +12,18 @@ libglisseo_utils_la_SOURCES = \
     Invocation.h \
     InvocationArgument.cpp \
     InvocationArgument.h \
+    Join.cpp \
+    Join.h \
     Log.cpp \
     Log.h \
     LogLevel.cpp \
     LogLevel.h \
     Select.cpp \
-    Select.h
+    Select.h \
+    Split.cpp \
+    Split.h \
+    Trim.cpp \
+    Trim.h
 
 libglisseo_utils_la_LDFLAGS = \
     -pthread
@@ -28,9 +34,12 @@ header_HEADERS = \
     GenericThread.h \
     Invocation.h \
     InvocationArgument.h \
+    Join.h \
     Log.h \
     LogLevel.h \
-    Select.h
+    Select.h \
+    Split.h \
+    Trim.h
 
 MAINTAINERCLEANFILES = \
     Makefile.in
