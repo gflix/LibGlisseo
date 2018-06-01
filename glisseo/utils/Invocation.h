@@ -26,6 +26,10 @@ public:
         std::ostream& stream,
         const std::string& programName,
         const std::string& versionInformation = std::string()) const;
+    std::string getGetOptString(void) const;
+    void evaluate(int argc, char* const argv[]);
+
+    const InvocationArgument& getArgument(const std::string& argument);
 
 private:
     InvocationArguments arguments;

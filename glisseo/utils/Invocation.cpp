@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include <glisseo/utils/Invocation.h>
 
 namespace Flix {
@@ -162,6 +163,93 @@ void Invocation::printHelp(
         stream << "  " << versionInformation << std::endl;
         stream << std::endl;
     }
+}
+
+std::string Invocation::getGetOptString(void) const
+{
+    std::string getOptString;
+
+    for (auto& argument: arguments)
+    {
+        if (!argument.shortArgument.empty())
+        {
+            getOptString += argument.shortArgument;
+            if (!argument.parameter.empty())
+            {
+                getOptString += ':';
+            }
+        }
+    }
+
+    return getOptString;
+}
+
+void Invocation::evaluate(int argc, char* const argv[])
+{
+    if (argc < 1)
+    {
+        throw std::invalid_argument("must provide at least one argument");
+    }
+    for (auto i = 0; i < argc; ++i)
+    {
+        if (!argv[i])
+        {
+            throw std::invalid_argument("invalid argument at position " + std::to_string(i));
+        }
+    }
+
+    optind = 1;
+
+    std::string getOptString = getGetOptString();
+    int opt;
+    while ((opt = getopt(argc, argv, getOptString.c_str())) != -1)
+    {
+        std::string optString = std::string(1, opt);
+
+        bool foundArgument = false;
+        for (auto& argument: arguments)
+        {
+            if (optString != argument.shortArgument)
+            {
+                continue;
+            }
+
+            foundArgument = true;
+            argument.argumentIsPresent = true;
+            if (!argument.parameter.empty())
+            {
+                argument.parameterValue = optarg;
+            }
+            break;
+        }
+
+        if (!foundArgument)
+        {
+            throw std::invalid_argument("argument \"-" + optString + "\" is not allowed");
+        }
+    }
+
+    for (auto& argument: arguments)
+    {
+        if (argument.parameterIsRequired && argument.parameterValue.empty())
+        {
+            throw std::invalid_argument("argument \"-" + argument.shortArgument + "\" is required but was not found");
+        }
+    }
+}
+
+const InvocationArgument& Invocation::getArgument(const std::string& argument)
+{
+    for (auto& element: arguments)
+    {
+        if (element.shortArgument == argument ||
+            element.longArgument == argument)
+        {
+            return element;
+        }
+    }
+
+    throw std::invalid_argument("argument \"" + argument + "\" was not found");
 }
 
 int Invocation::max(int a, int b) const
