@@ -14,6 +14,7 @@ TESTS = \
     invocation \
     join \
     protocol \
+    range \
     select \
     sha1 \
     split \
@@ -28,6 +29,7 @@ glisseo_SOURCES = TestGlisseo.cpp
 invocation_SOURCES = TestInvocation.cpp
 join_SOURCES = TestJoin.cpp
 protocol_SOURCES = TestProtocol.cpp
+range_SOURCES = TestRange.cpp
 select_SOURCES = TestSelect.cpp
 sha1_SOURCES = TestSha1.cpp
 split_SOURCES = TestSplit.cpp

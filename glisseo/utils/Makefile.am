@@ -18,6 +18,8 @@ libglisseo_utils_la_SOURCES = \
     Log.h \
     LogLevel.cpp \
     LogLevel.h \
+    Range.cpp \
+    Range.h \
     Select.cpp \
     Select.h \
     Split.cpp \
@@ -37,6 +39,7 @@ header_HEADERS = \
     Join.h \
     Log.h \
     LogLevel.h \
+    Range.h \
     Select.h \
     Split.h \
     Trim.h
