@@ -6,6 +6,8 @@ noinst_LTLIBRARIES = libglisseo-network-protocol.la
 libglisseo_network_protocol_la_SOURCES = \
     GenericServer.cpp \
     GenericServer.h \
+    GenericServerConnection.cpp \
+    GenericServerConnection.h \
     GenericTelnetService.cpp \
     GenericTelnetService.h \
     NetstringDecoder.cpp \
@@ -22,6 +24,7 @@ libglisseo_network_protocol_la_SOURCES = \
 headerdir = $(includedir)/glisseo/network/protocol
 header_HEADERS = \
     GenericServer.h \
+    GenericServerConnection.h \
     GenericTelnetService.h \
     NetstringDecoder.h \
     NetstringEncoder.h \

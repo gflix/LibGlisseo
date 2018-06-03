@@ -9,13 +9,11 @@ namespace Flix {
 TelnetServerConnection::TelnetServerConnection(
     GenericTelnetService* telnetService,
     int descriptor,
-    const std::string& peerAddress,
+    const std::string& clientConnection,
     const std::string& prompt,
     const std::string& welcomeMessage):
-    GenericThread("TelnetServerConnection(" + peerAddress + ")"),
+    GenericServerConnection("TelnetServerConnection(" + clientConnection + ")", descriptor, clientConnection),
     telnetService(telnetService),
-    descriptor(descriptor),
-    peerAddress(peerAddress),
     prompt(prompt),
     welcomeMessage(welcomeMessage)
 {
@@ -23,26 +21,6 @@ TelnetServerConnection::TelnetServerConnection(
 
 TelnetServerConnection::~TelnetServerConnection()
 {
-}
-
-void TelnetServerConnection::closeConnection(void)
-{
-    if (descriptor < 0) {
-        return;
-    }
-
-    close(descriptor);
-    descriptor = -1;
-    threadFinished = true;
-}
-
-void TelnetServerConnection::send(const std::string& message)
-{
-    ssize_t bytesWritten = ::write(descriptor, message.c_str(), message.size());
-    if (bytesWritten < 0)
-    {
-        closeConnection();
-    }
 }
 
 bool TelnetServerConnection::setup(void)
@@ -86,11 +64,6 @@ bool TelnetServerConnection::task(const Select& select)
     }
 
     return true;
-}
-
-void TelnetServerConnection::updateDescriptors(Select& select)
-{
-    select.addReadDescriptor(descriptor);
 }
 
 void TelnetServerConnection::sendPrompt(void)
