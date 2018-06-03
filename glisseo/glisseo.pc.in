@@ -6,5 +6,5 @@ includedir=@includedir@
 Name: glisseo
 Description: Slim library for providing common and re-usable solutions
 Version: @VERSION@
-Libs: -L${libdir} -lglisseo
+Libs: -L${libdir} -lglisseo -pthread
 Cflags: -I${includedir}
