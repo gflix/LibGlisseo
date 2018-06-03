@@ -6,6 +6,10 @@ noinst_LTLIBRARIES = libglisseo-network-protocol.la
 libglisseo_network_protocol_la_SOURCES = \
     GenericTelnetService.cpp \
     GenericTelnetService.h \
+    NetstringDecoder.cpp \
+    NetstringDecoder.h \
+    NetstringEncoder.cpp \
+    NetstringEncoder.h \
     Slip.cpp \
     Slip.h \
     TelnetServer.cpp \
@@ -16,6 +20,8 @@ libglisseo_network_protocol_la_SOURCES = \
 headerdir = $(includedir)/glisseo/network/protocol
 header_HEADERS = \
     GenericTelnetService.h \
+    NetstringDecoder.h \
+    NetstringEncoder.h \
     Slip.h \
     TelnetServer.h \
     TelnetServerConnection.h

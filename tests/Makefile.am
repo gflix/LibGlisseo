@@ -13,6 +13,8 @@ TESTS = \
     glisseo \
     invocation \
     join \
+    netstring-encoder \
+    netstring-decoder \
     protocol \
     range \
     select \
@@ -28,6 +30,8 @@ conversion_SOURCES = TestConversion.cpp
 glisseo_SOURCES = TestGlisseo.cpp
 invocation_SOURCES = TestInvocation.cpp
 join_SOURCES = TestJoin.cpp
+netstring_encoder_SOURCES = TestNetstringEncoder.cpp
+netstring_decoder_SOURCES = TestNetstringDecoder.cpp
 protocol_SOURCES = TestProtocol.cpp
 range_SOURCES = TestRange.cpp
 select_SOURCES = TestSelect.cpp
