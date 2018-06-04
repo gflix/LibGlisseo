@@ -14,7 +14,7 @@ public:
     virtual ~GenericServerConnection();
 
     void closeConnection(void);
-    void send(const std::string& message);
+    virtual void send(const std::string& message);
 
     const std::string& getPeer(void) const;
 

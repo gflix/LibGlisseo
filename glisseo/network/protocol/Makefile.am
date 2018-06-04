@@ -4,6 +4,8 @@ AM_CPPFLAGS = \
 noinst_LTLIBRARIES = libglisseo-network-protocol.la
 
 libglisseo_network_protocol_la_SOURCES = \
+    GenericNetstringServerConnection.cpp \
+    GenericNetstringServerConnection.h \
     GenericServer.cpp \
     GenericServer.h \
     GenericServerConnection.cpp \
@@ -23,6 +25,7 @@ libglisseo_network_protocol_la_SOURCES = \
 
 headerdir = $(includedir)/glisseo/network/protocol
 header_HEADERS = \
+    GenericNetstringServerConnection.h \
     GenericServer.h \
     GenericServerConnection.h \
     GenericTelnetService.h \
