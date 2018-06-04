@@ -67,17 +67,17 @@ void GenericJsonRpcServerConnection::processMessage(const Json::Value& message)
     }
     catch (JsonRpcMethodNotFoundException& e)
     {
-        generateErrorResponse(response, -32601, std::string(e.what()));
+        generateErrorResponse(response, -32601, std::string(e.what()), id);
         send(response);
     }
     catch (JsonRpcInvalidParamsException& e)
     {
-        generateErrorResponse(response, -32602, std::string(e.what()));
+        generateErrorResponse(response, -32602, std::string(e.what()), id);
         send(response);
     }
     catch (std::exception& e)
     {
-        generateErrorResponse(response, -32603, std::string(e.what()));
+        generateErrorResponse(response, -32603, std::string(e.what()), id);
         send(response);
     }
 }
