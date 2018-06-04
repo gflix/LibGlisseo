@@ -9,10 +9,10 @@ namespace Flix {
 TelnetServerConnection::TelnetServerConnection(
     GenericTelnetService* telnetService,
     int descriptor,
-    const std::string& clientConnection,
+    const std::string& peer,
     const std::string& prompt,
     const std::string& welcomeMessage):
-    GenericServerConnection("TelnetServerConnection(" + clientConnection + ")", descriptor, clientConnection),
+    GenericServerConnection("TelnetServerConnection(" + peer + ")", descriptor, peer),
     telnetService(telnetService),
     prompt(prompt),
     welcomeMessage(welcomeMessage)

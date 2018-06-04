@@ -12,7 +12,7 @@ public:
     TelnetServerConnection(
         GenericTelnetService* telnetService,
         int descriptor,
-        const std::string& clientConnection,
+        const std::string& peer,
         const std::string& prompt,
         const std::string& welcomeMessage);
     virtual ~TelnetServerConnection();

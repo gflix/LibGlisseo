@@ -62,10 +62,10 @@ protected:
                 char clientIpAddressBuffer[INET_ADDRSTRLEN];
                 bzero(clientIpAddressBuffer, sizeof(clientIpAddressBuffer));
                 inet_ntop(AF_INET, &clientAddress.sin_addr, clientIpAddressBuffer, sizeof(clientIpAddressBuffer));
-                std::string clientConnection =
+                std::string peer =
                     std::string(clientIpAddressBuffer) + ':' + std::to_string(ntohs(clientAddress.sin_port));
 
-                connectionThread = newConnectionThread(clientDescriptor, clientConnection);
+                connectionThread = newConnectionThread(clientDescriptor, peer);
             }
         }
         else if (protocol == Protocol::IPV6)
@@ -78,10 +78,10 @@ protected:
                 char clientIpAddressBuffer[INET6_ADDRSTRLEN];
                 bzero(clientIpAddressBuffer, sizeof(clientIpAddressBuffer));
                 inet_ntop(AF_INET6, &clientAddress.sin6_addr, clientIpAddressBuffer, sizeof(clientIpAddressBuffer));
-                std::string clientConnection =
+                std::string peer =
                     std::string(clientIpAddressBuffer) + ':' + std::to_string(ntohs(clientAddress.sin6_port));
 
-                connectionThread = newConnectionThread(clientDescriptor, clientConnection);
+                connectionThread = newConnectionThread(clientDescriptor, peer);
             }
         }
 

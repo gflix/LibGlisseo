@@ -32,9 +32,9 @@ void TelnetServer::setWelcomeMessage(const std::string& welcomeMessage)
 
 bool TelnetServer::task(const Select& select)
 {
-    manageClientConnections(select, [=](int clientDescriptor, const std::string& clientConnection) -> TelnetServerConnection* {
+    manageClientConnections(select, [=](int clientDescriptor, const std::string& peer) -> TelnetServerConnection* {
        return
-           new TelnetServerConnection(telnetService, clientDescriptor, clientConnection, defaultPrompt, welcomeMessage);
+           new TelnetServerConnection(telnetService, clientDescriptor, peer, defaultPrompt, welcomeMessage);
     });
 
     return true;
