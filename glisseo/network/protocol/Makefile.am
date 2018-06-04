@@ -4,6 +4,8 @@ AM_CPPFLAGS = \
 noinst_LTLIBRARIES = libglisseo-network-protocol.la
 
 libglisseo_network_protocol_la_SOURCES = \
+    GenericJsonOverNetstringServerConnection.cpp \
+    GenericJsonOverNetstringServerConnection.h \
     GenericNetstringServerConnection.cpp \
     GenericNetstringServerConnection.h \
     GenericServer.cpp \
@@ -23,8 +25,16 @@ libglisseo_network_protocol_la_SOURCES = \
     TelnetServerConnection.cpp \
     TelnetServerConnection.h
 
+libglisseo_network_protocol_la_CPPFLAGS = \
+    $(AM_CPPFLAGS) \
+    $(JSONCPP_CFLAGS)
+
+libglisseo_network_protocol_la_LIBADD = \
+    $(JSONCPP_LIBS)
+
 headerdir = $(includedir)/glisseo/network/protocol
 header_HEADERS = \
+    GenericJsonOverNetstringServerConnection.h \
     GenericNetstringServerConnection.h \
     GenericServer.h \
     GenericServerConnection.h \
