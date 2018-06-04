@@ -45,9 +45,11 @@
                                 								
                                 <option id="gnu.c.compiler.option.debugging.level.331589518" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
                                 								
-                                <option id="gnu.c.compiler.option.include.paths.2056274335" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+                                <option id="gnu.c.compiler.option.include.paths.2056274335" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibGlisseo}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/flix/include"/>
                                     								
                                 </option>
                                 								
@@ -61,11 +63,13 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.debugging.level.239971228" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
                                 								
-                                <option id="gnu.cpp.compiler.option.dialect.std.878989327" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
+                                <option id="gnu.cpp.compiler.option.dialect.std.878989327" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
                                 								
-                                <option id="gnu.cpp.compiler.option.include.paths.1261986632" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                <option id="gnu.cpp.compiler.option.include.paths.1261986632" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibGlisseo}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/flix/include"/>
                                     								
                                 </option>
                                 								
@@ -91,9 +95,11 @@
                             							
                             <tool id="cdt.managedbuild.tool.gnu.cross.assembler.552154212" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
                                 								
-                                <option id="gnu.both.asm.option.include.paths.827174197" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+                                <option id="gnu.both.asm.option.include.paths.827174197" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibGlisseo}&quot;"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/opt/flix/include"/>
                                     								
                                 </option>
                                 								
