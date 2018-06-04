@@ -16,6 +16,8 @@ public:
     void closeConnection(void);
     void send(const std::string& message);
 
+    const std::string& getPeer(void) const;
+
 protected:
     int descriptor;
     std::string clientConnection;

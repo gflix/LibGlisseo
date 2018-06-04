@@ -36,6 +36,12 @@ void GenericServerConnection::send(const std::string& message)
     }
 }
 
+const std::string& GenericServerConnection::getPeer(void) const
+{
+    return
+        clientConnection;
+}
+
 void GenericServerConnection::updateDescriptors(Select& select)
 {
     select.addReadDescriptor(descriptor);
