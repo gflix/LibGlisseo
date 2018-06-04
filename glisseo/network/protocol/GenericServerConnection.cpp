@@ -5,10 +5,10 @@ namespace Flix {
 GenericServerConnection::GenericServerConnection(
     const std::string& identifier,
     int descriptor,
-    const std::string& clientConnection):
+    const std::string& peer):
     GenericThread(identifier),
     descriptor(descriptor),
-    clientConnection(clientConnection)
+    peer(peer)
 {
 }
 
@@ -39,7 +39,7 @@ void GenericServerConnection::send(const std::string& message)
 const std::string& GenericServerConnection::getPeer(void) const
 {
     return
-        clientConnection;
+        peer;
 }
 
 void GenericServerConnection::updateDescriptors(Select& select)

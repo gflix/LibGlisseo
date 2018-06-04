@@ -10,7 +10,7 @@ public:
     GenericServerConnection(
         const std::string& identifier,
         int descriptor,
-        const std::string& clientConnection);
+        const std::string& peer);
     virtual ~GenericServerConnection();
 
     void closeConnection(void);
@@ -20,7 +20,7 @@ public:
 
 protected:
     int descriptor;
-    std::string clientConnection;
+    std::string peer;
 
     virtual void updateDescriptors(Select& select) override;
 };
