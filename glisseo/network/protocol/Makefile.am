@@ -52,6 +52,7 @@ header_HEADERS = \
     JsonRpc.h \
     JsonRpcInvalidParamsException.h \
     JsonRpcMethodNotFoundException.h \
+    JsonTags.h \
     NetstringDecoder.h \
     NetstringEncoder.h \
     Slip.h \

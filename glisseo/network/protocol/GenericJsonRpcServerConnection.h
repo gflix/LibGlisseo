@@ -17,8 +17,6 @@ protected:
     virtual void processMessage(const Json::Value& message) override;
     virtual void processCall(const Json::Value& message) = 0;
     virtual void processNotification(const Json::Value& message) = 0;
-
-    void generateErrorResponse(Json::Value& response, int errorCode, const std::string& errorMessage, Json::Value id = Json::nullValue);
 };
 
 } /* namespace Flix */

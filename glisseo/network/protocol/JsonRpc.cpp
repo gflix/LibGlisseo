@@ -1,6 +1,5 @@
 #include <stdexcept>
 #include <glisseo/network/protocol/JsonRpc.h>
-#include <glisseo/network/protocol/JsonTags.h>
 
 namespace Flix {
 
@@ -22,6 +21,23 @@ void initializeJsonRpcMessage(
     {
         message[JSON_TAG_ID] = id;
     }
+}
+
+void initializeJsonRpcErrorResponse(
+    Json::Value& response,
+    int errorCode,
+    const std::string& errorMessage,
+    Json::Value id)
+{
+    Json::Value jsonError = Json::objectValue;
+
+    jsonError[JSON_TAG_CODE] = errorCode;
+    jsonError[JSON_TAG_MESSAGE] = errorMessage;
+
+    response = Json::objectValue;
+    response[JSON_TAG_JSONRPC] = "2.0";
+    response[JSON_TAG_ERROR] = jsonError;
+    response[JSON_TAG_ID] = id;
 }
 
 } /* namespace Flix */
