@@ -34,8 +34,7 @@ Makefile.in
 *.o
 /Release/
 /.settings/
-/tests/gtest
-/tests/gtest.log
-/tests/gtest.trs
+/tests/*.log
+/tests/*.trs
 /tests/test-suite.log
 /debian/files
