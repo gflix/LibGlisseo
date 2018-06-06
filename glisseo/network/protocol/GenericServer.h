@@ -3,6 +3,7 @@
 
 #include <arpa/inet.h>
 #include <cstring>
+#include <mutex>
 #include <vector>
 #include <glisseo/utils/GenericThread.h>
 #include <glisseo/utils/Log.h>
@@ -27,6 +28,7 @@ protected:
     int port;
     Protocol protocol;
     TcpServer tcpServer;
+    std::mutex connectionThreadsMutex;
     std::vector<T*> connectionThreads;
 
     virtual bool setup(void) override
@@ -86,9 +88,11 @@ protected:
         }
 
         if (connectionThread && connectionThread->start()) {
+            std::lock_guard<std::mutex> lock(connectionThreadsMutex);
             connectionThreads.push_back(connectionThread);
         }
 
+        std::lock_guard<std::mutex> lock(connectionThreadsMutex);
 
         auto checkConnectionThread = connectionThreads.begin();
         while (checkConnectionThread != connectionThreads.end()) {
@@ -104,8 +108,6 @@ protected:
             }
             ++checkConnectionThread;
         }
-
-        return;
     }
 
     virtual void updateDescriptors(Select& select) override
