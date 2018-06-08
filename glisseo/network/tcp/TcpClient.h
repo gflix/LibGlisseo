@@ -11,7 +11,7 @@ public:
     TcpClient();
     virtual ~TcpClient();
 
-    void connect(std::string host, int port);
+    virtual void connect(std::string host, int port);
 };
 
 } /* namespace Flix */

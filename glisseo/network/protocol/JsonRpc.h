@@ -16,28 +16,24 @@ void initializeJsonRpcErrorResponse(
     int errorCode,
     const std::string& errorMessage,
     Json::Value id = Json::nullValue);
+void checkJsonRpcTag(const Json::Value& message);
+void checkJsonRpcClientRequestValidity(const Json::Value& message);
+void checkJsonRpcClientResponseValidity(const Json::Value& message);
 template<typename T>
-void checkJsonRpcMessageValidity(const Json::Value& message, T callback)
+void checkJsonRpcServerRequestValidity(const Json::Value& message, T callback)
 {
     Json::Value response;
 
-    if (!message.isObject())
+    try
     {
-        std::string errorMessage = "JSON is not an object";
-        initializeJsonRpcErrorResponse(response, -32600, errorMessage);
-        callback(response);
-
-        throw std::domain_error(errorMessage);
+        checkJsonRpcTag(message);
     }
-    if (!message.isMember(JSON_TAG_JSONRPC) ||
-        !message[JSON_TAG_JSONRPC].isString() ||
-        message[JSON_TAG_JSONRPC].asString() != "2.0")
+    catch(std::domain_error& e)
     {
-        std::string errorMessage = "not a JSON-RPC 2.0 request object";
-        initializeJsonRpcErrorResponse(response, -32600, errorMessage);
+        initializeJsonRpcErrorResponse(response, -32600, e.what());
         callback(response);
 
-        throw std::domain_error(errorMessage);
+        throw;
     }
     if (!message.isMember(JSON_TAG_METHOD) ||
         !message[JSON_TAG_METHOD].isString() ||

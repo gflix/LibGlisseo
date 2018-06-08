@@ -4,10 +4,14 @@ AM_CPPFLAGS = \
 noinst_LTLIBRARIES = libglisseo-network-protocol.la
 
 libglisseo_network_protocol_la_SOURCES = \
+    GenericJsonOverNetstringClient.cpp \
+    GenericJsonOverNetstringClient.h \
     GenericJsonOverNetstringServerConnection.cpp \
     GenericJsonOverNetstringServerConnection.h \
     GenericJsonRpcServerConnection.cpp \
     GenericJsonRpcServerConnection.h \
+    GenericNetstringClient.cpp \
+    GenericNetstringClient.h \
     GenericNetstringServerConnection.cpp \
     GenericNetstringServerConnection.h \
     GenericServer.cpp \
@@ -23,6 +27,7 @@ libglisseo_network_protocol_la_SOURCES = \
     JsonRpcMethodNotFoundException.cpp \
     JsonRpcMethodNotFoundException.h \
     JsonTags.h \
+    Messages.h \
     NetstringDecoder.cpp \
     NetstringDecoder.h \
     NetstringEncoder.cpp \
@@ -43,8 +48,10 @@ libglisseo_network_protocol_la_LIBADD = \
 
 headerdir = $(includedir)/glisseo/network/protocol
 header_HEADERS = \
+    GenericJsonOverNetstringClient.h \
     GenericJsonOverNetstringServerConnection.h \
     GenericJsonRpcServerConnection.h \
+    GenericNetstringClient.h \
     GenericNetstringServerConnection.h \
     GenericServer.h \
     GenericServerConnection.h \
@@ -53,6 +60,7 @@ header_HEADERS = \
     JsonRpcInvalidParamsException.h \
     JsonRpcMethodNotFoundException.h \
     JsonTags.h \
+    Messages.h \
     NetstringDecoder.h \
     NetstringEncoder.h \
     Slip.h \

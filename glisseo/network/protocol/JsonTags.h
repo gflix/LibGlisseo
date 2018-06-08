@@ -9,6 +9,7 @@ namespace Flix {
 #define JSON_TAG_JSONRPC "jsonrpc"
 #define JSON_TAG_MESSAGE "message"
 #define JSON_TAG_METHOD "method"
+#define JSON_TAG_RESULT "result"
 
 } /* namespace Flix */
 
