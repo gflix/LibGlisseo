@@ -28,6 +28,12 @@ void GenericNetstringClient::receiveMessages(Messages& messages)
 
     std::string data;
     receive(data);
+
+    if (data.empty())
+    {
+        throw std::runtime_error("connection was closed");
+    }
+
     netstringDecoder.appendText(data);
 
     while (netstringDecoder.hasMessage())

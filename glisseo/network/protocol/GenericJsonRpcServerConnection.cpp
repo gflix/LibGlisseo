@@ -21,7 +21,7 @@ GenericJsonRpcServerConnection::~GenericJsonRpcServerConnection()
 void GenericJsonRpcServerConnection::processMessage(const Json::Value& message)
 {
     Json::Value response = Json::objectValue;
-    checkJsonRpcMessageValidity(message, [=](const Json::Value& response) {
+    checkJsonRpcServerRequestValidity(message, [=](const Json::Value& response) {
         send(response);
     });
 

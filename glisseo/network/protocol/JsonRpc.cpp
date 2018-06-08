@@ -72,16 +72,21 @@ void checkJsonRpcClientRequestValidity(const Json::Value& message)
 void checkJsonRpcClientResponseValidity(const Json::Value& message)
 {
     checkJsonRpcTag(message);
-    if (!message.isMember(JSON_TAG_METHOD) ||
-        !message[JSON_TAG_METHOD].isString() ||
-        message[JSON_TAG_METHOD].asString().empty())
+    if (!message.isMember(JSON_TAG_ID) &&
+        !message.isMember(JSON_TAG_METHOD))
     {
-        throw std::domain_error("JSON-RPC method is missing");
+        throw std::domain_error("neither id nor method object is present");
+    }
+    if (message.isMember(JSON_TAG_METHOD) &&
+        (!message[JSON_TAG_METHOD].isString() ||
+        message[JSON_TAG_METHOD].asString().empty()))
+    {
+        throw std::domain_error("JSON-RPC method is given but not valid");
     }
     if (!message.isMember(JSON_TAG_RESULT) &&
         !message.isMember(JSON_TAG_ERROR))
     {
-        throw std::domain_error("JSON-RPC method is missing");
+        throw std::domain_error("neither result nor error object is present");
     }
 }
 

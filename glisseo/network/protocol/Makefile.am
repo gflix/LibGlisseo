@@ -8,6 +8,8 @@ libglisseo_network_protocol_la_SOURCES = \
     GenericJsonOverNetstringClient.h \
     GenericJsonOverNetstringServerConnection.cpp \
     GenericJsonOverNetstringServerConnection.h \
+    GenericJsonRpcClient.cpp \
+    GenericJsonRpcClient.h \
     GenericJsonRpcServerConnection.cpp \
     GenericJsonRpcServerConnection.h \
     GenericNetstringClient.cpp \
@@ -51,6 +53,7 @@ header_HEADERS = \
     GenericJsonOverNetstringClient.h \
     GenericJsonOverNetstringServerConnection.h \
     GenericJsonRpcServerConnection.h \
+    GenericJsonRpcClient.h \
     GenericNetstringClient.h \
     GenericNetstringServerConnection.h \
     GenericServer.h \
