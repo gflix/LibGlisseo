@@ -155,7 +155,7 @@ signed long long Conversion::binToSigned(char character)
     return binToSigned(std::string(1, character));
 }
 
-std::string unsignedToBin(unsigned long long value, int digits)
+std::string Conversion::unsignedToBin(unsigned long long value, int digits)
 {
     std::string bin;
 
@@ -168,12 +168,12 @@ std::string unsignedToBin(unsigned long long value, int digits)
     return bin;
 }
 
-std::string unsignedCharToBin(unsigned long long value)
+std::string Conversion::unsignedCharToBin(unsigned long long value)
 {
     return unsignedToBin(value, 1);
 }
 
-std::string unsignedShortToBin(unsigned long long value)
+std::string Conversion::unsignedShortToBin(unsigned long long value)
 {
     return unsignedToBin(value, 2);
 }
