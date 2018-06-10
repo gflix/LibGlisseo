@@ -155,6 +155,29 @@ signed long long Conversion::binToSigned(char character)
     return binToSigned(std::string(1, character));
 }
 
+std::string unsignedToBin(unsigned long long value, int digits)
+{
+    std::string bin;
+
+    for (; digits > 0; --digits)
+    {
+        bin.push_back(value & 0xff);
+        value >>= 8;
+    }
+
+    return bin;
+}
+
+std::string unsignedCharToBin(unsigned long long value)
+{
+    return unsignedToBin(value, 1);
+}
+
+std::string unsignedShortToBin(unsigned long long value)
+{
+    return unsignedToBin(value, 2);
+}
+
 unsigned char Conversion::decodeHexDigit(const char& digit)
 {
     if (digit >= '0' && digit <= '9')

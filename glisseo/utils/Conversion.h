@@ -25,6 +25,10 @@ public:
     static signed long long binToSigned(const std::string& bin);
     static signed long long binToSigned(char character);
 
+    static std::string unsignedToBin(unsigned long long value, int digits);
+    static std::string unsignedCharToBin(unsigned long long value);
+    static std::string unsignedShortToBin(unsigned long long value);
+
 private:
     static unsigned char decodeHexDigit(const char& digit);
 };
