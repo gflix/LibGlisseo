@@ -15,6 +15,7 @@
 /Debug/
 .deps/
 /examples/glisseo-example-01
+/examples/glisseo-example-02
 /external/googletest/src/.dirstamp
 *.la
 .libs/
