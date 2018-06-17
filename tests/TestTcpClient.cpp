@@ -21,5 +21,5 @@ TEST(TcpClient, Defaults)
     Flix::TcpClient tcpClient;
 
     EXPECT_FALSE(tcpClient.isConnected());
-    EXPECT_ANY_THROW(tcpClient.getDescriptor());
+    EXPECT_EQ(tcpClient.getDescriptor(), INVALID_DESCRIPTOR);
 }
