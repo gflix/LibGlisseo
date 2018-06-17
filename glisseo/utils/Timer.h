@@ -17,6 +17,8 @@ public:
     void setInterval(const timespec& interval);
     bool isRunning(void) const;
 
+    uint64_t getExpirationCount(void) const;
+
 private:
     timespec interval;
 

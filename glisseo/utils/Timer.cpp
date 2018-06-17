@@ -80,10 +80,28 @@ bool Timer::isRunning(void) const
         descriptorIsValid();
 }
 
+uint64_t Timer::getExpirationCount(void) const
+{
+    if (!isRunning())
+    {
+        throw std::runtime_error("timer is not running");
+    }
+
+    uint64_t expirationCount = 0;
+
+    if (read(descriptor, &expirationCount, sizeof(expirationCount)) != sizeof(expirationCount))
+    {
+        throw std::runtime_error("error reading expiration count from timer");
+    }
+
+    return expirationCount;
+}
+
 void Timer::checkInterval(void) const
 {
-    if (interval.tv_sec <= 0 ||
-        interval.tv_nsec <= 0)
+    if (interval.tv_sec < 0 ||
+        interval.tv_nsec < 0 ||
+        (interval.tv_sec == 0 && interval.tv_nsec == 0))
     {
         throw std::out_of_range("invalid timer interval");
     }
