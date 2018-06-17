@@ -82,12 +82,22 @@ size_t Select::getWriteDescriptorCount(void) const
 
 bool Select::readDescriptorIsSet(int descriptor) const
 {
+    if (readDescriptors.find(descriptor) == readDescriptors.cend())
+    {
+        throw std::invalid_argument("invalid descriptor given");
+    }
+
     return
         FD_ISSET(descriptor, &selectReadDescriptors);
 }
 
 bool Select::writeDescriptorIsSet(int descriptor) const
 {
+    if (writeDescriptors.find(descriptor) == writeDescriptors.cend())
+    {
+        throw std::invalid_argument("invalid descriptor given");
+    }
+
     return
         FD_ISSET(descriptor, &selectWriteDescriptors);
 }
