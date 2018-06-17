@@ -7,7 +7,6 @@
 #include <glisseo/utils/Select.h>
 #include <glisseo/network/serial/SerialPort.h>
 
-#define SERIAL_INVALID_DESCRIPTOR (-1)
 #define PORT_READ_TIMEOUT_MICROSECS (200000)
 #define PORT_WRITE_TIMEOUT_MICROSECS (500000)
 
@@ -15,7 +14,7 @@
 namespace Flix {
 
 SerialPort::SerialPort():
-    descriptor(SERIAL_INVALID_DESCRIPTOR)
+    GenericDescriptor()
 {
 }
 
@@ -55,7 +54,7 @@ void SerialPort::close(void)
     if (isOpened())
     {
         ::close(descriptor);
-        descriptor = SERIAL_INVALID_DESCRIPTOR;
+        invalidateDescriptor();
     }
 }
 
@@ -109,13 +108,7 @@ void SerialPort::receive(std::string& data, size_t bufferSize) const
 bool SerialPort::isOpened(void) const
 {
     return
-        descriptor != SERIAL_INVALID_DESCRIPTOR;
-}
-
-int SerialPort::getDescriptor(void) const
-{
-    return
-        descriptor;
+        descriptorIsValid();
 }
 
 } /* namespace Flix */

@@ -2,13 +2,14 @@
 #define NETWORKING_SERIAL_SERIALPORT_H_
 
 #include <string>
+#include <glisseo/utils/GenericDescriptor.h>
 #include <glisseo/network/serial/Baudrate.h>
 
 #define SERIAL_RECEIVE_BUFFER_SIZE_DEFAULT (128)
 
 namespace Flix {
 
-class SerialPort {
+class SerialPort: public GenericDescriptor {
 public:
     SerialPort();
     virtual ~SerialPort();
@@ -20,10 +21,6 @@ public:
     void receive(std::string& data, size_t bufferSize = SERIAL_RECEIVE_BUFFER_SIZE_DEFAULT) const;
 
     bool isOpened(void) const;
-    int getDescriptor(void) const;
-
-protected:
-    int descriptor;
 };
 
 } /* namespace Flix */

@@ -39,7 +39,7 @@ void TcpServer::start(int port, Protocol procotol)
     }
 
     descriptor = socket(socketNamespace, SOCK_STREAM, 0);
-    if (descriptor <= TCP_INVALID_DESCRIPTOR)
+    if (!descriptorIsValid())
     {
         throw std::runtime_error("could not create socket");
     }
@@ -83,7 +83,7 @@ void TcpServer::stop(void)
     if (isConnected())
     {
         ::close(descriptor);
-        descriptor = TCP_INVALID_DESCRIPTOR;
+        invalidateDescriptor();
     }
 }
 

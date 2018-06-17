@@ -22,7 +22,7 @@ void GenericTcpConnection::disconnect(void)
     if (isConnected())
     {
         ::close(descriptor);
-        descriptor = TCP_INVALID_DESCRIPTOR;
+        invalidateDescriptor();
     }
 }
 

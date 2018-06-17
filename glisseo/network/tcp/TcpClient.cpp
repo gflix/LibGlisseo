@@ -48,7 +48,7 @@ void TcpClient::connect(std::string host, int port)
     for (addressInfo = getAddrInfoResult; addressInfo; addressInfo = addressInfo->ai_next)
     {
         descriptor = socket(addressInfo->ai_family, addressInfo->ai_socktype, addressInfo->ai_protocol);
-        if (descriptor <= TCP_INVALID_DESCRIPTOR)
+        if (!descriptorIsValid())
         {
             continue;
         }

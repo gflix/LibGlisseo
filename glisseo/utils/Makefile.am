@@ -6,6 +6,8 @@ noinst_LTLIBRARIES = libglisseo-utils.la
 libglisseo_utils_la_SOURCES = \
     Conversion.cpp \
     Conversion.h \
+    GenericDescriptor.cpp \
+    GenericDescriptor.h \
     GenericThread.cpp \
     GenericThread.h \
     Invocation.cpp \
@@ -24,6 +26,8 @@ libglisseo_utils_la_SOURCES = \
     Select.h \
     Split.cpp \
     Split.h \
+    Timer.cpp \
+    Timer.h \
     Trim.cpp \
     Trim.h
 
@@ -33,6 +37,7 @@ libglisseo_utils_la_LDFLAGS = \
 headerdir = $(includedir)/glisseo/utils
 header_HEADERS = \
     Conversion.h \
+    GenericDescriptor.h \
     GenericThread.h \
     Invocation.h \
     InvocationArgument.h \
@@ -42,6 +47,7 @@ header_HEADERS = \
     Range.h \
     Select.h \
     Split.h \
+    Timer.h \
     Trim.h
 
 MAINTAINERCLEANFILES = \
