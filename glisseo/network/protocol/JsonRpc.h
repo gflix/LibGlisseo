@@ -5,7 +5,7 @@
 #include <json/json.h>
 #include <glisseo/network/protocol/JsonTags.h>
 
-namespace Flix {
+namespace Glisseo {
 
 void initializeJsonRpcMessage(
     Json::Value& message,
@@ -47,6 +47,6 @@ void checkJsonRpcServerRequestValidity(const Json::Value& message, T callback)
     }
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_JSONRPC_H_ */

@@ -4,7 +4,7 @@
 #include <json/json.h>
 #include <glisseo/network/protocol/GenericNetstringServerConnection.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class GenericJsonOverNetstringServerConnection: public GenericNetstringServerConnection {
 public:
@@ -21,6 +21,6 @@ protected:
     virtual void processMessage(const Json::Value& message) = 0;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_GENERICJSONOVERNETSTRINGSERVERCONNECTION_H_ */

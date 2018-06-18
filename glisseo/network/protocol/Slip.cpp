@@ -6,7 +6,7 @@
 #define FRAME_REPLACEMENT_DELIMITER (0xdc)
 #define FRAME_REPLACEMENT_ESCAPE_CHARACTER (0xdd)
 
-namespace Flix {
+namespace Glisseo {
 
 Slip::Slip()
 {
@@ -169,4 +169,4 @@ std::string Slip::unescapeFrame(const SlipFrame& input)
     return output;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

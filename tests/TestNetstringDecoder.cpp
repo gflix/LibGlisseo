@@ -3,7 +3,7 @@
 
 TEST(NetstringDecoder, BufferHandling)
 {
-    Flix::NetstringDecoder decoder;
+    Glisseo::NetstringDecoder decoder;
 
     EXPECT_EQ(decoder.getBuffer(), std::string());
     decoder.appendText("ABC");
@@ -16,7 +16,7 @@ TEST(NetstringDecoder, BufferHandling)
 
 TEST(NetstringDecoder, CheckBuffer)
 {
-    Flix::NetstringDecoder decoder;
+    Glisseo::NetstringDecoder decoder;
 
     EXPECT_NO_THROW(decoder.checkBuffer());
     decoder.appendText("ABC");
@@ -43,7 +43,7 @@ TEST(NetstringDecoder, CheckBuffer)
 
 TEST(NetstringDecoder, HasMessage)
 {
-    Flix::NetstringDecoder decoder;
+    Glisseo::NetstringDecoder decoder;
 
     EXPECT_FALSE(decoder.hasMessage());
 
@@ -59,7 +59,7 @@ TEST(NetstringDecoder, HasMessage)
 
 TEST(NetstringDecoder, GetMessage)
 {
-    Flix::NetstringDecoder decoder;
+    Glisseo::NetstringDecoder decoder;
 
     EXPECT_ANY_THROW(decoder.getMessage());
 

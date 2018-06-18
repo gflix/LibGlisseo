@@ -8,6 +8,6 @@ TEST(NetstringEncoder, Encode)
     std::string inputB { "ABC" };
     std::string expectedB { "3:ABC," };
 
-    EXPECT_EQ(Flix::toNetstring(inputA), expectedA);
-    EXPECT_EQ(Flix::toNetstring(inputB), expectedB);
+    EXPECT_EQ(Glisseo::toNetstring(inputA), expectedA);
+    EXPECT_EQ(Glisseo::toNetstring(inputB), expectedB);
 }

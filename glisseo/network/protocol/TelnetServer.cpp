@@ -3,7 +3,7 @@
 #include <glisseo/utils/Log.h>
 #include <glisseo/network/protocol/TelnetServer.h>
 
-namespace Flix {
+namespace Glisseo {
 
 TelnetServer::TelnetServer(
     GenericTelnetService* telnetService,
@@ -40,4 +40,4 @@ bool TelnetServer::task(const Select& select)
     return true;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

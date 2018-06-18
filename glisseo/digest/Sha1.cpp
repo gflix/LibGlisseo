@@ -7,7 +7,7 @@
 #define INITIAL_VALUE_H3 (0x10325476UL)
 #define INITIAL_VALUE_H4 (0xc3d2e1f0UL)
 
-namespace Flix {
+namespace Glisseo {
 
 Sha1::Sha1()
 {
@@ -148,4 +148,4 @@ std::string Sha1::getHash(void) const
     return hash;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

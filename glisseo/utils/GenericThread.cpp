@@ -7,7 +7,7 @@
 #define PERIODIC_TASK_INTERVAL_MIN_SECONDS (5)
 #define PERIODIC_TASK_INTERVAL_DEFAULT_SECONDS (20)
 
-namespace Flix {
+namespace Glisseo {
 
 GenericThread::GenericThread(const std::string& identifier, bool silent):
     identifier(identifier),
@@ -170,4 +170,4 @@ void GenericThread::run(void)
     if (!silent) LOG_INFO("Stopped thread \"" << identifier << "\"");
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

@@ -5,7 +5,7 @@
 
 #define STREAM_BUFFER (128)
 
-namespace Flix {
+namespace Glisseo {
 
 GenericNetstringServerConnection::GenericNetstringServerConnection(
     const std::string& identifier,
@@ -65,4 +65,4 @@ bool GenericNetstringServerConnection::task(const Select& select)
     return true;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

@@ -3,7 +3,7 @@
 
 #include <stdexcept>
 
-namespace Flix {
+namespace Glisseo {
 
 class JsonRpcInvalidParamsException: public std::logic_error {
 public:
@@ -11,6 +11,6 @@ public:
     virtual ~JsonRpcInvalidParamsException();
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_JSONRPCINVALIDPARAMSEXCEPTION_H_ */

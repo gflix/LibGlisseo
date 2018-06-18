@@ -4,7 +4,7 @@
 #include <string>
 #include <glisseo/network/tcp/GenericTcpConnection.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class TcpClient: public GenericTcpConnection {
 public:
@@ -14,6 +14,6 @@ public:
     virtual void connect(std::string host, int port);
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* TCPCLIENT_TCPCLIENT_H_ */

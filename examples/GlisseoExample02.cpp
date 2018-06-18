@@ -11,7 +11,7 @@ ostream& printTimestamp(ostream& stream)
 
     char buffer[32];
 
-    snprintf(buffer, sizeof(buffer) - 1, "%8ld.%03d", currentTime.tv_sec, currentTime.tv_nsec / 1000000);
+    snprintf(buffer, sizeof(buffer) - 1, "%8ld.%03ld", currentTime.tv_sec, currentTime.tv_nsec / 1000000);
 
     stream << buffer;
 
@@ -21,9 +21,9 @@ ostream& printTimestamp(ostream& stream)
 int main(int argc, char* argv[])
 {
 
-    Flix::Select timerSelect;
-    Flix::Timer timerA;
-    Flix::Timer timerB;
+    Glisseo::Select timerSelect;
+    Glisseo::Timer timerA;
+    Glisseo::Timer timerB;
 
     timerA.setInterval({2, 0});
     timerB.setInterval({0, 400000000});

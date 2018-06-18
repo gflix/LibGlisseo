@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include <glisseo/network/tcp/TcpServer.h>
 
-namespace Flix {
+namespace Glisseo {
 
 TcpServer::TcpServer():
     GenericTcp()
@@ -87,4 +87,4 @@ void TcpServer::stop(void)
     }
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

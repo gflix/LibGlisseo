@@ -4,7 +4,7 @@
 #include <string>
 #include <glisseo/network/tcp/GenericTcpConnection.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class TcpServerConnection: public GenericTcpConnection {
 public:
@@ -12,6 +12,6 @@ public:
     virtual ~TcpServerConnection();
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_TCP_TCPSERVERCONNECTION_H_ */

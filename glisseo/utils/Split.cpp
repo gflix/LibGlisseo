@@ -2,7 +2,7 @@
 #include <glisseo/utils/Trim.h>
 #include <glisseo/utils/Split.h>
 
-namespace Flix {
+namespace Glisseo {
 
 std::vector<std::string> split(std::string joinedString, const std::string& separator, bool trim, bool skipEmpty)
 {
@@ -24,7 +24,7 @@ std::vector<std::string> split(std::string joinedString, const std::string& sepa
 
         if (trim)
         {
-            element = Flix::trim(element);
+            element = Glisseo::trim(element);
         }
         if (!element.empty() || !skipEmpty)
         {
@@ -34,7 +34,7 @@ std::vector<std::string> split(std::string joinedString, const std::string& sepa
 
     if (trim)
     {
-        joinedString = Flix::trim(joinedString);
+        joinedString = Glisseo::trim(joinedString);
     }
     if (!joinedString.empty() || !skipEmpty)
     {
@@ -44,4 +44,4 @@ std::vector<std::string> split(std::string joinedString, const std::string& sepa
     return strings;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

@@ -1,6 +1,6 @@
 #include <glisseo/utils/Trim.h>
 
-namespace Flix {
+namespace Glisseo {
 
 std::string trimLeft(const std::string& text)
 {
@@ -32,4 +32,4 @@ std::string trim(const std::string& text)
         trimLeft(trimRight(text));
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

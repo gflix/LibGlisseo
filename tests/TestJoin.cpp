@@ -9,13 +9,13 @@ TEST(Join, JoinDefaultSeparator)
     std::string expectedC { "A,B" };
     std::string expectedD { "A,B,C" };
 
-    EXPECT_EQ(Flix::join(input), expectedA);
+    EXPECT_EQ(Glisseo::join(input), expectedA);
     input.push_back("A");
-    EXPECT_EQ(Flix::join(input), expectedB);
+    EXPECT_EQ(Glisseo::join(input), expectedB);
     input.push_back("B");
-    EXPECT_EQ(Flix::join(input), expectedC);
+    EXPECT_EQ(Glisseo::join(input), expectedC);
     input.push_back("C");
-    EXPECT_EQ(Flix::join(input), expectedD);
+    EXPECT_EQ(Glisseo::join(input), expectedD);
 }
 
 TEST(Join, JoinCustomSeparators)
@@ -29,7 +29,7 @@ TEST(Join, JoinCustomSeparators)
     input.push_back("B");
     input.push_back("C");
 
-    EXPECT_EQ(Flix::join(input, ":"), expectedA);
-    EXPECT_EQ(Flix::join(input, " / "), expectedB);
-    EXPECT_EQ(Flix::join(input, ", "), expectedC);
+    EXPECT_EQ(Glisseo::join(input, ":"), expectedA);
+    EXPECT_EQ(Glisseo::join(input, " / "), expectedB);
+    EXPECT_EQ(Glisseo::join(input, ", "), expectedC);
 }

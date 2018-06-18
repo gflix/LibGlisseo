@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Flix {
+namespace Glisseo {
 
 class NetstringDecoder {
 public:
@@ -25,6 +25,6 @@ private:
     int messageLength;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_NETSTRINGDECODER_H_ */

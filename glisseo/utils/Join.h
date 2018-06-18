@@ -4,10 +4,10 @@
 #include <string>
 #include <vector>
 
-namespace Flix {
+namespace Glisseo {
 
 std::string join(std::vector<std::string> strings, const std::string& separator = ",");
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_UTILS_JOIN_H_ */

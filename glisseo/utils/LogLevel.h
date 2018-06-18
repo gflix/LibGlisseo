@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Flix {
+namespace Glisseo {
 
 enum class LogLevel {
     ERROR = 0,
@@ -16,6 +16,6 @@ enum class LogLevel {
 LogLevel identifierToLogLevel(const std::string& identifier);
 std::string logLevelToIdentifier(LogLevel state);
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_UTILS_LOGLEVEL_H_ */

@@ -10,10 +10,10 @@ TEST(Trim, TrimLeft)
     std::string inputD { "\n\r A\nB\rC D \r\n" };
     std::string expectedD { "A\nB\rC D \r\n" };
 
-    EXPECT_EQ(Flix::trimLeft(inputA), inputA);
-    EXPECT_EQ(Flix::trimLeft(inputB), inputB);
-    EXPECT_EQ(Flix::trimLeft(inputC), expectedC);
-    EXPECT_EQ(Flix::trimLeft(inputD), expectedD);
+    EXPECT_EQ(Glisseo::trimLeft(inputA), inputA);
+    EXPECT_EQ(Glisseo::trimLeft(inputB), inputB);
+    EXPECT_EQ(Glisseo::trimLeft(inputC), expectedC);
+    EXPECT_EQ(Glisseo::trimLeft(inputD), expectedD);
 }
 
 TEST(Trim, TrimRight)
@@ -25,10 +25,10 @@ TEST(Trim, TrimRight)
     std::string inputD { "\n\r A\nB\rC D \r\n" };
     std::string expectedD { "\n\r A\nB\rC D" };
 
-    EXPECT_EQ(Flix::trimRight(inputA), inputA);
-    EXPECT_EQ(Flix::trimRight(inputB), inputB);
-    EXPECT_EQ(Flix::trimRight(inputC), expectedC);
-    EXPECT_EQ(Flix::trimRight(inputD), expectedD);
+    EXPECT_EQ(Glisseo::trimRight(inputA), inputA);
+    EXPECT_EQ(Glisseo::trimRight(inputB), inputB);
+    EXPECT_EQ(Glisseo::trimRight(inputC), expectedC);
+    EXPECT_EQ(Glisseo::trimRight(inputD), expectedD);
 }
 
 TEST(Trim, Trim)
@@ -37,6 +37,6 @@ TEST(Trim, Trim)
     std::string inputB { "\n\r A\nB\rC D \r\n" };
     std::string expectedB { "A\nB\rC D" };
 
-    EXPECT_EQ(Flix::trim(inputA), inputA);
-    EXPECT_EQ(Flix::trim(inputB), expectedB);
+    EXPECT_EQ(Glisseo::trim(inputA), inputA);
+    EXPECT_EQ(Glisseo::trim(inputB), expectedB);
 }

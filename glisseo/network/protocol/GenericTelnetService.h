@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Flix {
+namespace Glisseo {
 
 class TelnetServerConnection;
 
@@ -15,6 +15,6 @@ public:
     virtual void processLine(const std::string& line, TelnetServerConnection& connection);
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_PROTOCOL_GENERICTELNETSERVICE_H_ */

@@ -4,7 +4,7 @@
 #include <ctime>
 #include <glisseo/utils/GenericDescriptor.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class Timer: public GenericDescriptor {
 public:
@@ -25,6 +25,6 @@ private:
     void checkInterval(void) const;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_UTILS_TIMER_H_ */

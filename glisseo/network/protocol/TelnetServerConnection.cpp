@@ -4,7 +4,7 @@
 
 #define TELNET_STREAM_BUFFER (128)
 
-namespace Flix {
+namespace Glisseo {
 
 TelnetServerConnection::TelnetServerConnection(
     GenericTelnetService* telnetService,
@@ -102,4 +102,4 @@ bool TelnetServerConnection::getLineFromSocketBuffer(std::string& line)
     return true;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include <glisseo/network/protocol/NetstringDecoder.h>
 
-namespace Flix {
+namespace Glisseo {
 
 NetstringDecoder::NetstringDecoder():
     colonPosition(std::string::npos),
@@ -83,4 +83,4 @@ const std::string& NetstringDecoder::getBuffer(void) const
         buffer;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

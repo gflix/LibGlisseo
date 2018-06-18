@@ -4,7 +4,7 @@
 #include <glisseo/network/protocol/GenericNetstringClient.h>
 #include <glisseo/network/protocol/Messages.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class GenericJsonOverNetstringClient: public GenericNetstringClient {
 public:
@@ -15,6 +15,6 @@ public:
     void receiveJsonMessages(JsonMessages& jsonMessages);
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_GENERICJSONOVERNETSTRINGCLIENT_H_ */

@@ -1,6 +1,6 @@
 #include <glisseo/network/protocol/GenericJsonOverNetstringServerConnection.h>
 
-namespace Flix {
+namespace Glisseo {
 
 GenericJsonOverNetstringServerConnection::GenericJsonOverNetstringServerConnection(
     const std::string& identifier,
@@ -32,4 +32,4 @@ void GenericJsonOverNetstringServerConnection::processMessage(const std::string&
     processMessage(json);
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

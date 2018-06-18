@@ -7,7 +7,7 @@
 
 #define SERIAL_RECEIVE_BUFFER_SIZE_DEFAULT (128)
 
-namespace Flix {
+namespace Glisseo {
 
 class SerialPort: public GenericDescriptor {
 public:
@@ -23,6 +23,6 @@ public:
     bool isOpened(void) const;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_SERIAL_SERIALPORT_H_ */

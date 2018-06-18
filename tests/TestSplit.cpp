@@ -3,7 +3,7 @@
 
 TEST(Split, SplitThrow)
 {
-    EXPECT_ANY_THROW(Flix::split(std::string(), std::string()));
+    EXPECT_ANY_THROW(Glisseo::split(std::string(), std::string()));
 }
 
 TEST(Split, Split)
@@ -26,10 +26,10 @@ TEST(Split, Split)
     expectedD.push_back(" BBB ");
     expectedD.push_back("CCC ");
 
-    EXPECT_EQ(Flix::split(inputA, ","), expectedA);
-    EXPECT_EQ(Flix::split(inputB, ","), expectedB);
-    EXPECT_EQ(Flix::split(inputC, ","), expectedC);
-    EXPECT_EQ(Flix::split(inputD, ","), expectedD);
+    EXPECT_EQ(Glisseo::split(inputA, ","), expectedA);
+    EXPECT_EQ(Glisseo::split(inputB, ","), expectedB);
+    EXPECT_EQ(Glisseo::split(inputC, ","), expectedC);
+    EXPECT_EQ(Glisseo::split(inputD, ","), expectedD);
 }
 
 TEST(Split, SplitWithTrim)
@@ -40,7 +40,7 @@ TEST(Split, SplitWithTrim)
     expectedA.push_back("BBB");
     expectedA.push_back("CCC");
 
-    EXPECT_EQ(Flix::split(inputA, ",", true), expectedA);
+    EXPECT_EQ(Glisseo::split(inputA, ",", true), expectedA);
 }
 
 TEST(Split, SplitWithEmptyElements)
@@ -64,7 +64,7 @@ TEST(Split, SplitWithEmptyElements)
     expectedB.push_back(std::string());
     expectedB.push_back(std::string());
 
-    EXPECT_EQ(Flix::split(inputB, ",", false, false), expectedB);
+    EXPECT_EQ(Glisseo::split(inputB, ",", false, false), expectedB);
 }
 
 TEST(Split, SplitDifferentSeparators)
@@ -78,8 +78,8 @@ TEST(Split, SplitDifferentSeparators)
     std::string inputB { "AAA / BBB / CCC" };
     std::string inputC { "AAA:BBB:CCC" };
 
-    EXPECT_EQ(Flix::split(inputA, ", "), expectedA);
-    EXPECT_EQ(Flix::split(inputB, ", "), std::vector<std::string>({ inputB }));
-    EXPECT_EQ(Flix::split(inputB, " / "), expectedA);
-    EXPECT_EQ(Flix::split(inputC, ":"), expectedA);
+    EXPECT_EQ(Glisseo::split(inputA, ", "), expectedA);
+    EXPECT_EQ(Glisseo::split(inputB, ", "), std::vector<std::string>({ inputB }));
+    EXPECT_EQ(Glisseo::split(inputB, " / "), expectedA);
+    EXPECT_EQ(Glisseo::split(inputC, ":"), expectedA);
 }

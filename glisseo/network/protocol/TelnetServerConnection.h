@@ -5,7 +5,7 @@
 #include <glisseo/network/protocol/GenericServerConnection.h>
 #include <glisseo/network/protocol/GenericTelnetService.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class TelnetServerConnection: public GenericServerConnection {
 public:
@@ -34,6 +34,6 @@ private:
     bool getLineFromSocketBuffer(std::string& line);
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_PROTOCOL_TELNETSERVERCONNECTION_H_ */

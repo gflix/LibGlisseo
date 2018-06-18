@@ -1,6 +1,6 @@
 #include <glisseo/utils/Range.h>
 
-namespace Flix {
+namespace Glisseo {
 
 bool withinRange(int value, int min, int max)
 {
@@ -22,4 +22,4 @@ int restrictToRange(int value, int min, int max)
     return value;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

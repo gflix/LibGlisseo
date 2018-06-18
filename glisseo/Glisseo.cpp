@@ -5,11 +5,11 @@
 #define PACKAGE_STRING "unknown"
 #endif
 
-namespace Flix {
+namespace Glisseo {
 
 std::string Glisseo::getPackageInfo(void)
 {
     return { PACKAGE_STRING };
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

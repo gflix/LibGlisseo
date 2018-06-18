@@ -9,7 +9,7 @@
 #include <glisseo/utils/Log.h>
 #include <glisseo/network/tcp/TcpServer.h>
 
-namespace Flix {
+namespace Glisseo {
 
 template<typename T>
 class GenericServer: public GenericThread {
@@ -116,6 +116,6 @@ protected:
     }
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_GENERICSERVER_H_ */

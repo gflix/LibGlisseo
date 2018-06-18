@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Flix {
+namespace Glisseo {
 
 class Sha1 {
 public:
@@ -21,6 +21,6 @@ private:
     std::string message;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_DIGEST_SHA1_H_ */

@@ -11,7 +11,7 @@
 #define PORT_WRITE_TIMEOUT_MICROSECS (500000)
 
 
-namespace Flix {
+namespace Glisseo {
 
 SerialPort::SerialPort():
     GenericDescriptor()
@@ -111,4 +111,4 @@ bool SerialPort::isOpened(void) const
         descriptorIsValid();
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

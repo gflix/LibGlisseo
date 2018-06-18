@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include <glisseo/network/protocol/JsonRpc.h>
 
-namespace Flix {
+namespace Glisseo {
 
 void initializeJsonRpcMessage(
         Json::Value& message,
@@ -90,4 +90,4 @@ void checkJsonRpcClientResponseValidity(const Json::Value& message)
     }
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

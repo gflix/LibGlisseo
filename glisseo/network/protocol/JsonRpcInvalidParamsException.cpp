@@ -1,6 +1,6 @@
 #include <glisseo/network/protocol/JsonRpcInvalidParamsException.h>
 
-namespace Flix {
+namespace Glisseo {
 
 JsonRpcInvalidParamsException::JsonRpcInvalidParamsException(const std::string& what):
     std::logic_error(what)
@@ -11,4 +11,4 @@ JsonRpcInvalidParamsException::~JsonRpcInvalidParamsException()
 {
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

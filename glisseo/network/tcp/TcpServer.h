@@ -4,7 +4,7 @@
 #include <glisseo/network/Protocol.h>
 #include <glisseo/network/tcp/GenericTcp.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class TcpServer: public GenericTcp {
 public:
@@ -15,6 +15,6 @@ public:
     void stop(void);
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_TCP_TCPSERVER_H_ */

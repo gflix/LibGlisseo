@@ -5,7 +5,7 @@
 #include <glisseo/network/protocol/GenericTelnetService.h>
 #include <glisseo/network/protocol/TelnetServerConnection.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class TelnetServer: public GenericServer<TelnetServerConnection> {
 public:
@@ -28,6 +28,6 @@ private:
     std::string welcomeMessage;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_PROTOCOL_TELNETSERVER_H_ */

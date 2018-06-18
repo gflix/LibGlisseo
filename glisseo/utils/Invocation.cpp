@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <glisseo/utils/Invocation.h>
 
-namespace Flix {
+namespace Glisseo {
 
 Invocation::Invocation()
 {
@@ -268,4 +268,4 @@ int Invocation::max(int a, int b) const
         a > b ? a : b;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

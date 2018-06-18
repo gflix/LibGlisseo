@@ -3,7 +3,7 @@
 
 #include <glisseo/utils/GenericThread.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class GenericServerConnection: public GenericThread {
 public:
@@ -25,6 +25,6 @@ protected:
     virtual void updateDescriptors(Select& select) override;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_GENERICSERVERCONNECTION_H_ */

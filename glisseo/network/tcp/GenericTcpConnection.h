@@ -6,7 +6,7 @@
 
 #define TCP_RECEIVE_BUFFER_SIZE_DEFAULT (1024)
 
-namespace Flix {
+namespace Glisseo {
 
 class GenericTcpConnection: public GenericTcp {
 public:
@@ -19,6 +19,6 @@ public:
     void receive(std::string& data, size_t bufferSize = TCP_RECEIVE_BUFFER_SIZE_DEFAULT) const;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_TCP_GENERICTCPCONNECTION_H_ */

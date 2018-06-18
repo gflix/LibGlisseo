@@ -1,6 +1,6 @@
 #include <glisseo/utils/GenericDescriptor.h>
 
-namespace Flix {
+namespace Glisseo {
 
 GenericDescriptor::GenericDescriptor():
     descriptor(INVALID_DESCRIPTOR)
@@ -28,4 +28,4 @@ void GenericDescriptor::invalidateDescriptor(void)
     descriptor = INVALID_DESCRIPTOR;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

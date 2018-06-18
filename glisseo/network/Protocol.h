@@ -1,7 +1,7 @@
 #ifndef NETWORKING_PROTOCOL_H_
 #define NETWORKING_PROTOCOL_H_
 
-namespace Flix {
+namespace Glisseo {
 
 enum class Protocol {
     UNDEFINED,
@@ -9,6 +9,6 @@ enum class Protocol {
     IPV6
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_PROTOCOL_H_ */

@@ -3,7 +3,7 @@
 
 #include <glisseo/network/protocol/GenericJsonOverNetstringClient.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class GenericJsonRpcClient: public GenericJsonOverNetstringClient {
 public:
@@ -14,6 +14,6 @@ public:
     void receiveJsonRpcMessages(JsonMessages& jsonRpcMessages);
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_GENERICJSONRPCCLIENT_H_ */

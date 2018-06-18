@@ -7,7 +7,7 @@
 #define CONTROL_PIPE_OUT (1)
 #define CONTROL_PIPE_IN (0)
 
-namespace Flix {
+namespace Glisseo {
 
 enum class ThreadControl {
     UNKNOWN,
@@ -47,6 +47,6 @@ private:
     virtual void run(void);
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* SRC_GENERICTHREAD_H_ */

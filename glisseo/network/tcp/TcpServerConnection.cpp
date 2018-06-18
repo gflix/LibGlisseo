@@ -1,6 +1,6 @@
 #include <glisseo/network/tcp/TcpServerConnection.h>
 
-namespace Flix {
+namespace Glisseo {
 
 TcpServerConnection::TcpServerConnection(int descriptor):
     GenericTcpConnection()
@@ -12,4 +12,4 @@ TcpServerConnection::~TcpServerConnection()
 {
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

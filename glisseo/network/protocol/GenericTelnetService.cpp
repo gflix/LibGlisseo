@@ -2,7 +2,7 @@
 #include <glisseo/network/protocol/TelnetServerConnection.h>
 #include <glisseo/network/protocol/GenericTelnetService.h>
 
-namespace Flix {
+namespace Glisseo {
 
 GenericTelnetService::GenericTelnetService()
 {
@@ -22,4 +22,4 @@ void GenericTelnetService::processLine(const std::string& line, TelnetServerConn
     connection.send("unknown command \"" + line + "\" (" + std::to_string(line.size()) + ")\n");
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

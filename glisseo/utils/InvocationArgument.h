@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-namespace Flix {
+namespace Glisseo {
 
 struct InvocationArgument {
     InvocationArgument(
@@ -27,6 +27,6 @@ struct InvocationArgument {
 
 typedef std::vector<InvocationArgument> InvocationArguments;
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_UTILS_INVOCATIONARGUMENT_H_ */

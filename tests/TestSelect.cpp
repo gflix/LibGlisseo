@@ -3,7 +3,7 @@
 
 TEST(Select, Defaults)
 {
-    Flix::Select select;
+    Glisseo::Select select;
 
     EXPECT_TRUE(select.getAutoReloadTimeout());
     EXPECT_EQ(select.getTimeout().tv_sec, 15);
@@ -14,7 +14,7 @@ TEST(Select, Defaults)
 
 TEST(Select, ReadDescriptors)
 {
-    Flix::Select select;
+    Glisseo::Select select;
 
     EXPECT_EQ(select.getReadDescriptorCount(), 0);
 
@@ -29,7 +29,7 @@ TEST(Select, ReadDescriptors)
 
 TEST(Select, WriteDescriptors)
 {
-    Flix::Select select;
+    Glisseo::Select select;
 
     EXPECT_EQ(select.getWriteDescriptorCount(), 0);
 
@@ -44,7 +44,7 @@ TEST(Select, WriteDescriptors)
 
 TEST(Select, Timeout)
 {
-    Flix::Select select;
+    Glisseo::Select select;
 
     EXPECT_EQ(select.getTimeout().tv_sec, select.getRemainingTime().tv_sec);
     EXPECT_EQ(select.getTimeout().tv_usec, select.getRemainingTime().tv_usec);

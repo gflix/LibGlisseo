@@ -1,7 +1,7 @@
 #include <glisseo/network/protocol/NetstringEncoder.h>
 #include <glisseo/network/protocol/GenericNetstringClient.h>
 
-namespace Flix {
+namespace Glisseo {
 
 GenericNetstringClient::GenericNetstringClient()
 {
@@ -42,4 +42,4 @@ void GenericNetstringClient::receiveMessages(Messages& messages)
     }
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

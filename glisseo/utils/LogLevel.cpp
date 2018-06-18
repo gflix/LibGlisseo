@@ -1,6 +1,6 @@
 #include <glisseo/utils/LogLevel.h>
 
-namespace Flix {
+namespace Glisseo {
 
 LogLevel identifierToLogLevel(const std::string& identifier)
 {
@@ -33,4 +33,4 @@ std::string logLevelToIdentifier(LogLevel logLevel)
     return "DEBUG";
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

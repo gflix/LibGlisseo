@@ -1,6 +1,6 @@
 #include <glisseo/network/protocol/GenericServerConnection.h>
 
-namespace Flix {
+namespace Glisseo {
 
 GenericServerConnection::GenericServerConnection(
     const std::string& identifier,
@@ -47,4 +47,4 @@ void GenericServerConnection::updateDescriptors(Select& select)
     select.addReadDescriptor(descriptor);
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

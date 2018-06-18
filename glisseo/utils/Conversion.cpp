@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include <glisseo/utils/Conversion.h>
 
-namespace Flix {
+namespace Glisseo {
 
 const char hexDigits[2][16] = {
     { '0', '1', '2', '3', '4', '5', '6', '7',
@@ -195,4 +195,4 @@ unsigned char Conversion::decodeHexDigit(const char& digit)
     throw std::invalid_argument("invalid hex digit");
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

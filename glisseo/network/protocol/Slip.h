@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-namespace Flix {
+namespace Glisseo {
 
 typedef std::string SlipFrame;
 typedef std::vector<SlipFrame> SlipFrames;
@@ -32,6 +32,6 @@ private:
     std::string receiveBuffer;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_PROTOCOL_SLIP_H_ */

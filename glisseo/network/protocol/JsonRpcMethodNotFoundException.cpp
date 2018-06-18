@@ -1,6 +1,6 @@
 #include <glisseo/network/protocol/JsonRpcMethodNotFoundException.h>
 
-namespace Flix {
+namespace Glisseo {
 
 JsonRpcMethodNotFoundException::JsonRpcMethodNotFoundException(const std::string& what):
     std::logic_error(what)
@@ -11,4 +11,4 @@ JsonRpcMethodNotFoundException::~JsonRpcMethodNotFoundException()
 {
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

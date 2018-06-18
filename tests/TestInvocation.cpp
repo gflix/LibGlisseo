@@ -4,17 +4,17 @@
 
 TEST(Invocation, ArgumentsNoThrow)
 {
-    EXPECT_NO_THROW(Flix::InvocationArgument("f", "", "", "", false));
-    EXPECT_NO_THROW(Flix::InvocationArgument("f", "", "", "BAR", false));
-    EXPECT_NO_THROW(Flix::InvocationArgument("f", "", "", "BAR", true));
+    EXPECT_NO_THROW(Glisseo::InvocationArgument("f", "", "", "", false));
+    EXPECT_NO_THROW(Glisseo::InvocationArgument("f", "", "", "BAR", false));
+    EXPECT_NO_THROW(Glisseo::InvocationArgument("f", "", "", "BAR", true));
 }
 
 TEST(Invocation, ArgumentsThrow)
 {
-    EXPECT_ANY_THROW(Flix::InvocationArgument("", "", "", "", false));
-    EXPECT_ANY_THROW(Flix::InvocationArgument("", "foo", "", "", false));
-    EXPECT_ANY_THROW(Flix::InvocationArgument("fo", "", "", "", false));
-    EXPECT_ANY_THROW(Flix::InvocationArgument("f", "", "", "", true));
+    EXPECT_ANY_THROW(Glisseo::InvocationArgument("", "", "", "", false));
+    EXPECT_ANY_THROW(Glisseo::InvocationArgument("", "foo", "", "", false));
+    EXPECT_ANY_THROW(Glisseo::InvocationArgument("fo", "", "", "", false));
+    EXPECT_ANY_THROW(Glisseo::InvocationArgument("f", "", "", "", true));
 }
 
 TEST(Invocation, PrintHelpShort)
@@ -22,7 +22,7 @@ TEST(Invocation, PrintHelpShort)
     std::stringstream stream;
     std::stringstream expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     expectedA << "USAGE: programName" << std::endl << std::endl;
     invocation.printHelp(stream, "programName");
@@ -34,7 +34,7 @@ TEST(Invocation, PrintHelpShortWithVersionInformation)
     std::stringstream stream;
     std::stringstream expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     expectedA << "USAGE: programName" << std::endl << std::endl;
     expectedA << "Version information:" << std::endl;
@@ -48,7 +48,7 @@ TEST(Invocation, PrintHelpOneFlag)
     std::stringstream stream;
     std::stringstream expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.addArgument("f", "", "Foo", "", false);
     stream.str(std::string());
@@ -66,7 +66,7 @@ TEST(Invocation, PrintHelpTwoFlags)
     std::stringstream stream;
     std::stringstream expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.addArgument("f", "", "Foo", "", false);
     invocation.addArgument("b", "", "Bar", "", false);
@@ -86,7 +86,7 @@ TEST(Invocation, PrintHelpOneOptionalArgument)
     std::stringstream stream;
     std::stringstream expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.addArgument("f", "", "Foo", "FOO", false);
     stream.str(std::string());
@@ -104,7 +104,7 @@ TEST(Invocation, PrintHelpTwoOptionalArguments)
     std::stringstream stream;
     std::stringstream expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.addArgument("f", "", "Foo", "FOO", false);
     invocation.addArgument("b", "", "Bar", "BAR", false);
@@ -124,7 +124,7 @@ TEST(Invocation, PrintHelpOneArgument)
     std::stringstream stream;
     std::stringstream expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.addArgument("f", "", "Foo", "FOO", true);
     stream.str(std::string());
@@ -142,7 +142,7 @@ TEST(Invocation, PrintHelpTwoArguments)
     std::stringstream stream;
     std::stringstream expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.addArgument("f", "", "Foo", "FOO", true);
     invocation.addArgument("b", "", "Bar", "BAR", true);
@@ -162,7 +162,7 @@ TEST(Invocation, PrintHelpRemainingArguments)
     std::stringstream stream;
     std::stringstream expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.setupRemainingArguments("REMAINING", "Remaining arguments");
     stream.str(std::string());
@@ -180,7 +180,7 @@ TEST(Invocation, PrintHelpAnyArgument)
     std::stringstream stream;
     std::stringstream expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.addArgument("a", "", "Aaa");
     invocation.addArgument("b", "", "Bbb");
@@ -212,7 +212,7 @@ TEST(Invocation, GetOptString)
 {
     std::string expectedA;
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.addArgument("a", "", "Aaa");
     invocation.addArgument("b", "", "Bbb");
@@ -228,7 +228,7 @@ TEST(Invocation, GetOptString)
 
 TEST(Invocation, GetArgumentThrow)
 {
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.addArgument("a", "", "Aaa");
     invocation.addArgument("b", "", "Bbb");
@@ -239,7 +239,7 @@ TEST(Invocation, GetArgumentThrow)
 
 TEST(Invocation, GetArgumentNoThrow)
 {
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     invocation.addArgument("a", "", "Aaa");
     invocation.addArgument("b", "", "Bbb");
@@ -259,7 +259,7 @@ TEST(Invocation, EvaluateThrow)
     int argcC = 2;
     char* argvC[] = { "programName", "-a" };
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
 
     EXPECT_ANY_THROW(invocation.evaluate(argcA, argvA));
     EXPECT_ANY_THROW(invocation.evaluate(argcB, argvB));
@@ -276,7 +276,7 @@ TEST(Invocation, EvaluateNoThrow)
     int argcB = 2;
     char* const argvB[] = { "programName", "-a" };
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
     invocation.addArgument("a", "", "Aaa");
 
     /*EXPECT_NO_THROW(*/invocation.evaluate(argcA, argvA)/*)*/;
@@ -288,7 +288,7 @@ TEST(Invocation, EvaluateFlags)
     int argcA = 3;
     char* const argvA[] = { "programName", "-b", "-c" };
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
     invocation.addArgument("a", "", "Aaa");
     invocation.addArgument("b", "", "Bbb");
     invocation.addArgument("c", "", "Ccc");
@@ -306,7 +306,7 @@ TEST(Invocation, EvaluateOptionalArguments)
     int argcA = 4;
     char* const argvA[] = { "programName", "-bBBB", "-c", "CCC" };
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
     invocation.addArgument("a", "", "Aaa", "AAA");
     invocation.addArgument("b", "", "Bbb", "BBB");
     invocation.addArgument("c", "", "Ccc", "CCC");
@@ -326,7 +326,7 @@ TEST(Invocation, EvaluateRequiredArguments)
     int argcA = 4;
     char* const argvA[] = { "programName", "-bBBB", "-c", "CCC" };
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
     invocation.addArgument("a", "", "Aaa", "AAA");
     invocation.addArgument("b", "", "Bbb", "BBB", true);
     invocation.addArgument("c", "", "Ccc", "CCC", true);
@@ -345,14 +345,14 @@ TEST(Invocation, EvaluateRemainingArguments)
     int argcA = 5;
     char* const argvA[] = { "programName", "-b", "-c", "FOO", "BAR" };
 
-    Flix::Invocation invocation;
+    Glisseo::Invocation invocation;
     invocation.addArgument("a", "", "Aaa");
     invocation.addArgument("b", "", "Bbb");
     invocation.addArgument("c", "", "Ccc");
     invocation.addArgument("d", "", "Ddd");
 
     EXPECT_NO_THROW(invocation.evaluate(argcA, argvA));
-    Flix::Arguments remainingArguments = invocation.getRemainingArguments();
+    Glisseo::Arguments remainingArguments = invocation.getRemainingArguments();
     EXPECT_EQ(remainingArguments.size(), 2);
     EXPECT_EQ(remainingArguments[0], "FOO");
     EXPECT_EQ(remainingArguments[1], "BAR");

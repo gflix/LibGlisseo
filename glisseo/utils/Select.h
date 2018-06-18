@@ -5,7 +5,7 @@
 #include <set>
 #include <string>
 
-namespace Flix {
+namespace Glisseo {
 
 typedef std::set<int> Descriptors;
 
@@ -53,6 +53,6 @@ private:
     int max(int a, int b) const;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_SELECT_H_ */

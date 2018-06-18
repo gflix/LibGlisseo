@@ -7,7 +7,7 @@
 #define SOCKET_READ_TIMEOUT_MICROSECS (100000)
 #define SOCKET_WRITE_TIMEOUT_MICROSECS (100000)
 
-namespace Flix {
+namespace Glisseo {
 
 GenericTcpConnection::GenericTcpConnection()
 {
@@ -73,4 +73,4 @@ void GenericTcpConnection::receive(std::string& data, size_t bufferSize) const
     data = std::move(std::string(buffer.get(), bytesRead));
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

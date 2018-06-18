@@ -5,7 +5,7 @@
 #define INVALID_DESCRIPTOR (-1)
 #define TIMEOUT_SECONDS_DEFAULT (15)
 
-namespace Flix {
+namespace Glisseo {
 
 Select::Select():
     autoReloadTimeout(AUTO_RELOAD_TIMEOUT_DEFAULT)
@@ -179,4 +179,4 @@ int Select::max(int a, int b) const
         a > b ? a : b;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

@@ -6,7 +6,7 @@
 #define TCP_PORT_MIN (1)
 #define TCP_PORT_MAX (65535)
 
-namespace Flix {
+namespace Glisseo {
 
 class GenericTcp: public GenericDescriptor {
 public:
@@ -19,6 +19,6 @@ protected:
     bool withinRange(int value, int min, int max) const;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_TCP_GENERICTCP_H_ */

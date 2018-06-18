@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Flix {
+namespace Glisseo {
 
 enum class HexDigitCase {
     LOWER,
@@ -33,6 +33,6 @@ private:
     static unsigned char decodeHexDigit(const char& digit);
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* NETWORKING_CONVERSION_H_ */

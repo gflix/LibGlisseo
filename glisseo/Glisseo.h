@@ -3,13 +3,13 @@
 
 #include <string>
 
-namespace Flix {
+namespace Glisseo {
 
 class Glisseo {
 public:
     static std::string getPackageInfo(void);
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_GLISSEO_H_ */

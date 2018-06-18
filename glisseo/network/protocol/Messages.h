@@ -5,11 +5,11 @@
 #include <vector>
 #include <json/json.h>
 
-namespace Flix {
+namespace Glisseo {
 
 typedef std::vector<std::string> Messages;
 typedef std::vector<Json::Value> JsonMessages;
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_MESSAGES_H_ */

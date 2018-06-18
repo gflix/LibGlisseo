@@ -4,7 +4,7 @@
 #include <glisseo/network/protocol/JsonRpc.h>
 #include <glisseo/network/protocol/JsonTags.h>
 
-namespace Flix {
+namespace Glisseo {
 
 GenericJsonRpcServerConnection::GenericJsonRpcServerConnection(
     const std::string& identifier,
@@ -58,4 +58,4 @@ void GenericJsonRpcServerConnection::processMessage(const Json::Value& message)
     }
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

@@ -1,6 +1,6 @@
 #include <glisseo/utils/Join.h>
 
-namespace Flix {
+namespace Glisseo {
 
 std::string join(std::vector<std::string> strings, const std::string& separator)
 {
@@ -21,4 +21,4 @@ std::string join(std::vector<std::string> strings, const std::string& separator)
     return joinedStrings;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

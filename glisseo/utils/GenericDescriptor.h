@@ -3,7 +3,7 @@
 
 #define INVALID_DESCRIPTOR (-1)
 
-namespace Flix {
+namespace Glisseo {
 
 class GenericDescriptor {
 public:
@@ -19,6 +19,6 @@ protected:
     void invalidateDescriptor(void);
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_UTILS_GENERICDESCRIPTOR_H_ */

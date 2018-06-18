@@ -3,7 +3,7 @@
 
 TEST(Protocol, SlipReceiveBuffer)
 {
-    Flix::Slip slip;
+    Glisseo::Slip slip;
     std::string inputA { "1234" };
     std::string inputB { "5678" };
 
@@ -18,7 +18,7 @@ TEST(Protocol, SlipReceiveBuffer)
 
 TEST(Protocol, SlipFrameDelimiters)
 {
-    Flix::Slip slip;
+    Glisseo::Slip slip;
     std::string::size_type firstDelimiter;
     std::string::size_type secondDelimiter;
 
@@ -53,7 +53,7 @@ TEST(Protocol, SlipFrameDelimiters)
 
 TEST(Protocol, SlipGetFrame)
 {
-    Flix::Slip slip;
+    Glisseo::Slip slip;
     std::string frame;
 
     EXPECT_ANY_THROW(slip.getFrame(frame));
@@ -66,8 +66,8 @@ TEST(Protocol, SlipGetFrame)
 
 TEST(Protocol, SlipGetFrames)
 {
-    Flix::Slip slip;
-    Flix::SlipFrames frames;
+    Glisseo::Slip slip;
+    Glisseo::SlipFrames frames;
 
     slip.appendReceivedData("invalid\xC0""frame\xC0\xC0""FRAME\xC0""INVALID");
     EXPECT_NO_THROW(slip.getFrames(frames));
@@ -87,10 +87,10 @@ TEST(Protocol, SlipEscapeFrame)
     std::string inputD { "1234\xC0\xC0""5678" };
     std::string expectD { "1234\xDB\xDC\xDB\xDC""5678" };
 
-    EXPECT_EQ(Flix::Slip::escapeFrame(inputA), inputA);
-    EXPECT_EQ(Flix::Slip::escapeFrame(inputB), expectB);
-    EXPECT_EQ(Flix::Slip::escapeFrame(inputC), expectC);
-    EXPECT_EQ(Flix::Slip::escapeFrame(inputD), expectD);
+    EXPECT_EQ(Glisseo::Slip::escapeFrame(inputA), inputA);
+    EXPECT_EQ(Glisseo::Slip::escapeFrame(inputB), expectB);
+    EXPECT_EQ(Glisseo::Slip::escapeFrame(inputC), expectC);
+    EXPECT_EQ(Glisseo::Slip::escapeFrame(inputD), expectD);
 }
 
 TEST(Protocol, SlipUnescapeFrame)
@@ -104,11 +104,11 @@ TEST(Protocol, SlipUnescapeFrame)
     std::string inputE { "1234\xDB\xDC\xDB\xDC""5678" };
     std::string expectE { "1234\xC0\xC0""5678" };
 
-    EXPECT_EQ(Flix::Slip::unescapeFrame(inputA), inputA);
-    EXPECT_ANY_THROW(Flix::Slip::unescapeFrame(inputB));
-    EXPECT_EQ(Flix::Slip::unescapeFrame(inputC), expectC);
-    EXPECT_EQ(Flix::Slip::unescapeFrame(inputD), expectD);
-    EXPECT_EQ(Flix::Slip::unescapeFrame(inputE), expectE);
+    EXPECT_EQ(Glisseo::Slip::unescapeFrame(inputA), inputA);
+    EXPECT_ANY_THROW(Glisseo::Slip::unescapeFrame(inputB));
+    EXPECT_EQ(Glisseo::Slip::unescapeFrame(inputC), expectC);
+    EXPECT_EQ(Glisseo::Slip::unescapeFrame(inputD), expectD);
+    EXPECT_EQ(Glisseo::Slip::unescapeFrame(inputE), expectE);
 }
 
 TEST(Protocol, SlipEncodeFrame)
@@ -118,6 +118,6 @@ TEST(Protocol, SlipEncodeFrame)
     std::string inputB { "12\xC0""34" };
     std::string expectB { "\xC0""12\xDB\xDC""34\xC0" };
 
-    EXPECT_EQ(Flix::Slip::encodeFrame(inputA), expectA);
-    EXPECT_EQ(Flix::Slip::encodeFrame(inputB), expectB);
+    EXPECT_EQ(Glisseo::Slip::encodeFrame(inputA), expectA);
+    EXPECT_EQ(Glisseo::Slip::encodeFrame(inputB), expectB);
 }

@@ -1,5 +1,5 @@
 #include <glisseo/network/Protocol.h>
 
-namespace Flix {
+namespace Glisseo {
 
-} /* namespace Flix */
+} /* namespace Glisseo */

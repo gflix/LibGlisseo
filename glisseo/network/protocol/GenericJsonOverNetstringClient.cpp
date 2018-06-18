@@ -1,6 +1,6 @@
 #include <glisseo/network/protocol/GenericJsonOverNetstringClient.h>
 
-namespace Flix {
+namespace Glisseo {
 
 GenericJsonOverNetstringClient::GenericJsonOverNetstringClient()
 {
@@ -33,4 +33,4 @@ void GenericJsonOverNetstringClient::receiveJsonMessages(JsonMessages& jsonMessa
     }
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

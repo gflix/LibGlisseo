@@ -3,13 +3,13 @@
 
 TEST(TcpServer, StartValueRanges)
 {
-    Flix::TcpServer tcpServer;
+    Glisseo::TcpServer tcpServer;
 
     int invalidTcpPortLow = 0;
     int invalidTcpPortHigh = 65536;
-    Flix::Protocol dummyProtocol = Flix::Protocol::IPV4;
+    Glisseo::Protocol dummyProtocol = Flix::Protocol::IPV4;
     int dummyTcpPort = 6635;
-    Flix::Protocol invalidProtocol = static_cast<Flix::Protocol>(-1);
+    Glisseo::Protocol invalidProtocol = static_cast<Flix::Protocol>(-1);
 
     EXPECT_ANY_THROW(tcpServer.start(invalidTcpPortLow, dummyProtocol));
     EXPECT_ANY_THROW(tcpServer.start(invalidTcpPortHigh, dummyProtocol));
@@ -18,7 +18,7 @@ TEST(TcpServer, StartValueRanges)
 
 TEST(TcpServer, Defaults)
 {
-    Flix::TcpServer tcpServer;
+    Glisseo::TcpServer tcpServer;
 
     EXPECT_FALSE(tcpServer.isConnected());
     EXPECT_EQ(tcpServer.getDescriptor(), INVALID_DESCRIPTOR);

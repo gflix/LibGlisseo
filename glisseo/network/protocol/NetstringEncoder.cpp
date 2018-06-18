@@ -1,7 +1,7 @@
 #include <sstream>
 #include <glisseo/network/protocol/NetstringEncoder.h>
 
-namespace Flix {
+namespace Glisseo {
 
 std::string toNetstring(const std::string& text)
 {
@@ -12,4 +12,4 @@ std::string toNetstring(const std::string& text)
     return stream.str();
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

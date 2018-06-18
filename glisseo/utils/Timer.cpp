@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include <glisseo/utils/Timer.h>
 
-namespace Flix {
+namespace Glisseo {
 
 Timer::Timer():
     GenericDescriptor(),
@@ -107,4 +107,4 @@ void Timer::checkInterval(void) const
     }
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

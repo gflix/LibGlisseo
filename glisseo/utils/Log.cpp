@@ -12,7 +12,7 @@
 #include <systemd/sd-daemon.h>
 #endif
 
-namespace Flix {
+namespace Glisseo {
 
 Log Log::instance = {};
 
@@ -126,4 +126,4 @@ void Log::determineOutputMode(void)
     toTty = isatty(fileno(stdout)) && isatty(fileno(stderr));
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

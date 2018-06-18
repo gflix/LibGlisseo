@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include <glisseo/network/serial/Baudrate.h>
 
-namespace Flix {
+namespace Glisseo {
 
 Baudrate identifierToBaudrate(std::string& identifier)
 {
@@ -30,4 +30,4 @@ int baudrateToInt(Baudrate baudrate)
     }
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

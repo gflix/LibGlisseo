@@ -28,20 +28,20 @@ int main(int argc, char* argv[])
     int protocolVersion = std::stol(argv[1]);
     int port = std::stol(argv[2]);
 
-    Flix::Protocol protocol = Flix::Protocol::UNDEFINED;
+    Glisseo::Protocol protocol = Glisseo::Protocol::UNDEFINED;
     switch (protocolVersion)
     {
     case 4:
-        protocol = Flix::Protocol::IPV4;
+        protocol = Glisseo::Protocol::IPV4;
         break;
     case 6:
-        protocol = Flix::Protocol::IPV6;
+        protocol = Glisseo::Protocol::IPV6;
         break;
     default:
         break;
     }
 
-    Flix::TcpServer tcpServer;
+    Glisseo::TcpServer tcpServer;
     tcpServer.start(port, protocol);
 
     while (1)

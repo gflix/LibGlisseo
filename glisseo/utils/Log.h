@@ -5,7 +5,7 @@
 #include <string>
 #include <glisseo/utils/LogLevel.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class Log {
 public:
@@ -32,21 +32,21 @@ private:
 };
 
 #define LOG_ERROR(message) { \
-    std::stringstream tempLogStream; tempLogStream << message; Flix::Log::instance.error(tempLogStream.str()); \
+    std::stringstream tempLogStream; tempLogStream << message; Glisseo::Log::instance.error(tempLogStream.str()); \
 }
 #define LOG_WARNING(message) { \
-    std::stringstream tempLogStream; tempLogStream << message; Flix::Log::instance.warning(tempLogStream.str()); \
+    std::stringstream tempLogStream; tempLogStream << message; Glisseo::Log::instance.warning(tempLogStream.str()); \
 }
 #define LOG_NOTICE(message) { \
-    std::stringstream tempLogStream; tempLogStream << message; Flix::Log::instance.notice(tempLogStream.str()); \
+    std::stringstream tempLogStream; tempLogStream << message; Glisseo::Log::instance.notice(tempLogStream.str()); \
 }
 #define LOG_INFO(message) { \
-    std::stringstream tempLogStream; tempLogStream << message; Flix::Log::instance.info(tempLogStream.str()); \
+    std::stringstream tempLogStream; tempLogStream << message; Glisseo::Log::instance.info(tempLogStream.str()); \
 }
 #define LOG_DEBUG(message) { \
-    std::stringstream tempLogStream; tempLogStream << message; Flix::Log::instance.debug(tempLogStream.str()); \
+    std::stringstream tempLogStream; tempLogStream << message; Glisseo::Log::instance.debug(tempLogStream.str()); \
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* SRC_MODELLBAHN_CONTROLLER_LOG_H_ */

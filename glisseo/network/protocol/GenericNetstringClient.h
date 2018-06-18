@@ -7,7 +7,7 @@
 #include <glisseo/network/protocol/Messages.h>
 #include <glisseo/network/tcp/TcpClient.h>
 
-namespace Flix {
+namespace Glisseo {
 
 class GenericNetstringClient: public TcpClient {
 public:
@@ -23,6 +23,6 @@ private:
     NetstringDecoder netstringDecoder;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_GENERICNETSTRINGCLIENT_H_ */

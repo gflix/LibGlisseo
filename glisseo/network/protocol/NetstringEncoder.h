@@ -3,10 +3,10 @@
 
 #include <string>
 
-namespace Flix {
+namespace Glisseo {
 
 std::string toNetstring(const std::string& text);
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_NETSTRINGENCODER_H_ */

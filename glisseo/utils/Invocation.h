@@ -4,7 +4,7 @@
 #include <ostream>
 #include <glisseo/utils/InvocationArgument.h>
 
-namespace Flix {
+namespace Glisseo {
 
 typedef std::vector<std::string> Arguments;
 
@@ -44,6 +44,6 @@ private:
     int max(int a, int b) const;
 };
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_UTILS_INVOCATION_H_ */

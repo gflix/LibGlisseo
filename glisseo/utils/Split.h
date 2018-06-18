@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-namespace Flix {
+namespace Glisseo {
 
 std::vector<std::string> split(
     std::string joinedString,
@@ -12,6 +12,6 @@ std::vector<std::string> split(
     bool trim = false,
     bool skipEmpty = true);
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_UTILS_SPLIT_H_ */

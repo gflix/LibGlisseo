@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include <glisseo/utils/InvocationArgument.h>
 
-namespace Flix {
+namespace Glisseo {
 
 InvocationArgument::InvocationArgument(
     const std::string& shortArgument,
@@ -35,4 +35,4 @@ InvocationArgument::InvocationArgument(
     }
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

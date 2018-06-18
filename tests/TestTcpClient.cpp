@@ -3,7 +3,7 @@
 
 TEST(TcpClient, ConnectValueRanges)
 {
-    Flix::TcpClient tcpClient;
+    Glisseo::TcpClient tcpClient;
 
     std::string invalidHost;
     std::string dummyHost { "127.0.0.1" };
@@ -18,7 +18,7 @@ TEST(TcpClient, ConnectValueRanges)
 
 TEST(TcpClient, Defaults)
 {
-    Flix::TcpClient tcpClient;
+    Glisseo::TcpClient tcpClient;
 
     EXPECT_FALSE(tcpClient.isConnected());
     EXPECT_EQ(tcpClient.getDescriptor(), INVALID_DESCRIPTOR);

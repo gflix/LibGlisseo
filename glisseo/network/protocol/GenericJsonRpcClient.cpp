@@ -1,6 +1,6 @@
 #include <glisseo/network/protocol/GenericJsonRpcClient.h>
 
-namespace Flix {
+namespace Glisseo {
 
 GenericJsonRpcClient::GenericJsonRpcClient()
 {
@@ -20,4 +20,4 @@ void GenericJsonRpcClient::receiveJsonRpcMessages(JsonMessages& jsonRpcMessages)
     receiveJsonMessages(jsonRpcMessages);
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

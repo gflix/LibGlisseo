@@ -1,7 +1,7 @@
 #include <stdexcept>
 #include <glisseo/network/tcp/GenericTcp.h>
 
-namespace Flix {
+namespace Glisseo {
 
 GenericTcp::GenericTcp():
     GenericDescriptor()
@@ -25,4 +25,4 @@ bool GenericTcp::withinRange(int value, int min, int max) const
         value <= max;
 }
 
-} /* namespace Flix */
+} /* namespace Glisseo */

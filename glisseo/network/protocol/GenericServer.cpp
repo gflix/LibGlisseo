@@ -1,5 +1,5 @@
 #include <glisseo/network/protocol/GenericServer.h>
 
-namespace Flix {
+namespace Glisseo {
 
-} /* namespace Flix */
+} /* namespace Glisseo */

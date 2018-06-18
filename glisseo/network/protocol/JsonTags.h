@@ -1,7 +1,7 @@
 #ifndef GLISSEO_NETWORK_PROTOCOL_JSONTAGS_H_
 #define GLISSEO_NETWORK_PROTOCOL_JSONTAGS_H_
 
-namespace Flix {
+namespace Glisseo {
 
 #define JSON_TAG_CODE "code"
 #define JSON_TAG_ERROR "error"
@@ -11,6 +11,6 @@ namespace Flix {
 #define JSON_TAG_METHOD "method"
 #define JSON_TAG_RESULT "result"
 
-} /* namespace Flix */
+} /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_JSONTAGS_H_ */
