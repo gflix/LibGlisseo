@@ -9,9 +9,9 @@ TEST(Conversion, BinToHex)
 
     EXPECT_EQ(Glisseo::Conversion::binToHex(bin),
         expectedLower);
-    EXPECT_EQ(Glisseo::Conversion::binToHex(bin, Flix::HexDigitCase::LOWER),
+    EXPECT_EQ(Glisseo::Conversion::binToHex(bin, Glisseo::HexDigitCase::LOWER),
         expectedLower);
-    EXPECT_EQ(Glisseo::Conversion::binToHex(bin, Flix::HexDigitCase::UPPER),
+    EXPECT_EQ(Glisseo::Conversion::binToHex(bin, Glisseo::HexDigitCase::UPPER),
         expectedUpper);
 }
 
@@ -43,7 +43,7 @@ TEST(Conversion, HexToBinToHex)
 {
     std::string hex { "0123456789abcdef" };
 
-    EXPECT_EQ(Glisseo::Conversion::binToHex(Flix::Conversion::hexToBin(hex)),
+    EXPECT_EQ(Glisseo::Conversion::binToHex(Glisseo::Conversion::hexToBin(hex)),
         hex);
 }
 
