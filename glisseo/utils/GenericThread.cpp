@@ -124,7 +124,6 @@ void GenericThread::sendSignal(ThreadControl threadControl)
 
 void GenericThread::run(void)
 {
-    Select select;
     timespec lastRunPeriodicTask;
 
     if (!silent) LOG_INFO("Started thread \"" << identifier << "\"");
@@ -132,6 +131,8 @@ void GenericThread::run(void)
     clock_gettime(CLOCK_MONOTONIC_COARSE, &lastRunPeriodicTask);
 
     do {
+        Select select;
+
         select.setTimeout(periodicTaskInterval / 2);
         select.addReadDescriptor(controlPipe[CONTROL_PIPE_IN]);
         updateDescriptors(select);
