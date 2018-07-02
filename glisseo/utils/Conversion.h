@@ -29,6 +29,9 @@ public:
     static std::string unsignedCharToBin(unsigned long long value);
     static std::string unsignedShortToBin(unsigned long long value);
 
+    static std::string unsignedCharToHex(unsigned int value);
+    static std::string unsignedShortToHex(unsigned int value);
+
 private:
     static unsigned char decodeHexDigit(const char& digit);
 };

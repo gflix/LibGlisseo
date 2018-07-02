@@ -128,3 +128,29 @@ TEST(Conversion, BinToSignedFromCharacter)
 
     EXPECT_EQ(Glisseo::Conversion::binToSigned(inputA), expectedA);
 }
+
+TEST(Conversion, UnsignedCharToHex)
+{
+    unsigned int inputA = 0x0f;
+    std::string expectedA { "0f" };
+    unsigned int inputB = 0xef;
+    std::string expectedB { "ef" };
+    unsigned int inputC = 0xcef;
+
+    EXPECT_EQ(Glisseo::Conversion::unsignedCharToHex(inputA), expectedA);
+    EXPECT_EQ(Glisseo::Conversion::unsignedCharToHex(inputB), expectedB);
+    EXPECT_EQ(Glisseo::Conversion::unsignedCharToHex(inputC), expectedB);
+}
+
+TEST(Conversion, UnsignedShortToHex)
+{
+    unsigned int inputA = 0x0def;
+    std::string expectedA { "0def" };
+    unsigned int inputB = 0xcdef;
+    std::string expectedB { "cdef" };
+    unsigned int inputC = 0xbcdef;
+
+    EXPECT_EQ(Glisseo::Conversion::unsignedShortToHex(inputA), expectedA);
+    EXPECT_EQ(Glisseo::Conversion::unsignedShortToHex(inputB), expectedB);
+    EXPECT_EQ(Glisseo::Conversion::unsignedShortToHex(inputC), expectedB);
+}

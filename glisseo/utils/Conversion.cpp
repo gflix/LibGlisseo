@@ -1,3 +1,4 @@
+#include <cstring>
 #include <stdexcept>
 #include <glisseo/utils/Conversion.h>
 
@@ -176,6 +177,28 @@ std::string Conversion::unsignedCharToBin(unsigned long long value)
 std::string Conversion::unsignedShortToBin(unsigned long long value)
 {
     return unsignedToBin(value, 2);
+}
+
+std::string Conversion::unsignedCharToHex(unsigned int value)
+{
+    value &= 0xff;
+    char buffer[4];
+
+    bzero(buffer, sizeof(buffer));
+    snprintf(buffer,sizeof(buffer), "%02x", value);
+
+    return buffer;
+}
+
+std::string Conversion::unsignedShortToHex(unsigned int value)
+{
+    value &= 0xffff;
+    char buffer[6];
+
+    bzero(buffer, sizeof(buffer));
+    snprintf(buffer,sizeof(buffer), "%04x", value);
+
+    return buffer;
 }
 
 unsigned char Conversion::decodeHexDigit(const char& digit)
