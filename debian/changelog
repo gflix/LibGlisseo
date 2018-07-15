@@ -1,8 +1,14 @@
-libglisseo (0.5.2) UNRELEASED; urgency=medium
+libglisseo (0.5.3) bionic; urgency=medium
+
+  * Fixed potential errors
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sun, 15 Jul 2018 16:03:34 +0200
+
+libglisseo (0.5.2) bionic; urgency=medium
 
   * A lot of new features
 
- -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Tue, 03 Jul 2018 21:46:06 +0200
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sun, 15 Jul 2018 16:03:19 +0200
 
 libglisseo (0.3.1) bionic; urgency=medium
 
