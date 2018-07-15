@@ -77,7 +77,7 @@ void SerialPort::send(const std::string& data) const
     size_t dataSize = data.size();
     ssize_t bytesWritten = write(descriptor, data.c_str(), data.size());
 
-    if (dataSize != bytesWritten)
+    if (dataSize != static_cast<size_t>(bytesWritten))
     {
         throw std::runtime_error("could not write to socket");
     }

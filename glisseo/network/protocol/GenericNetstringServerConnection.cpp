@@ -59,7 +59,6 @@ bool GenericNetstringServerConnection::task(const Select& select)
     {
         LOG_WARNING("Broken netstring or protocol error detected (" << e.what() << ")! Closing connection to " << peer << ".");
         closeConnection();
-        true;
     }
 
     return true;
