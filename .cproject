@@ -7,7 +7,19 @@
             			
             <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.652290101" moduleId="org.eclipse.cdt.core.settings" name="Debug">
                 				
-                <externalSettings/>
+                <externalSettings>
+                    					
+                    <externalSetting>
+                        						
+                        <entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/LibGlisseo"/>
+                        						
+                        <entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/LibGlisseo/Debug"/>
+                        						
+                        <entry flags="RESOLVED" kind="libraryFile" name="LibGlisseo" srcPrefixMapping="" srcRootPath=""/>
+                        					
+                    </externalSetting>
+                    				
+                </externalSettings>
                 				
                 <extensions>
                     					
@@ -29,7 +41,7 @@
             			
             <storageModule moduleId="cdtBuildSystem" version="4.0.0">
                 				
-                <configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.652290101" name="Debug" parent="cdt.managedbuild.config.gnu.cross.exe.debug">
+                <configuration artifactExtension="so" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.652290101" name="Debug" parent="cdt.managedbuild.config.gnu.cross.exe.debug">
                     					
                     <folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.652290101." name="/" resourcePath="">
                         						
@@ -50,6 +62,8 @@
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibGlisseo}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/flix/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibGlisseo/external/googletest}&quot;"/>
                                     								
                                 </option>
                                 								
@@ -73,13 +87,21 @@
                                     								
                                 </option>
                                 								
+                                <option id="gnu.cpp.compiler.option.other.pic.1682276669" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+                                								
                                 <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1401383157" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
                                 							
                             </tool>
                             							
-                            <tool id="cdt.managedbuild.tool.gnu.cross.c.linker.642153913" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
+                            <tool id="cdt.managedbuild.tool.gnu.cross.c.linker.642153913" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
+                                								
+                                <option defaultValue="true" id="gnu.c.link.option.shared.1517068288" name="Shared (-shared)" superClass="gnu.c.link.option.shared" valueType="boolean"/>
+                                							
+                            </tool>
                             							
                             <tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1509870665" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
+                                								
+                                <option defaultValue="true" id="gnu.cpp.link.option.shared.170891143" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" useByScannerDiscovery="false" valueType="boolean"/>
                                 								
                                 <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.86927427" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
                                     									
@@ -100,6 +122,8 @@
                                     <listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibGlisseo}&quot;"/>
                                     									
                                     <listOptionValue builtIn="false" value="/opt/flix/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="&quot;${workspace_loc:/LibGlisseo/external/googletest}&quot;"/>
                                     								
                                 </option>
                                 								
@@ -110,6 +134,12 @@
                         </toolChain>
                         					
                     </folderInfo>
+                    					
+                    <sourceEntries>
+                        						
+                        <entry excluding="examples/|tests/|external/" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+                        					
+                    </sourceEntries>
                     				
                 </configuration>
                 			
@@ -148,5 +178,15 @@
     <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
     	
     <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+    	
+    <storageModule moduleId="refreshScope" versionNumber="2">
+        		
+        <configuration configurationName="Debug">
+            			
+            <resource resourceType="PROJECT" workspacePath="/LibGlisseo"/>
+            		
+        </configuration>
+        	
+    </storageModule>
     
 </cproject>
