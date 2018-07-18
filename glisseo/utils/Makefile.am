@@ -26,6 +26,8 @@ libglisseo_utils_la_SOURCES = \
     Select.h \
     Split.cpp \
     Split.h \
+    String.cpp \
+    String.h \
     Timer.cpp \
     Timer.h \
     Trim.cpp \
@@ -47,6 +49,7 @@ header_HEADERS = \
     Range.h \
     Select.h \
     Split.h \
+    String.h \
     Timer.h \
     Trim.h
 

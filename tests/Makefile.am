@@ -20,6 +20,7 @@ TESTS = \
     select \
     sha1 \
     split \
+    stringtest \
     trim \
     tcp-client \
     tcp-server
@@ -37,6 +38,7 @@ range_SOURCES = TestRange.cpp
 select_SOURCES = TestSelect.cpp
 sha1_SOURCES = TestSha1.cpp
 split_SOURCES = TestSplit.cpp
+stringtest_SOURCES = TestString.cpp
 trim_SOURCES = TestTrim.cpp
 tcp_client_SOURCES = TestTcpClient.cpp
 tcp_server_SOURCES = TestTcpServer.cpp
