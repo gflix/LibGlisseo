@@ -7,6 +7,8 @@ SUBDIRS = \
     examples \
     tests
 
+@DX_RULES@
+
 MAINTAINERCLEANFILES = \
     build-aux/ar-lib \
     build-aux/compile \

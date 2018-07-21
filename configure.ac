@@ -45,8 +45,11 @@ AC_FUNC_MALLOC
 AC_FUNC_MMAP
 AC_FUNC_STRERROR_R
 
+DX_INIT_DOXYGEN([libglisseo], [Doxyfile], [doc])
+
 AC_CONFIG_FILES([
     Makefile
+    Doxyfile
     examples/Makefile
     external/googletest/Makefile
     glisseo/Makefile
