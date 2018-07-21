@@ -8,7 +8,7 @@ namespace Glisseo {
 class JsonRpcMethodNotFoundException: public std::logic_error {
 public:
     JsonRpcMethodNotFoundException(const std::string& what);
-    virtual ~JsonRpcMethodNotFoundException();
+    virtual ~JsonRpcMethodNotFoundException() = default;
 };
 
 } /* namespace Glisseo */

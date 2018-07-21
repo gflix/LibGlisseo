@@ -8,8 +8,4 @@ TcpServerConnection::TcpServerConnection(int descriptor):
     this->descriptor = descriptor;
 }
 
-TcpServerConnection::~TcpServerConnection()
-{
-}
-
 } /* namespace Glisseo */

@@ -11,7 +11,7 @@ public:
         const std::string& identifier,
         int descriptor,
         const std::string& peer);
-    virtual ~GenericJsonRpcServerConnection();
+    virtual ~GenericJsonRpcServerConnection() = default;
 
 protected:
     virtual void processMessage(const Json::Value& message) override;

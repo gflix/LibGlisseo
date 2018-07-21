@@ -7,8 +7,4 @@ JsonRpcInvalidParamsException::JsonRpcInvalidParamsException(const std::string& 
 {
 }
 
-JsonRpcInvalidParamsException::~JsonRpcInvalidParamsException()
-{
-}
-
 } /* namespace Glisseo */

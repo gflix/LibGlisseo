@@ -7,8 +7,8 @@ namespace Glisseo {
 
 class GenericDescriptor {
 public:
-    GenericDescriptor();
-    virtual ~GenericDescriptor();
+    GenericDescriptor(void);
+    virtual ~GenericDescriptor() = default;
 
     int getDescriptor(void) const;
 

@@ -16,10 +16,6 @@ TelnetServer::TelnetServer(
 {
 }
 
-TelnetServer::~TelnetServer()
-{
-}
-
 void TelnetServer::setDefaultPrompt(const std::string& defaultPrompt)
 {
     this->defaultPrompt = defaultPrompt;

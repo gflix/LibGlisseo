@@ -7,10 +7,6 @@ GenericDescriptor::GenericDescriptor():
 {
 }
 
-GenericDescriptor::~GenericDescriptor()
-{
-}
-
 int GenericDescriptor::getDescriptor(void) const
 {
     return

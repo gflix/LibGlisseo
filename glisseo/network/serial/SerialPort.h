@@ -11,7 +11,7 @@ namespace Glisseo {
 
 class SerialPort: public GenericDescriptor {
 public:
-    SerialPort();
+    SerialPort(void);
     virtual ~SerialPort();
 
     void open(const std::string& device, Baudrate baudrate);

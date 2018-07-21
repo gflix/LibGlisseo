@@ -3,11 +3,7 @@
 
 namespace Glisseo {
 
-Invocation::Invocation()
-{
-}
-
-Invocation::~Invocation()
+Invocation::Invocation(void)
 {
 }
 

@@ -8,7 +8,7 @@ namespace Glisseo {
 
 class TcpClient: public GenericTcpConnection {
 public:
-    TcpClient();
+    TcpClient(void);
     virtual ~TcpClient();
 
     virtual void connect(std::string host, int port);

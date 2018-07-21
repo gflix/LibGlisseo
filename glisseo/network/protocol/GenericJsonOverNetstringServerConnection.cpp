@@ -10,10 +10,6 @@ GenericJsonOverNetstringServerConnection::GenericJsonOverNetstringServerConnecti
 {
 }
 
-GenericJsonOverNetstringServerConnection::~GenericJsonOverNetstringServerConnection()
-{
-}
-
 void GenericJsonOverNetstringServerConnection::send(const Json::Value& message)
 {
     GenericNetstringServerConnection::send(message.toStyledString());

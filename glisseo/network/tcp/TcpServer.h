@@ -8,7 +8,7 @@ namespace Glisseo {
 
 class TcpServer: public GenericTcp {
 public:
-    TcpServer();
+    TcpServer(void);
     virtual ~TcpServer();
 
     void start(int port, Protocol protocol = Protocol::IPV4);

@@ -11,8 +11,8 @@ typedef std::vector<SlipFrame> SlipFrames;
 
 class Slip {
 public:
-    Slip();
-    virtual ~Slip();
+    Slip(void);
+    virtual ~Slip() = default;
 
     void appendReceivedData(const std::string& receivedData);
     void resetReceiveBuffer(void);

@@ -11,8 +11,8 @@ namespace Glisseo {
 
 class GenericNetstringClient: public TcpClient {
 public:
-    GenericNetstringClient();
-    virtual ~GenericNetstringClient();
+    GenericNetstringClient(void);
+    virtual ~GenericNetstringClient() = default;
 
     virtual void connect(std::string host, int port) override;
 

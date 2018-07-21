@@ -9,8 +9,8 @@ class TelnetServerConnection;
 
 class GenericTelnetService {
 public:
-    GenericTelnetService();
-    virtual ~GenericTelnetService();
+    GenericTelnetService(void);
+    virtual ~GenericTelnetService() = default;
 
     virtual void processLine(const std::string& line, TelnetServerConnection& connection);
 };

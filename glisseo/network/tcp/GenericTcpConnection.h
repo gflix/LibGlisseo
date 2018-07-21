@@ -10,8 +10,8 @@ namespace Glisseo {
 
 class GenericTcpConnection: public GenericTcp {
 public:
-    GenericTcpConnection();
-    virtual ~GenericTcpConnection();
+    GenericTcpConnection(void);
+    virtual ~GenericTcpConnection() = default;
 
     void disconnect(void);
 

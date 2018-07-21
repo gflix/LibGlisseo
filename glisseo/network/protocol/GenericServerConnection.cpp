@@ -12,10 +12,6 @@ GenericServerConnection::GenericServerConnection(
 {
 }
 
-GenericServerConnection::~GenericServerConnection()
-{
-}
-
 void GenericServerConnection::closeConnection(void)
 {
     if (descriptor < 0) {

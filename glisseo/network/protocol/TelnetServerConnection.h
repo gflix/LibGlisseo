@@ -15,7 +15,7 @@ public:
         const std::string& peer,
         const std::string& prompt,
         const std::string& welcomeMessage);
-    virtual ~TelnetServerConnection();
+    virtual ~TelnetServerConnection() = default;
 
 protected:
     virtual bool setup(void) override;

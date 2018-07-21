@@ -14,7 +14,7 @@ public:
         int port,
         Protocol protocol = Protocol::IPV4,
         const std::string& defaultPrompt = "> ");
-    virtual ~TelnetServer();
+    virtual ~TelnetServer() = default;
 
     void setDefaultPrompt(const std::string& defaultPrompt);
     void setWelcomeMessage(const std::string& welcomeMessage);

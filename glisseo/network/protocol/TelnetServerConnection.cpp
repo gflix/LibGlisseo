@@ -19,10 +19,6 @@ TelnetServerConnection::TelnetServerConnection(
 {
 }
 
-TelnetServerConnection::~TelnetServerConnection()
-{
-}
-
 bool TelnetServerConnection::setup(void)
 {
     send("\n");

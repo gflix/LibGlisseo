@@ -7,8 +7,4 @@ JsonRpcMethodNotFoundException::JsonRpcMethodNotFoundException(const std::string
 {
 }
 
-JsonRpcMethodNotFoundException::~JsonRpcMethodNotFoundException()
-{
-}
-
 } /* namespace Glisseo */

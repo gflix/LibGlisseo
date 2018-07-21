@@ -8,10 +8,6 @@ GenericTcp::GenericTcp():
 {
 }
 
-GenericTcp::~GenericTcp()
-{
-}
-
 bool GenericTcp::isConnected(void) const
 {
     return

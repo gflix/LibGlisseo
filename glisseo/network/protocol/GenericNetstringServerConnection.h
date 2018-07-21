@@ -12,7 +12,7 @@ public:
         const std::string& identifier,
         int descriptor,
         const std::string& peer);
-    virtual ~GenericNetstringServerConnection();
+    virtual ~GenericNetstringServerConnection() = default;
 
     virtual void send(const std::string& message) override;
 

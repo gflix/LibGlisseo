@@ -9,7 +9,7 @@ namespace Glisseo {
 class TcpServerConnection: public GenericTcpConnection {
 public:
     TcpServerConnection(int descriptor);
-    virtual ~TcpServerConnection();
+    virtual ~TcpServerConnection() = default;
 };
 
 } /* namespace Glisseo */

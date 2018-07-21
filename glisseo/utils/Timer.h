@@ -8,7 +8,7 @@ namespace Glisseo {
 
 class Timer: public GenericDescriptor {
 public:
-    Timer();
+    Timer(void);
     explicit Timer(const timespec& interval);
     virtual ~Timer();
 

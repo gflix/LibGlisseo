@@ -8,7 +8,7 @@ namespace Glisseo {
 class NetstringDecoder {
 public:
     NetstringDecoder();
-    virtual ~NetstringDecoder();
+    virtual ~NetstringDecoder() = default;
 
     void appendText(const std::string& text);
     void checkBuffer(void);

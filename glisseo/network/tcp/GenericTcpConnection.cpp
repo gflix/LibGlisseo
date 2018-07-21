@@ -13,10 +13,6 @@ GenericTcpConnection::GenericTcpConnection()
 {
 }
 
-GenericTcpConnection::~GenericTcpConnection()
-{
-}
-
 void GenericTcpConnection::disconnect(void)
 {
     if (isConnected())

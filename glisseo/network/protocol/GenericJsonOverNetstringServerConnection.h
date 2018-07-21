@@ -12,7 +12,7 @@ public:
         const std::string& identifier,
         int descriptor,
         const std::string& peer);
-    virtual ~GenericJsonOverNetstringServerConnection();
+    virtual ~GenericJsonOverNetstringServerConnection() = default;
 
     virtual void send(const Json::Value& message);
 

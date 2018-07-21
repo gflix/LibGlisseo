@@ -2,11 +2,7 @@
 
 namespace Glisseo {
 
-GenericJsonRpcClient::GenericJsonRpcClient()
-{
-}
-
-GenericJsonRpcClient::~GenericJsonRpcClient()
+GenericJsonRpcClient::GenericJsonRpcClient(void)
 {
 }
 

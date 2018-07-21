@@ -8,7 +8,7 @@ namespace Glisseo {
 class JsonRpcInvalidParamsException: public std::logic_error {
 public:
     JsonRpcInvalidParamsException(const std::string& what);
-    virtual ~JsonRpcInvalidParamsException();
+    virtual ~JsonRpcInvalidParamsException() = default;
 };
 
 } /* namespace Glisseo */

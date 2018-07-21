@@ -2,11 +2,7 @@
 
 namespace Glisseo {
 
-GenericJsonOverNetstringClient::GenericJsonOverNetstringClient()
-{
-}
-
-GenericJsonOverNetstringClient::~GenericJsonOverNetstringClient()
+GenericJsonOverNetstringClient::GenericJsonOverNetstringClient(void)
 {
 }
 

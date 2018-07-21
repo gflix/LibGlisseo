@@ -8,8 +8,8 @@ namespace Glisseo {
 
 class GenericJsonOverNetstringClient: public GenericNetstringClient {
 public:
-    GenericJsonOverNetstringClient();
-    virtual ~GenericJsonOverNetstringClient();
+    GenericJsonOverNetstringClient(void);
+    virtual ~GenericJsonOverNetstringClient() = default;
 
     void sendJsonMessage(const Json::Value& jsonMessage) const;
     void receiveJsonMessages(JsonMessages& jsonMessages);

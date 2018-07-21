@@ -14,10 +14,6 @@ GenericJsonRpcServerConnection::GenericJsonRpcServerConnection(
 {
 }
 
-GenericJsonRpcServerConnection::~GenericJsonRpcServerConnection()
-{
-}
-
 void GenericJsonRpcServerConnection::processMessage(const Json::Value& message)
 {
     Json::Value response = Json::objectValue;

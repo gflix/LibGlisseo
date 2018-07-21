@@ -7,8 +7,8 @@ namespace Glisseo {
 
 class Sha1 {
 public:
-    Sha1();
-    virtual ~Sha1();
+    Sha1(void);
+    virtual ~Sha1() = default;
 
     void appendMessage(const std::string& message);
     const std::string& getMessage(void) const;

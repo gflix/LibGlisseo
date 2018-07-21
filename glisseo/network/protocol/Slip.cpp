@@ -8,11 +8,7 @@
 
 namespace Glisseo {
 
-Slip::Slip()
-{
-}
-
-Slip::~Slip()
+Slip::Slip(void)
 {
 }
 

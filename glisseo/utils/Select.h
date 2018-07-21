@@ -11,8 +11,8 @@ typedef std::set<int> Descriptors;
 
 class Select {
 public:
-    Select();
-    virtual ~Select();
+    Select(void);
+    virtual ~Select() = default;
 
     int execute(void);
 

@@ -18,10 +18,6 @@ Select::Select():
     reloadTimeout();
 }
 
-Select::~Select()
-{
-}
-
 int Select::execute(void)
 {
     int maxDescriptor = 0;

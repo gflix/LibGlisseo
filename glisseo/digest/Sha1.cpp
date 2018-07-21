@@ -9,11 +9,7 @@
 
 namespace Glisseo {
 
-Sha1::Sha1()
-{
-}
-
-Sha1::~Sha1()
+Sha1::Sha1(void)
 {
 }
 

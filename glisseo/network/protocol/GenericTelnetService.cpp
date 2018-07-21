@@ -4,11 +4,7 @@
 
 namespace Glisseo {
 
-GenericTelnetService::GenericTelnetService()
-{
-}
-
-GenericTelnetService::~GenericTelnetService()
+GenericTelnetService::GenericTelnetService(void)
 {
 }
 

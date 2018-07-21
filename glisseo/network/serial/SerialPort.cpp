@@ -13,7 +13,7 @@
 
 namespace Glisseo {
 
-SerialPort::SerialPort():
+SerialPort::SerialPort(void):
     GenericDescriptor()
 {
 }

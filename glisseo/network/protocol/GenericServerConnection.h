@@ -11,7 +11,7 @@ public:
         const std::string& identifier,
         int descriptor,
         const std::string& peer);
-    virtual ~GenericServerConnection();
+    virtual ~GenericServerConnection() = default;
 
     void closeConnection(void);
     virtual void send(const std::string& message);

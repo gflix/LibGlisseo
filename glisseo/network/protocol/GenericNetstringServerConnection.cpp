@@ -15,10 +15,6 @@ GenericNetstringServerConnection::GenericNetstringServerConnection(
 {
 }
 
-GenericNetstringServerConnection::~GenericNetstringServerConnection()
-{
-}
-
 void GenericNetstringServerConnection::send(const std::string& message)
 {
     GenericServerConnection::send(toNetstring(message));

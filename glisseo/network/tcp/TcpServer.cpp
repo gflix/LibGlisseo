@@ -6,7 +6,7 @@
 
 namespace Glisseo {
 
-TcpServer::TcpServer():
+TcpServer::TcpServer(void):
     GenericTcp()
 {
 }

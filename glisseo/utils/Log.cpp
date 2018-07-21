@@ -28,10 +28,6 @@ Log::Log(LogLevel logLevel):
     determineOutputMode();
 }
 
-Log::~Log()
-{
-}
-
 void Log::error(std::string logMessage) const
 {
     if (LogLevel::ERROR <= logLevel) {

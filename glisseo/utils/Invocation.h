@@ -10,8 +10,8 @@ typedef std::vector<std::string> Arguments;
 
 class Invocation {
 public:
-    Invocation();
-    virtual ~Invocation();
+    Invocation(void);
+    virtual ~Invocation() = default;
 
     void addArgument(
         const std::string& shortArgument,

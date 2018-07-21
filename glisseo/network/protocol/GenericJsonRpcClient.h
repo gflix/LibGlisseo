@@ -7,8 +7,8 @@ namespace Glisseo {
 
 class GenericJsonRpcClient: public GenericJsonOverNetstringClient {
 public:
-    GenericJsonRpcClient();
-    virtual ~GenericJsonRpcClient();
+    GenericJsonRpcClient(void);
+    virtual ~GenericJsonRpcClient() = default;
 
     void sendJsonRpcMessage(const Json::Value& jsonRpcMessage) const;
     void receiveJsonRpcMessages(JsonMessages& jsonRpcMessages);

@@ -9,10 +9,6 @@ NetstringDecoder::NetstringDecoder():
 {
 }
 
-NetstringDecoder::~NetstringDecoder()
-{
-}
-
 void NetstringDecoder::appendText(const std::string& text)
 {
     buffer += text;

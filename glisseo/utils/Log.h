@@ -11,7 +11,7 @@ class Log {
 public:
     Log();
     Log(LogLevel logLevel);
-    virtual ~Log();
+    virtual ~Log() = default;
 
     void error(std::string logMessage) const;
     void warning(std::string logMessage) const;

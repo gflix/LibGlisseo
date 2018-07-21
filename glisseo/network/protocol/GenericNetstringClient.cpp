@@ -3,11 +3,7 @@
 
 namespace Glisseo {
 
-GenericNetstringClient::GenericNetstringClient()
-{
-}
-
-GenericNetstringClient::~GenericNetstringClient()
+GenericNetstringClient::GenericNetstringClient(void)
 {
 }
 

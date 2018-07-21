@@ -10,8 +10,8 @@ namespace Glisseo {
 
 class GenericTcp: public GenericDescriptor {
 public:
-    GenericTcp();
-    virtual ~GenericTcp();
+    GenericTcp(void);
+    virtual ~GenericTcp() = default;
 
     bool isConnected(void) const;
 

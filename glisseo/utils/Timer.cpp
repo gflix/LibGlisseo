@@ -6,7 +6,7 @@
 
 namespace Glisseo {
 
-Timer::Timer():
+Timer::Timer(void):
     GenericDescriptor(),
     interval({0, 0})
 {
