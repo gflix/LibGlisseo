@@ -11,9 +11,11 @@
 
 namespace Glisseo {
 
+/// Basic template for TCP servers
 template<typename T>
 class GenericServer: public GenericThread {
 public:
+    /// Initializes the server with an identifier, a TCP server port and the preferred protocol (IPv4/IPv6)
     GenericServer(const std::string& identifier, int port, Protocol protocol = Protocol::IPV4):
         GenericThread(identifier),
         port(port),
@@ -25,12 +27,18 @@ public:
     }
 
 protected:
+    /// TCP port number
     int port;
+    /// Chosen protocol (IPv4/IPv6)
     Protocol protocol;
+    /// Instance of the TCP server
     TcpServer tcpServer;
+    /// Mutex to retrieve exclusive access to the connectionThreads;
     std::mutex connectionThreadsMutex;
+    /// List of active connection threads
     std::vector<T*> connectionThreads;
 
+    /// Overriden thread setup method
     virtual bool setup(void) override
     {
         try
@@ -45,6 +53,7 @@ protected:
         return true;
     }
 
+    /// Templated wrapper to manage active and new client connections
     template<typename U>
     void manageClientConnections(const Select& select, U newConnectionThread)
     {
@@ -110,6 +119,7 @@ protected:
         }
     }
 
+    /// Overriden method to add the TCP server descriptor to the Select instance
     virtual void updateDescriptors(Select& select) override
     {
         select.addReadDescriptor(tcpServer.getDescriptor());

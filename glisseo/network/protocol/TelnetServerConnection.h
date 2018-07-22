@@ -7,8 +7,10 @@
 
 namespace Glisseo {
 
+/// Telnet server connection
 class TelnetServerConnection: public GenericServerConnection {
 public:
+    /// Initializes the telnet server connection with defaults
     TelnetServerConnection(
         GenericTelnetService* telnetService,
         int descriptor,
@@ -18,7 +20,9 @@ public:
     virtual ~TelnetServerConnection() = default;
 
 protected:
+    /// Overriden setup method
     virtual bool setup(void) override;
+    /// Overidden thread task
     virtual bool task(const Select& select) override;
 
 private:
