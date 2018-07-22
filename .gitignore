@@ -39,3 +39,4 @@ Makefile.in
 /tests/*.trs
 /tests/test-suite.log
 /debian/files
+/doc/
