@@ -6,11 +6,13 @@
 
 namespace Glisseo {
 
+/// Implementation of a TCP client
 class TcpClient: public GenericTcpConnection {
 public:
     TcpClient(void);
     virtual ~TcpClient();
 
+    /// Tries to connect to a given host on a given default TCP port, if hostname:port is given the default is overridden
     virtual void connect(std::string host, int port);
 };
 

@@ -8,14 +8,18 @@
 
 namespace Glisseo {
 
+/// Basic class for TCP clients, connections and servers
 class GenericTcp: public GenericDescriptor {
 public:
     GenericTcp(void);
     virtual ~GenericTcp() = default;
 
+    /// True if the underlying descriptor is valid
     bool isConnected(void) const;
 
 protected:
+    // TODO: replace with Glisseo::withinRange()
+    /// Deprecated: checks if a value is within a range
     bool withinRange(int value, int min, int max) const;
 };
 

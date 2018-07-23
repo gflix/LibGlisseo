@@ -6,9 +6,11 @@
 
 namespace Glisseo {
 
+/// Implements a TCP server connection
 class TcpServerConnection: public GenericTcpConnection {
 public:
-    TcpServerConnection(int descriptor);
+    /// Initializes the connection with a POSIX descriptor
+    explicit TcpServerConnection(int descriptor);
     virtual ~TcpServerConnection() = default;
 };
 

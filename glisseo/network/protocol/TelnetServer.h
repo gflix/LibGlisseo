@@ -7,8 +7,10 @@
 
 namespace Glisseo {
 
+/// Implementation of a telnet server
 class TelnetServer: public GenericServer<TelnetServerConnection> {
 public:
+    /// Initializes the telnet server
     TelnetServer(
         GenericTelnetService* telnetService,
         int port,
@@ -16,10 +18,13 @@ public:
         const std::string& defaultPrompt = "> ");
     virtual ~TelnetServer() = default;
 
+    /// Changes the default prompt for further telnet sessions
     void setDefaultPrompt(const std::string& defaultPrompt);
+    /// Changes the welcome message for further telnet sessions
     void setWelcomeMessage(const std::string& welcomeMessage);
 
 protected:
+    /// Overridden thread task
     virtual bool task(const Select& select) override;
 
 private:
