@@ -5,8 +5,10 @@
 
 namespace Glisseo {
 
+/// Expression which expresses that a called JSON-RPC method was not found
 class JsonRpcMethodNotFoundException: public std::logic_error {
 public:
+    /// Initializes the exception with an error message
     JsonRpcMethodNotFoundException(const std::string& what);
     virtual ~JsonRpcMethodNotFoundException() = default;
 };

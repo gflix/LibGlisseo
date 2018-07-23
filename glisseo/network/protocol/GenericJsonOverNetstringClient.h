@@ -6,12 +6,15 @@
 
 namespace Glisseo {
 
+/// Basic class of a TCP client which transports JSON encoded messages using netstrings
 class GenericJsonOverNetstringClient: public GenericNetstringClient {
 public:
     GenericJsonOverNetstringClient(void);
     virtual ~GenericJsonOverNetstringClient() = default;
 
+    /// Send a JSON message through the client connection
     void sendJsonMessage(const Json::Value& jsonMessage) const;
+    /// Receive a JSON message from the server
     void receiveJsonMessages(JsonMessages& jsonMessages);
 };
 

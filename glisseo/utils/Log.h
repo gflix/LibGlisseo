@@ -7,20 +7,29 @@
 
 namespace Glisseo {
 
+/// Implementation of a logging mechanism which automatically selects whether to print to stdout or to the system log
 class Log {
 public:
     Log();
-    Log(LogLevel logLevel);
+    /// Initializes the logging mechanism with a given log level
+    explicit Log(LogLevel logLevel);
     virtual ~Log() = default;
 
+    /// Print an error message
     void error(std::string logMessage) const;
+    /// Print a warning message
     void warning(std::string logMessage) const;
+    /// Print a noticeable message
     void notice(std::string logMessage) const;
+    /// Print an informational message
     void info(std::string logMessage) const;
+    /// Print a debug message
     void debug(std::string logMessage) const;
 
+    /// Sets the minimum log level for the next log messages
     void setLogLevel(LogLevel logLevel);
 
+    /// Singleton instance of the logging mechanism
     static Log instance;
 
 private:
