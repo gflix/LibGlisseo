@@ -20,7 +20,7 @@ AX_CXX_COMPILE_STDCXX_11()
 LT_INIT
 
 # Checks for libraries.
-PKG_CHECK_MODULES([JSONCPP],[jsoncpp >= 1.6.0],[],AC_MSG_ERROR([Could not find jsoncpp >= 1.6.0.]))
+PKG_CHECK_MODULES([JSONCPP],[jsoncpp >= 1.7.7],[],AC_MSG_ERROR([Could not find jsoncpp >= 1.7.7.]))
 
 # Checks for header files.
 AC_CHECK_HEADER_STDBOOL
