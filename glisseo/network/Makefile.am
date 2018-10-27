@@ -4,7 +4,8 @@ AM_CPPFLAGS = \
 SUBDIRS = \
     protocol \
     serial \
-    tcp
+    tcp \
+    udp
 
 noinst_LTLIBRARIES = libglisseo-network.la
 
@@ -15,7 +16,8 @@ libglisseo_network_la_SOURCES = \
 libglisseo_network_la_LIBADD = \
     $(top_builddir)/glisseo/network/protocol/libglisseo-network-protocol.la \
     $(top_builddir)/glisseo/network/serial/libglisseo-network-serial.la \
-    $(top_builddir)/glisseo/network/tcp/libglisseo-network-tcp.la
+    $(top_builddir)/glisseo/network/tcp/libglisseo-network-tcp.la \
+    $(top_builddir)/glisseo/network/udp/libglisseo-network-udp.la
 
 headerdir = $(includedir)/glisseo/network
 header_HEADERS = \

@@ -60,6 +60,7 @@ AC_CONFIG_FILES([
     glisseo/network/serial/Makefile
     glisseo/network/protocol/Makefile
     glisseo/network/tcp/Makefile
+    glisseo/network/udp/Makefile
     glisseo/utils/Makefile
     tests/Makefile
 ])
