@@ -2,6 +2,7 @@
 #include <netinet/in.h>
 #include <cstring>
 #include <stdexcept>
+#include <glisseo/utils/Range.h>
 #include <glisseo/network/tcp/TcpServer.h>
 
 namespace Glisseo {

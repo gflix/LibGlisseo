@@ -2,6 +2,7 @@
 #include <cstring>
 #include <memory>
 #include <stdexcept>
+#include <glisseo/utils/Range.h>
 #include <glisseo/network/tcp/TcpClient.h>
 
 namespace Glisseo {

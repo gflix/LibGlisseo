@@ -14,11 +14,4 @@ bool GenericTcp::isConnected(void) const
         descriptorIsValid();
 }
 
-bool GenericTcp::withinRange(int value, int min, int max) const
-{
-    return
-        value >= min &&
-        value <= max;
-}
-
 } /* namespace Glisseo */
