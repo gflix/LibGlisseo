@@ -11,6 +11,11 @@ std::vector<std::string> split(
     const std::string& separator,
     bool trim = false,
     bool skipEmpty = true);
+void splitHostPort(
+    const std::string& peer,
+    int defaultPort,
+    std::string& host,
+    int& port);
 
 } /* namespace Glisseo */
 

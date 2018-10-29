@@ -3,6 +3,7 @@
 #include <memory>
 #include <stdexcept>
 #include <glisseo/utils/Range.h>
+#include <glisseo/utils/Split.h>
 #include <glisseo/network/tcp/TcpClient.h>
 
 namespace Glisseo {
@@ -17,21 +18,14 @@ TcpClient::~TcpClient()
     disconnect();
 }
 
-void TcpClient::connect(std::string host, int port)
+void TcpClient::connect(std::string peer, int defaultPort)
 {
     disconnect();
 
-    size_t colonPosition = host.find_last_of(':');
-    if (colonPosition != std::string::npos)
-    {
-        port = std::stoi(host.substr(colonPosition + 1), nullptr, 10);
-        host.erase(colonPosition);
-    }
+    std::string host;
+    int port = 0;
 
-    if (host.empty() || !withinRange(port, TCP_PORT_MIN, TCP_PORT_MAX))
-    {
-        throw std::invalid_argument("invalid arguments");
-    }
+    splitHostPort(peer, defaultPort, host, port);
 
     addrinfo getAddrInfoHints;
     addrinfo* getAddrInfoResult = nullptr;
