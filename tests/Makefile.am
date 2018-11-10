@@ -10,6 +10,7 @@ AM_LDFLAGS = \
 
 TESTS = \
     conversion \
+    enum-mapper \
     glisseo \
     invocation \
     join \
@@ -28,6 +29,7 @@ TESTS = \
 check_PROGRAMS = $(TESTS)
 
 conversion_SOURCES = TestConversion.cpp
+enum_mapper_SOURCES = TestEnumMapper.cpp
 glisseo_SOURCES = TestGlisseo.cpp
 invocation_SOURCES = TestInvocation.cpp
 join_SOURCES = TestJoin.cpp

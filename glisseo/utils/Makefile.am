@@ -6,6 +6,8 @@ noinst_LTLIBRARIES = libglisseo-utils.la
 libglisseo_utils_la_SOURCES = \
     Conversion.cpp \
     Conversion.h \
+    EnumMapper.cpp \
+    EnumMapper.h \
     GenericDescriptor.cpp \
     GenericDescriptor.h \
     GenericThread.cpp \
@@ -39,6 +41,7 @@ libglisseo_utils_la_LDFLAGS = \
 headerdir = $(includedir)/glisseo/utils
 header_HEADERS = \
     Conversion.h \
+    EnumMapper.h \
     GenericDescriptor.h \
     GenericThread.h \
     Invocation.h \
