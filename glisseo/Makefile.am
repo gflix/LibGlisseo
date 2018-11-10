@@ -17,6 +17,8 @@ libglisseo_la_LIBADD = \
     $(top_builddir)/glisseo/network/libglisseo-network.la \
     $(top_builddir)/glisseo/utils/libglisseo-utils.la
 
+libglisseo_la_LDFLAGS = -version-info 1:1
+
 headerdir = $(includedir)/glisseo
 header_HEADERS = \
     Glisseo.h
