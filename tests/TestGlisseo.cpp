@@ -3,5 +3,5 @@
 
 TEST(Glisseo, PackageInfo)
 {
-    EXPECT_EQ(Glisseo::Glisseo::getPackageInfo(), "libglisseo 0.6.0");
+    EXPECT_EQ(Glisseo::Glisseo::getPackageInfo(), "libglisseo 0.6.1");
 }

@@ -24,10 +24,14 @@ libglisseo_network_protocol_la_SOURCES = \
     GenericTelnetService.h \
     JsonRpc.cpp \
     JsonRpc.h \
+    JsonRpcErrorResponse.cpp \
+    JsonRpcErrorResponse.h \
     JsonRpcInvalidParamsException.cpp \
     JsonRpcInvalidParamsException.h \
     JsonRpcMethodNotFoundException.cpp \
     JsonRpcMethodNotFoundException.h \
+    JsonRpcResponse.cpp \
+    JsonRpcResponse.h \
     JsonTags.h \
     Messages.h \
     NetstringDecoder.cpp \
@@ -60,8 +64,10 @@ header_HEADERS = \
     GenericServerConnection.h \
     GenericTelnetService.h \
     JsonRpc.h \
+    JsonRpcErrorResponse.h \
     JsonRpcInvalidParamsException.h \
     JsonRpcMethodNotFoundException.h \
+    JsonRpcResponse.h \
     JsonTags.h \
     Messages.h \
     NetstringDecoder.h \

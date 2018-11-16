@@ -1,3 +1,9 @@
+libglisseo (0.6.1) UNRELEASED; urgency=medium
+
+  * New: Added JsonRpcResponse and JsonRpcErrorResponse structures
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Fri, 16 Nov 2018 17:08:30 +0100
+
 libglisseo (0.6.0) cosmic; urgency=medium
 
   * New: Added enumeration mapper
