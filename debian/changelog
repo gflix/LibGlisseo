@@ -1,8 +1,9 @@
-libglisseo (0.6.1) UNRELEASED; urgency=medium
+libglisseo (0.6.1) cosmic; urgency=medium
 
   * New: Added JsonRpcResponse and JsonRpcErrorResponse structures
+  * New: Added JsonRpcNotification structure
 
- -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Fri, 16 Nov 2018 17:08:30 +0100
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sun, 18 Nov 2018 18:25:58 +0100
 
 libglisseo (0.6.0) cosmic; urgency=medium
 

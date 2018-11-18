@@ -4,7 +4,7 @@
 namespace Glisseo {
 
 JsonRpcNotification::JsonRpcNotification(void):
-    result(Json::nullValue)
+    params(Json::nullValue)
 {
 }
 
@@ -14,7 +14,7 @@ void JsonRpcNotification::serialize(Json::Value& json)
 
     json[JSON_TAG_JSONRPC] = JSONRPC_VERSION_2_0;
     json[JSON_TAG_METHOD] = method;
-    json[JSON_TAG_RESULT] = result;
+    json[JSON_TAG_PARAMS] = params;
 }
 
 void JsonRpcNotification::deserialize(const Json::Value& json)
@@ -24,7 +24,7 @@ void JsonRpcNotification::deserialize(const Json::Value& json)
         !json[JSON_TAG_JSONRPC].isString() ||
         !json.isMember(JSON_TAG_METHOD) ||
         !json[JSON_TAG_METHOD].isString() ||
-        !json.isMember(JSON_TAG_RESULT))
+        !json.isMember(JSON_TAG_PARAMS))
     {
         throw std::invalid_argument("invalid JSON for a JSON-RPC notification");
     }
@@ -35,7 +35,7 @@ void JsonRpcNotification::deserialize(const Json::Value& json)
     }
 
     method = json[JSON_TAG_METHOD].asString();
-    result = json[JSON_TAG_RESULT];
+    params = json[JSON_TAG_PARAMS];
 }
 
 } /* namespace Glisseo */

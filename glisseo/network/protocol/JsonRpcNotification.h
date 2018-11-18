@@ -13,7 +13,7 @@ struct JsonRpcNotification {
     void serialize(Json::Value& json);
 
     std::string method;
-    Json::Value result;
+    Json::Value params;
 };
 
 } /* namespace Glisseo */

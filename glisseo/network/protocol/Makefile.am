@@ -69,6 +69,7 @@ header_HEADERS = \
     JsonRpcErrorResponse.h \
     JsonRpcInvalidParamsException.h \
     JsonRpcMethodNotFoundException.h \
+    JsonRpcNotification.h \
     JsonRpcResponse.h \
     JsonTags.h \
     Messages.h \
