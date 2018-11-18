@@ -30,6 +30,8 @@ libglisseo_network_protocol_la_SOURCES = \
     JsonRpcInvalidParamsException.h \
     JsonRpcMethodNotFoundException.cpp \
     JsonRpcMethodNotFoundException.h \
+    JsonRpcNotification.cpp \
+    JsonRpcNotification.h \
     JsonRpcResponse.cpp \
     JsonRpcResponse.h \
     JsonTags.h \
