@@ -1,31 +1,35 @@
 #include <gtest/gtest.h>
 #include <glisseo/datetime/LocalDate.h>
+#include <glisseo/datetime/LocalDateTime.h>
+#include <glisseo/datetime/LocalTime.h>
 
-TEST(DateTime, validDates)
+TEST(LocalDate, validDates)
 {
     Glisseo::LocalDate dateA;
-    Glisseo::LocalDate dateB { 1970, 1, 1 };
-    Glisseo::LocalDate dateC { 2037, 12, 31 };
+    Glisseo::LocalDate dateB(1970, 12);
+    Glisseo::LocalDate dateC(2037, 1);
+    Glisseo::LocalDate dateD(1970, 1, 1);
+    Glisseo::LocalDate dateE(2037, 12, 31);
 }
 
-TEST(DateTime, invalidYears)
+TEST(LocalDate, invalidYears)
 {
     EXPECT_THROW(Glisseo::LocalDate dateA(1969), std::out_of_range);
     EXPECT_THROW(Glisseo::LocalDate dateB(2038), std::out_of_range);
 }
 
-TEST(DateTime, invalidMonths)
+TEST(LocalDate, invalidMonths)
 {
     EXPECT_THROW(Glisseo::LocalDate dateA(1984, 0), std::out_of_range);
     EXPECT_THROW(Glisseo::LocalDate dateB(1984, 13), std::out_of_range);
 }
 
-TEST(DateTime, invalidDays)
+TEST(LocalDate, invalidDays)
 {
     EXPECT_THROW(Glisseo::LocalDate dateA(1984, 4, 0), std::out_of_range);
 }
 
-TEST(DateTime, validDaysShortMonths)
+TEST(LocalDate, validDaysShortMonths)
 {
     Glisseo::LocalDate dateA(1984, 4, 30);
     Glisseo::LocalDate dateB(1984, 6, 30);
@@ -33,7 +37,7 @@ TEST(DateTime, validDaysShortMonths)
     Glisseo::LocalDate dateD(1984, 11, 30);
 }
 
-TEST(DateTime, invalidDaysShortMonths)
+TEST(LocalDate, invalidDaysShortMonths)
 {
     EXPECT_THROW(Glisseo::LocalDate dateA(1984, 4, 31), std::out_of_range);
     EXPECT_THROW(Glisseo::LocalDate dateB(1984, 6, 31), std::out_of_range);
@@ -41,7 +45,7 @@ TEST(DateTime, invalidDaysShortMonths)
     EXPECT_THROW(Glisseo::LocalDate dateD(1984, 11, 31), std::out_of_range);
 }
 
-TEST(DateTime, validDaysLongMonths)
+TEST(LocalDate, validDaysLongMonths)
 {
     Glisseo::LocalDate dateA(1984, 1, 31);
     Glisseo::LocalDate dateB(1984, 3, 31);
@@ -52,7 +56,7 @@ TEST(DateTime, validDaysLongMonths)
     Glisseo::LocalDate dateG(1984, 12, 31);
 }
 
-TEST(DateTime, invalidDaysLongMonths)
+TEST(LocalDate, invalidDaysLongMonths)
 {
     EXPECT_THROW(Glisseo::LocalDate dateA(1984, 1, 32), std::out_of_range);
     EXPECT_THROW(Glisseo::LocalDate dateB(1984, 3, 32), std::out_of_range);
@@ -63,17 +67,17 @@ TEST(DateTime, invalidDaysLongMonths)
     EXPECT_THROW(Glisseo::LocalDate dateG(1984, 12, 32), std::out_of_range);
 }
 
-TEST(DateTime, invalidDaysFebruaryNoLeapYear)
+TEST(LocalDate, invalidDaysFebruaryNoLeapYear)
 {
     EXPECT_THROW(Glisseo::LocalDate dateA(1999, 2, 29), std::out_of_range);
 }
 
-TEST(DateTime, validDaysFebruaryLeapYear)
+TEST(LocalDate, validDaysFebruaryLeapYear)
 {
     Glisseo::LocalDate dateA(2000, 2, 29);
 }
 
-TEST(DateTime, leapYears)
+TEST(LocalDate, leapYears)
 {
     Glisseo::LocalDate date;
 
@@ -83,7 +87,7 @@ TEST(DateTime, leapYears)
     EXPECT_TRUE(date.isLeapYear());
 }
 
-TEST(DateTime, noLeapYears)
+TEST(LocalDate, noLeapYears)
 {
     Glisseo::LocalDate date;
 
@@ -91,4 +95,36 @@ TEST(DateTime, noLeapYears)
     EXPECT_FALSE(date.isLeapYear());
     date.year = 2100;
     EXPECT_FALSE(date.isLeapYear());
+}
+
+TEST(LocalTime, validTimes)
+{
+    Glisseo::LocalTime timeA;
+    Glisseo::LocalTime timeB(0);
+    Glisseo::LocalTime timeC(23, 0);
+    Glisseo::LocalTime timeD(0, 0, 0);
+    Glisseo::LocalTime timeE(23, 59, 59);
+}
+
+TEST(LocalTime, invalidTimes)
+{
+    EXPECT_THROW(Glisseo::LocalTime timeA(-1), std::out_of_range);
+    EXPECT_THROW(Glisseo::LocalTime timeB(24), std::out_of_range);
+    EXPECT_THROW(Glisseo::LocalTime timeC(0, -1), std::out_of_range);
+    EXPECT_THROW(Glisseo::LocalTime timeD(0, 60), std::out_of_range);
+    EXPECT_THROW(Glisseo::LocalTime timeE(0, 0, -1), std::out_of_range);
+    EXPECT_THROW(Glisseo::LocalTime timeF(0, 0, 60), std::out_of_range);
+}
+
+TEST(LocalDateTime, validDateTimes)
+{
+    Glisseo::LocalDateTime dateTimeA;
+    Glisseo::LocalDateTime dateTimeB(1989, 11, 9);
+    Glisseo::LocalDateTime dateTimeC(1989, 11, 9, 19, 30, 0);
+}
+
+TEST(LocalDateTime, invalidDateTimes)
+{
+    EXPECT_THROW(Glisseo::LocalDateTime dateTimeA(1953, 6, 17), std::out_of_range);
+    EXPECT_THROW(Glisseo::LocalDateTime dateTimeB(1990, 10, 3, 24, 0, 0), std::out_of_range);
 }
