@@ -1,3 +1,5 @@
+#include <cstring>
+#include <ctime>
 #include <stdexcept>
 #include <glisseo/datetime/LocalTime.h>
 
@@ -8,6 +10,41 @@ LocalTime::LocalTime(int hour, int minutes, int seconds):
     minutes(minutes),
     seconds(seconds)
 {
+    checkValidity();
+}
+
+LocalTime::LocalTime(const std::string& time)
+{
+    tm brokenDownTimestamp;
+    bzero(&brokenDownTimestamp, sizeof(brokenDownTimestamp));
+
+    if (time.empty())
+    {
+        throw std::invalid_argument("unable to parse empty local time");
+    }
+
+    char* lastProcessedCharacter = strptime(time.c_str(), "%T", &brokenDownTimestamp);
+    if (lastProcessedCharacter &&
+        *lastProcessedCharacter == '\0')
+    {
+        hour = brokenDownTimestamp.tm_hour;
+        minutes = brokenDownTimestamp.tm_min;
+        seconds = brokenDownTimestamp.tm_sec;
+    }
+    else
+    {
+        lastProcessedCharacter = strptime(time.c_str(), "%H:%M", &brokenDownTimestamp);
+        if (!lastProcessedCharacter ||
+            *lastProcessedCharacter != '\0')
+        {
+            throw std::invalid_argument("unable to parse local time \"" + time + "\"");
+        }
+
+        hour = brokenDownTimestamp.tm_hour;
+        minutes = brokenDownTimestamp.tm_min;
+        seconds = 0;
+    }
+
     checkValidity();
 }
 
