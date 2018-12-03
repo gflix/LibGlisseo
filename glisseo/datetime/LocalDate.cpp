@@ -1,3 +1,5 @@
+#include <cstring>
+#include <ctime>
 #include <stdexcept>
 #include <glisseo/datetime/LocalDate.h>
 
@@ -8,6 +10,26 @@ LocalDate::LocalDate(int year, int month, int day):
     month(month),
     day(day)
 {
+    checkValidity();
+}
+
+LocalDate::LocalDate(const std::string& date)
+{
+    tm brokenDownTimestamp;
+    bzero(&brokenDownTimestamp, sizeof(brokenDownTimestamp));
+
+    char* lastProcessedCharacter = strptime(date.c_str(), "%F", &brokenDownTimestamp);
+    if (date.empty() ||
+        !lastProcessedCharacter ||
+        *lastProcessedCharacter != '\0')
+    {
+        throw std::invalid_argument("unable to parse local date \"" + date + "\"");
+    }
+
+    year = brokenDownTimestamp.tm_year + 1900;
+    month = brokenDownTimestamp.tm_mon + 1;
+    day = brokenDownTimestamp.tm_mday;
+
     checkValidity();
 }
 

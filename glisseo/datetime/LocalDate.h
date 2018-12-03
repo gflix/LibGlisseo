@@ -1,6 +1,8 @@
 #ifndef GLISSEO_DATETIME_LOCALDATE_H_
 #define GLISSEO_DATETIME_LOCALDATE_H_
 
+#include <string>
+
 #define LOCAL_DATE_YEAR_DEFAULT (1970)
 #define LOCAL_DATE_YEAR_MIN (1970)
 #define LOCAL_DATE_YEAR_MAX (2037)
@@ -20,6 +22,7 @@ struct LocalDate {
     LocalDate(int year = LOCAL_DATE_YEAR_DEFAULT,
               int month = LOCAL_DATE_MONTH_DEFAULT,
               int day = LOCAL_DATE_DAY_DEFAULT);
+    explicit LocalDate(const std::string& date);
     virtual ~LocalDate() = default;
 
     void checkValidity(void) const;

@@ -97,6 +97,20 @@ TEST(LocalDate, noLeapYears)
     EXPECT_FALSE(date.isLeapYear());
 }
 
+TEST(LocalDate, validFromString)
+{
+    Glisseo::LocalDate dateA("1990-10-3");
+    Glisseo::LocalDate dateB("1990-7-1");
+}
+
+TEST(LocalDate, invalidFromString)
+{
+    EXPECT_THROW(Glisseo::LocalDate dateA(""), std::invalid_argument);
+    EXPECT_THROW(Glisseo::LocalDate dateB("1969-12-31"), std::out_of_range);
+    EXPECT_THROW(Glisseo::LocalDate dateC("1969-12-xx"), std::invalid_argument);
+    EXPECT_THROW(Glisseo::LocalDate dateD("no valid date"), std::invalid_argument);
+}
+
 TEST(LocalTime, validTimes)
 {
     Glisseo::LocalTime timeA;
