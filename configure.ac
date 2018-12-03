@@ -54,6 +54,7 @@ AC_CONFIG_FILES([
     external/googletest/Makefile
     glisseo/Makefile
     glisseo/glisseo.pc
+    glisseo/datetime/Makefile
     glisseo/digest/Makefile
     glisseo/network/Makefile
     glisseo/network/serial/Makefile
