@@ -2,6 +2,7 @@
 #define GLISSEO_DATETIME_LOCALDATE_H_
 
 #include <string>
+#include <glisseo/datetime/Weekday.h>
 
 #define LOCAL_DATE_YEAR_DEFAULT (1970)
 #define LOCAL_DATE_YEAR_MIN (1970)
@@ -29,6 +30,7 @@ struct LocalDate {
     bool isLeapYear(void) const;
 
     std::string toString(void) const;
+    Weekday weekday(void) const;
 
     int year;
     int month;

@@ -120,10 +120,19 @@ TEST(LocalDate, invalidFromString)
 
 TEST(LocalDate, toString)
 {
-    std::string dateString("1990-03-10");
+    std::string dateString("1984-02-29");
     Glisseo::LocalDate date(dateString);
 
     EXPECT_EQ(date.toString(), dateString);
+}
+
+TEST(LocalDate, weekday)
+{
+    Glisseo::LocalDate dateA("1990-10-03");
+    Glisseo::LocalDate dateB("1989-11-09");
+
+    EXPECT_EQ(dateA.weekday(), Glisseo::Weekday::WEDNESDAY);
+    EXPECT_EQ(dateB.weekday(), Glisseo::Weekday::THURSDAY);
 }
 
 TEST(LocalTime, validTimes)
@@ -221,11 +230,13 @@ TEST(LocalDateTime, invalidFromString)
 TEST(LocalDateTime, convertTimestamps)
 {
     time_t timestampA = 0;
-    time_t timestampB = 1500000000;
+    timespec timestampB { 1500000000, 1234 };
 
     // Perform both conversions at the same time as for local dates the result depends on the local timezone
-    EXPECT_EQ(Glisseo::LocalDateTime(timestampA).toTimestamp(), timestampA);
-    EXPECT_EQ(Glisseo::LocalDateTime(timestampB).toTimestamp(), timestampB);
+    EXPECT_EQ(Glisseo::LocalDateTime(timestampA).toTimestamp().tv_sec, timestampA);
+    timespec timestampResultB = Glisseo::LocalDateTime(timestampB).toTimestamp();
+    EXPECT_EQ(timestampResultB.tv_sec, timestampB.tv_sec);
+    EXPECT_EQ(timestampResultB.tv_nsec, 0);
 }
 
 TEST(LocalDateTime, toString)

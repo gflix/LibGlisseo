@@ -110,4 +110,23 @@ std::string LocalDate::toString(void) const
     return buffer;
 }
 
+Weekday LocalDate::weekday(void) const
+{
+    checkValidity();
+
+    tm brokenDownTimestamp;
+    bzero(&brokenDownTimestamp, sizeof(brokenDownTimestamp));
+
+    brokenDownTimestamp.tm_year = year - 1900;
+    brokenDownTimestamp.tm_mon = month - 1;
+    brokenDownTimestamp.tm_mday = day;
+
+    if (mktime(&brokenDownTimestamp) < 0)
+    {
+        throw std::out_of_range("unable to calculate weekday for the given date/time combination");
+    }
+
+    return static_cast<Weekday>(brokenDownTimestamp.tm_wday);
+}
+
 } /* namespace Glisseo */
