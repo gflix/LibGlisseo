@@ -188,9 +188,8 @@ TEST(LocalTime, toStringWithoutSeconds)
 
 TEST(LocalDateTime, validDateTimes)
 {
-    Glisseo::LocalDateTime dateTimeA;
-    Glisseo::LocalDateTime dateTimeB(1989, 11, 9);
-    Glisseo::LocalDateTime dateTimeC(1989, 11, 9, 19, 30, 0);
+    Glisseo::LocalDateTime dateTimeA(1989, 11, 9);
+    Glisseo::LocalDateTime dateTimeB(1989, 11, 9, 19, 30, 0);
 }
 
 TEST(LocalDateTime, invalidDateTimes)
@@ -217,6 +216,16 @@ TEST(LocalDateTime, invalidFromString)
     EXPECT_THROW(Glisseo::LocalDateTime timeB("1989-11-09P18:30:45"), std::invalid_argument);
     EXPECT_THROW(Glisseo::LocalDateTime timeC("1989-11-09T"), std::invalid_argument);
     EXPECT_THROW(Glisseo::LocalDateTime timeD("T18:30:45"), std::invalid_argument);
+}
+
+TEST(LocalDateTime, convertTimestamps)
+{
+    time_t timestampA = 0;
+    time_t timestampB = 1500000000;
+
+    // Perform both conversions at the same time as for local dates the result depends on the local timezone
+    EXPECT_EQ(Glisseo::LocalDateTime(timestampA).toTimestamp(), timestampA);
+    EXPECT_EQ(Glisseo::LocalDateTime(timestampB).toTimestamp(), timestampB);
 }
 
 TEST(LocalDateTime, toString)
