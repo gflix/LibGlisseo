@@ -28,4 +28,11 @@ void LocalDateTime::checkValidity(void) const
     time.checkValidity();
 }
 
+std::string LocalDateTime::toString(void) const
+{
+    checkValidity();
+
+    return date.toString() + "T" + time.toString();
+}
+
 } /* namespace Glisseo */

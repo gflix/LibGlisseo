@@ -218,3 +218,11 @@ TEST(LocalDateTime, invalidFromString)
     EXPECT_THROW(Glisseo::LocalDateTime timeC("1989-11-09T"), std::invalid_argument);
     EXPECT_THROW(Glisseo::LocalDateTime timeD("T18:30:45"), std::invalid_argument);
 }
+
+TEST(LocalDateTime, toString)
+{
+    std::string iso8601String("1990-03-10T12:00:25");
+    Glisseo::LocalDateTime dateTime(iso8601String);
+
+    EXPECT_EQ(dateTime.toString(), iso8601String);
+}

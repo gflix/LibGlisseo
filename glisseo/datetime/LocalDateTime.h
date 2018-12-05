@@ -18,6 +18,8 @@ struct LocalDateTime {
 
     void checkValidity(void) const;
 
+    std::string toString(void) const;
+
     LocalDate date;
     LocalTime time;
 };
