@@ -198,3 +198,23 @@ TEST(LocalDateTime, invalidDateTimes)
     EXPECT_THROW(Glisseo::LocalDateTime dateTimeA(1953, 6, 17), std::out_of_range);
     EXPECT_THROW(Glisseo::LocalDateTime dateTimeB(1990, 10, 3, 24, 0, 0), std::out_of_range);
 }
+
+TEST(LocalDateTime, validFromString)
+{
+    Glisseo::LocalDateTime dateTime("1989-11-09T18:30:45");
+
+    EXPECT_EQ(dateTime.date.year, 1989);
+    EXPECT_EQ(dateTime.date.month, 11);
+    EXPECT_EQ(dateTime.date.day, 9);
+    EXPECT_EQ(dateTime.time.hour, 18);
+    EXPECT_EQ(dateTime.time.minutes, 30);
+    EXPECT_EQ(dateTime.time.seconds, 45);
+}
+
+TEST(LocalDateTime, invalidFromString)
+{
+    EXPECT_THROW(Glisseo::LocalDateTime timeA(""), std::invalid_argument);
+    EXPECT_THROW(Glisseo::LocalDateTime timeB("1989-11-09P18:30:45"), std::invalid_argument);
+    EXPECT_THROW(Glisseo::LocalDateTime timeC("1989-11-09T"), std::invalid_argument);
+    EXPECT_THROW(Glisseo::LocalDateTime timeD("T18:30:45"), std::invalid_argument);
+}

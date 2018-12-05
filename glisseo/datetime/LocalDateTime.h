@@ -13,6 +13,7 @@ struct LocalDateTime {
                   int hour = LOCAL_TIME_HOUR_DEFAULT,
                   int minutes = LOCAL_TIME_MINUTES_DEFAULT,
                   int seconds = LOCAL_TIME_SECONDS_DEFAULT);
+    LocalDateTime(const std::string& iso8601);
     virtual ~LocalDateTime() = default;
 
     void checkValidity(void) const;
