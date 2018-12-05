@@ -75,4 +75,24 @@ void LocalTime::checkValidity(void) const
     }
 }
 
+std::string LocalTime::toString(bool withSeconds) const
+{
+    checkValidity();
+
+    char buffer[64];
+    bzero(buffer, sizeof(buffer));
+
+    if (withSeconds)
+    {
+        snprintf(buffer, sizeof(buffer) - 1, "%02d:%02d:%02d", hour, minutes, seconds);
+    }
+    else
+    {
+        snprintf(buffer, sizeof(buffer) - 1, "%02d:%02d", hour, minutes);
+    }
+
+    return buffer;
+
+}
+
 } /* namespace Glisseo */

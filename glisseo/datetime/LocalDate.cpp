@@ -98,4 +98,16 @@ bool LocalDate::isLeapYear(void) const
     return false;
 }
 
+std::string LocalDate::toString(void) const
+{
+    checkValidity();
+
+    char buffer[64];
+    bzero(buffer, sizeof(buffer));
+
+    snprintf(buffer, sizeof(buffer) - 1, "%04d-%02d-%02d", year, month, day);
+
+    return buffer;
+}
+
 } /* namespace Glisseo */

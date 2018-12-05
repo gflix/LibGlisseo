@@ -28,6 +28,8 @@ struct LocalDate {
     void checkValidity(void) const;
     bool isLeapYear(void) const;
 
+    std::string toString(void) const;
+
     int year;
     int month;
     int day;

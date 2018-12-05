@@ -118,6 +118,14 @@ TEST(LocalDate, invalidFromString)
     EXPECT_THROW(Glisseo::LocalDate dateD("no valid date"), std::invalid_argument);
 }
 
+TEST(LocalDate, toString)
+{
+    std::string dateString("1990-03-10");
+    Glisseo::LocalDate date(dateString);
+
+    EXPECT_EQ(date.toString(), dateString);
+}
+
 TEST(LocalTime, validTimes)
 {
     Glisseo::LocalTime timeA;
@@ -157,6 +165,25 @@ TEST(LocalTime, invalidFromString)
     EXPECT_THROW(Glisseo::LocalTime timeB("23:00:60"), std::out_of_range);
     EXPECT_THROW(Glisseo::LocalTime timeC("23:xx"), std::invalid_argument);
     EXPECT_THROW(Glisseo::LocalTime timeD("no valid date"), std::invalid_argument);
+}
+
+TEST(LocalTime, toStringWithSeconds)
+{
+    std::string timeString("15:23:17");
+    Glisseo::LocalTime time(timeString);
+
+    EXPECT_EQ(time.toString(), timeString);
+    EXPECT_EQ(time.toString(true), timeString);
+}
+
+TEST(LocalTime, toStringWithoutSeconds)
+{
+    std::string timeString("09:30:59");
+    Glisseo::LocalTime time(timeString);
+
+    std::string timeStringExpected("09:30");
+
+    EXPECT_EQ(time.toString(false), timeStringExpected);
 }
 
 TEST(LocalDateTime, validDateTimes)

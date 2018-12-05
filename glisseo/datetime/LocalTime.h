@@ -24,6 +24,8 @@ struct LocalTime {
 
     void checkValidity(void) const;
 
+    std::string toString(bool withSeconds = true) const;
+
     int hour;
     int minutes;
     int seconds;
