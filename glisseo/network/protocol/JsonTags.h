@@ -11,6 +11,8 @@ namespace Glisseo {
 #define JSON_TAG_METHOD "method"
 #define JSON_TAG_RESULT "result"
 
+#define JSONRPC_VERSION_2_0 "2.0"
+
 } /* namespace Glisseo */
 
 #endif /* GLISSEO_NETWORK_PROTOCOL_JSONTAGS_H_ */
