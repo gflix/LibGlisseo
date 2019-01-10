@@ -246,3 +246,94 @@ TEST(LocalDateTime, toString)
 
     EXPECT_EQ(dateTime.toString(), iso8601String);
 }
+
+TEST(Weekday, validFromIdentifier)
+{
+    EXPECT_EQ(Glisseo::identifierToWeekday("Sunday"), Glisseo::Weekday::SUNDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Sun"), Glisseo::Weekday::SUNDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Su"), Glisseo::Weekday::SUNDAY);
+
+    EXPECT_EQ(Glisseo::identifierToWeekday("Monday"), Glisseo::Weekday::MONDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Mon"), Glisseo::Weekday::MONDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Mo"), Glisseo::Weekday::MONDAY);
+
+    EXPECT_EQ(Glisseo::identifierToWeekday("Tuesday"), Glisseo::Weekday::TUESDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Tue"), Glisseo::Weekday::TUESDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Tu"), Glisseo::Weekday::TUESDAY);
+
+    EXPECT_EQ(Glisseo::identifierToWeekday("Wednesday"), Glisseo::Weekday::WEDNESDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Wed"), Glisseo::Weekday::WEDNESDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("We"), Glisseo::Weekday::WEDNESDAY);
+
+    EXPECT_EQ(Glisseo::identifierToWeekday("Thursday"), Glisseo::Weekday::THURSDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Thu"), Glisseo::Weekday::THURSDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Th"), Glisseo::Weekday::THURSDAY);
+
+    EXPECT_EQ(Glisseo::identifierToWeekday("Friday"), Glisseo::Weekday::FRIDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Fri"), Glisseo::Weekday::FRIDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Fr"), Glisseo::Weekday::FRIDAY);
+
+    EXPECT_EQ(Glisseo::identifierToWeekday("Saturday"), Glisseo::Weekday::SATURDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Sat"), Glisseo::Weekday::SATURDAY);
+    EXPECT_EQ(Glisseo::identifierToWeekday("Sa"), Glisseo::Weekday::SATURDAY);
+}
+
+TEST(Weekday, invalidFromIdentifier)
+{
+    EXPECT_THROW(Glisseo::identifierToWeekday("Holiday"), std::out_of_range);
+}
+
+TEST(Weekday, toIdentifier)
+{
+    EXPECT_EQ(Glisseo::weekdayToIdentifier(Glisseo::Weekday::SUNDAY), "Sunday");
+    EXPECT_EQ(Glisseo::weekdayToIdentifier(Glisseo::Weekday::MONDAY), "Monday");
+    EXPECT_EQ(Glisseo::weekdayToIdentifier(Glisseo::Weekday::TUESDAY), "Tuesday");
+    EXPECT_EQ(Glisseo::weekdayToIdentifier(Glisseo::Weekday::WEDNESDAY), "Wednesday");
+    EXPECT_EQ(Glisseo::weekdayToIdentifier(Glisseo::Weekday::THURSDAY), "Thursday");
+    EXPECT_EQ(Glisseo::weekdayToIdentifier(Glisseo::Weekday::FRIDAY), "Friday");
+    EXPECT_EQ(Glisseo::weekdayToIdentifier(Glisseo::Weekday::SATURDAY), "Saturday");
+}
+
+TEST(Weekday, toIdentifierThreeLetters)
+{
+    EXPECT_EQ(Glisseo::weekdayToIdentifierThreeLetters(Glisseo::Weekday::SUNDAY), "Sun");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierThreeLetters(Glisseo::Weekday::MONDAY), "Mon");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierThreeLetters(Glisseo::Weekday::TUESDAY), "Tue");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierThreeLetters(Glisseo::Weekday::WEDNESDAY), "Wed");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierThreeLetters(Glisseo::Weekday::THURSDAY), "Thu");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierThreeLetters(Glisseo::Weekday::FRIDAY), "Fri");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierThreeLetters(Glisseo::Weekday::SATURDAY), "Sat");
+}
+
+TEST(Weekday, toIdentifierTwoLetters)
+{
+    EXPECT_EQ(Glisseo::weekdayToIdentifierTwoLetters(Glisseo::Weekday::SUNDAY), "Su");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierTwoLetters(Glisseo::Weekday::MONDAY), "Mo");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierTwoLetters(Glisseo::Weekday::TUESDAY), "Tu");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierTwoLetters(Glisseo::Weekday::WEDNESDAY), "We");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierTwoLetters(Glisseo::Weekday::THURSDAY), "Th");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierTwoLetters(Glisseo::Weekday::FRIDAY), "Fr");
+    EXPECT_EQ(Glisseo::weekdayToIdentifierTwoLetters(Glisseo::Weekday::SATURDAY), "Sa");
+}
+
+TEST(Weekdays, validFromIdentifiers)
+{
+    std::string inputA("Monday,We,Thu,Saturday");
+    Glisseo::Weekdays weekdaysExpectedA = {
+        Glisseo::Weekday::MONDAY,
+        Glisseo::Weekday::WEDNESDAY,
+        Glisseo::Weekday::THURSDAY,
+        Glisseo::Weekday::SATURDAY,
+    };
+
+    std::string inputB("Su,Sa,We,Th");
+    Glisseo::Weekdays weekdaysExpectedB = {
+        Glisseo::Weekday::WEDNESDAY,
+        Glisseo::Weekday::THURSDAY,
+        Glisseo::Weekday::SATURDAY,
+        Glisseo::Weekday::SUNDAY,
+    };
+
+    EXPECT_EQ(Glisseo::identifiersToWeekdays(inputA), weekdaysExpectedA);
+    EXPECT_EQ(Glisseo::identifiersToWeekdays(inputB), weekdaysExpectedB);
+}

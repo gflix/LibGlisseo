@@ -1,6 +1,9 @@
 #ifndef GLISSEO_DATETIME_WEEKDAY_H_
 #define GLISSEO_DATETIME_WEEKDAY_H_
 
+#include <set>
+#include <string>
+
 namespace Glisseo {
 
 enum class Weekday {
@@ -12,6 +15,14 @@ enum class Weekday {
     FRIDAY = 5,
     SATURDAY = 6,
 };
+
+typedef std::set<Weekday> Weekdays;
+
+Weekday identifierToWeekday(const std::string& identifier);
+std::string weekdayToIdentifier(Weekday weekday);
+std::string weekdayToIdentifierThreeLetters(Weekday weekday);
+std::string weekdayToIdentifierTwoLetters(Weekday weekday);
+Weekdays identifiersToWeekdays(const std::string& identifiers);
 
 } /* namespace Glisseo */
 
