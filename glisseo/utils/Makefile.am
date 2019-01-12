@@ -12,6 +12,8 @@ libglisseo_utils_la_SOURCES = \
     GenericDescriptor.h \
     GenericThread.cpp \
     GenericThread.h \
+    Hexdump.cpp \
+    Hexdump.h \
     Invocation.cpp \
     Invocation.h \
     InvocationArgument.cpp \
@@ -44,6 +46,7 @@ header_HEADERS = \
     EnumMapper.h \
     GenericDescriptor.h \
     GenericThread.h \
+    Hexdump.h \
     Invocation.h \
     InvocationArgument.h \
     Join.h \

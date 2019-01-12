@@ -10,8 +10,10 @@ AM_LDFLAGS = \
 
 TESTS = \
     conversion \
+    datetime \
     enum-mapper \
     glisseo \
+    hexdump \
     invocation \
     join \
     netstring-encoder \
@@ -29,8 +31,10 @@ TESTS = \
 check_PROGRAMS = $(TESTS)
 
 conversion_SOURCES = TestConversion.cpp
+datetime_SOURCES = TestDateTime.cpp
 enum_mapper_SOURCES = TestEnumMapper.cpp
 glisseo_SOURCES = TestGlisseo.cpp
+hexdump_SOURCES = TestHexdump.cpp
 invocation_SOURCES = TestInvocation.cpp
 join_SOURCES = TestJoin.cpp
 netstring_encoder_SOURCES = TestNetstringEncoder.cpp
@@ -47,3 +51,5 @@ tcp_server_SOURCES = TestTcpServer.cpp
 
 MAINTAINERCLEANFILES = \
     Makefile.in
+
+.NOTPARALLEL:

@@ -1,9 +1,11 @@
-libglisseo (0.6.1) cosmic; urgency=medium
+libglisseo (0.7.0) UNRELEASED; urgency=medium
 
+  * New: Added classes for handling dates and times
+  * New: Added hexdump utility
   * New: Added JsonRpcResponse and JsonRpcErrorResponse structures
   * New: Added JsonRpcNotification structure
 
- -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sun, 18 Nov 2018 18:25:58 +0100
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Thu, 10 Jan 2019 16:06:04 +0100
 
 libglisseo (0.6.0) cosmic; urgency=medium
 
