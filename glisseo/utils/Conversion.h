@@ -20,13 +20,16 @@ public:
     /// Convert a binary message to an escaped hexadecimal string which could be used in C code
     static std::string binToHexEscaped(const std::string& bin);
     /// Converts a binary message to an ASCII string where unprintable characters are replaced with a dot '.'
+    [[deprecated]]
     static std::string binToAscii(const std::string& bin);
     /// Converts a hexadecimal string back to a binary message
     static std::string hexToBin(const std::string& hex);
     /// Reverse a string
+    [[deprecated]]
     static std::string reverse(const std::string& text);
 
     /// Converts a binary message to a unsigned number
+    [[deprecated]]
     static unsigned long long binToUnsigned(const std::string& bin);
     /// Converts a character to a unsigned number
     static unsigned long long binToUnsigned(char character);
@@ -50,6 +53,11 @@ public:
 private:
     static unsigned char decodeHexDigit(const char& digit);
 };
+
+std::string binToAscii(const std::string& bin);
+std::string reverse(const std::string& text);
+unsigned long long binToUnsignedLe(const std::string& bin);
+unsigned long long binToUnsignedBe(const std::string& bin);
 
 } /* namespace Glisseo */
 

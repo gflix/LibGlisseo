@@ -53,22 +53,7 @@ std::string Conversion::binToHexEscaped(const std::string& bin)
 
 std::string Conversion::binToAscii(const std::string& bin)
 {
-    std::string ascii;
-
-    for (auto& element: bin)
-    {
-        int value = static_cast<unsigned char>(element);
-        if (value >= 32 && value < 127)
-        {
-            ascii += element;
-        }
-        else
-        {
-            ascii += '.';
-        }
-    }
-
-    return ascii;
+    return Glisseo::binToAscii(bin);
 }
 
 std::string Conversion::hexToBin(const std::string& hex)
@@ -99,32 +84,12 @@ std::string Conversion::hexToBin(const std::string& hex)
 
 std::string Conversion::reverse(const std::string& text)
 {
-    std::string reversedText;
-
-    for (auto it = text.crbegin(); it != text.crend(); ++it)
-    {
-        reversedText += *it;
-    }
-
-    return reversedText;
+    return Glisseo::reverse(text);
 }
 
 unsigned long long Conversion::binToUnsigned(const std::string& bin)
 {
-    if (bin.size() > 8)
-    {
-        throw std::invalid_argument("too much input");
-    }
-
-    unsigned long long value = 0;
-    for (auto it = bin.crbegin(); it != bin.crend(); ++it)
-    {
-        unsigned char characterValue = static_cast<unsigned char>(*it);
-
-        value = (value << 8) | characterValue;
-    }
-
-    return value;
+    return Glisseo::binToUnsignedLe(bin);
 }
 
 unsigned long long Conversion::binToUnsigned(char character)
@@ -216,6 +181,61 @@ unsigned char Conversion::decodeHexDigit(const char& digit)
         return digit - 'a' + 10;
     }
     throw std::invalid_argument("invalid hex digit");
+}
+
+std::string binToAscii(const std::string& bin)
+{
+    std::string ascii;
+
+    for (auto& element: bin)
+    {
+        int value = static_cast<unsigned char>(element);
+        if (value >= 32 && value < 127)
+        {
+            ascii += element;
+        }
+        else
+        {
+            ascii += '.';
+        }
+    }
+
+    return ascii;
+}
+
+std::string reverse(const std::string& text)
+{
+    std::string reversedText;
+
+    for (auto it = text.crbegin(); it != text.crend(); ++it)
+    {
+        reversedText += *it;
+    }
+
+    return reversedText;
+}
+
+unsigned long long binToUnsignedLe(const std::string& bin)
+{
+    if (bin.size() > 8)
+    {
+        throw std::invalid_argument("too much input");
+    }
+
+    unsigned long long value = 0;
+    for (auto it = bin.crbegin(); it != bin.crend(); ++it)
+    {
+        unsigned char characterValue = static_cast<unsigned char>(*it);
+
+        value = (value << 8) | characterValue;
+    }
+
+    return value;
+}
+
+unsigned long long binToUnsignedBe(const std::string& bin)
+{
+    return binToUnsignedLe(reverse(bin));
 }
 
 } /* namespace Glisseo */

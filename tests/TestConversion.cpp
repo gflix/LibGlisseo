@@ -52,7 +52,7 @@ TEST(Conversion, BinToAscii)
     std::string bin { "\x01 234 \x05" };
     std::string expected { ". 234 ." };
 
-    EXPECT_EQ(Glisseo::Conversion::binToAscii(bin), expected);
+    EXPECT_EQ(Glisseo::binToAscii(bin), expected);
 }
 
 TEST(Conversion, Reverse)
@@ -60,7 +60,7 @@ TEST(Conversion, Reverse)
     std::string input { "0123456789" };
     std::string expected { "9876543210" };
 
-    EXPECT_EQ(Glisseo::Conversion::reverse(input), expected);
+    EXPECT_EQ(Glisseo::reverse(input), expected);
 }
 
 TEST(Conversion, BinToUnsigned)
@@ -82,14 +82,14 @@ TEST(Conversion, BinToUnsigned)
     std::string inputH { "\xab\xcd\xef\x01\x23\x45\x67\x89" };
     unsigned long long expectedH = 9900958322455989675ULL;
 
-    EXPECT_EQ(Glisseo::Conversion::binToUnsigned(inputA), expectedA);
-    EXPECT_EQ(Glisseo::Conversion::binToUnsigned(inputB), expectedB);
-    EXPECT_EQ(Glisseo::Conversion::binToUnsigned(inputC), expectedC);
-    EXPECT_EQ(Glisseo::Conversion::binToUnsigned(inputD), expectedD);
-    EXPECT_EQ(Glisseo::Conversion::binToUnsigned(inputE), expectedE);
-    EXPECT_EQ(Glisseo::Conversion::binToUnsigned(inputF), expectedF);
-    EXPECT_EQ(Glisseo::Conversion::binToUnsigned(inputG), expectedG);
-    EXPECT_EQ(Glisseo::Conversion::binToUnsigned(inputH), expectedH);
+    EXPECT_EQ(Glisseo::binToUnsignedLe(inputA), expectedA);
+    EXPECT_EQ(Glisseo::binToUnsignedLe(inputB), expectedB);
+    EXPECT_EQ(Glisseo::binToUnsignedLe(inputC), expectedC);
+    EXPECT_EQ(Glisseo::binToUnsignedLe(inputD), expectedD);
+    EXPECT_EQ(Glisseo::binToUnsignedLe(inputE), expectedE);
+    EXPECT_EQ(Glisseo::binToUnsignedLe(inputF), expectedF);
+    EXPECT_EQ(Glisseo::binToUnsignedLe(inputG), expectedG);
+    EXPECT_EQ(Glisseo::binToUnsignedLe(inputH), expectedH);
 }
 
 TEST(Conversion, BinToUnsignedFromCharacter)
@@ -104,7 +104,7 @@ TEST(Conversion, BinToUnsignedInvalidArgument)
 {
     std::string input { "123456789" };
 
-    EXPECT_ANY_THROW(Glisseo::Conversion::binToUnsigned(input));
+    EXPECT_ANY_THROW(Glisseo::binToUnsignedLe(input));
 }
 
 TEST(Conversion, BinToSigned)

@@ -1,6 +1,7 @@
 #include <cassert>
 #include <cstring>
 #include <stdexcept>
+#include <glisseo/utils/Conversion.h>
 #include <glisseo/utils/Hexdump.h>
 
 #define BYTES_PER_LINE (16)
@@ -55,8 +56,7 @@ void hexdumpSlice(std::ostream& stream, const std::string& data, unsigned int ad
 
     auto dataIterator = data.cbegin();
     char dataBuffer[3];
-    char printableBuffer[BYTES_PER_LINE + 1];
-    bzero(printableBuffer, sizeof(printableBuffer));
+    std::string printable;
 
     for (int i = 0; i < BYTES_PER_LINE; ++i)
     {
@@ -65,14 +65,7 @@ void hexdumpSlice(std::ostream& stream, const std::string& data, unsigned int ad
             bzero(dataBuffer, sizeof(dataBuffer));
             snprintf(dataBuffer, sizeof(dataBuffer), "%02x", *dataIterator & 0xff);
 
-            if ((*dataIterator >= 32) && (*dataIterator < 127))
-            {
-                printableBuffer[i] = *dataIterator;
-            }
-            else
-            {
-                printableBuffer[i] = '.';
-            }
+            printable += binToAscii(std::string(1, *dataIterator));
 
             stream << dataBuffer << " ";
             ++dataIterator;
@@ -87,7 +80,7 @@ void hexdumpSlice(std::ostream& stream, const std::string& data, unsigned int ad
             stream << " ";
         }
     }
-    stream << printableBuffer;
+    stream << printable;
 }
 
 } /* namespace Glisseo */
