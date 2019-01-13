@@ -97,7 +97,7 @@ TEST(Conversion, BinToUnsignedFromCharacter)
     char inputA = '\xab';
     unsigned long long expectedA = 171;
 
-    EXPECT_EQ(Glisseo::Conversion::binToUnsigned(inputA), expectedA);
+    EXPECT_EQ(Glisseo::binToUnsigned(inputA), expectedA);
 }
 
 TEST(Conversion, BinToUnsignedInvalidArgument)
@@ -116,9 +116,9 @@ TEST(Conversion, BinToSigned)
     std::string inputC { "\xfe\xff\xff\xff\xff\xff\xff\xff" };
     signed long long expectedC = -2;
 
-    EXPECT_EQ(Glisseo::Conversion::binToSigned(inputA), expectedA);
-    EXPECT_EQ(Glisseo::Conversion::binToSigned(inputB), expectedB);
-    EXPECT_EQ(Glisseo::Conversion::binToSigned(inputC), expectedC);
+    EXPECT_EQ(Glisseo::binToSignedLe(inputA), expectedA);
+    EXPECT_EQ(Glisseo::binToSignedLe(inputB), expectedB);
+    EXPECT_EQ(Glisseo::binToSignedLe(inputC), expectedC);
 }
 
 TEST(Conversion, BinToSignedFromCharacter)
@@ -126,7 +126,7 @@ TEST(Conversion, BinToSignedFromCharacter)
     char inputA = '\xfe';
     signed long long expectedA = -2;
 
-    EXPECT_EQ(Glisseo::Conversion::binToSigned(inputA), expectedA);
+    EXPECT_EQ(Glisseo::binToSigned(inputA), expectedA);
 }
 
 TEST(Conversion, UnsignedCharToHex)
@@ -137,9 +137,9 @@ TEST(Conversion, UnsignedCharToHex)
     std::string expectedB { "ef" };
     unsigned int inputC = 0xcef;
 
-    EXPECT_EQ(Glisseo::Conversion::unsignedCharToHex(inputA), expectedA);
-    EXPECT_EQ(Glisseo::Conversion::unsignedCharToHex(inputB), expectedB);
-    EXPECT_EQ(Glisseo::Conversion::unsignedCharToHex(inputC), expectedB);
+    EXPECT_EQ(Glisseo::unsignedCharToHex(inputA), expectedA);
+    EXPECT_EQ(Glisseo::unsignedCharToHex(inputB), expectedB);
+    EXPECT_EQ(Glisseo::unsignedCharToHex(inputC), expectedB);
 }
 
 TEST(Conversion, UnsignedShortToHex)
@@ -150,7 +150,7 @@ TEST(Conversion, UnsignedShortToHex)
     std::string expectedB { "cdef" };
     unsigned int inputC = 0xbcdef;
 
-    EXPECT_EQ(Glisseo::Conversion::unsignedShortToHex(inputA), expectedA);
-    EXPECT_EQ(Glisseo::Conversion::unsignedShortToHex(inputB), expectedB);
-    EXPECT_EQ(Glisseo::Conversion::unsignedShortToHex(inputC), expectedB);
+    EXPECT_EQ(Glisseo::unsignedShortToHex(inputA), expectedA);
+    EXPECT_EQ(Glisseo::unsignedShortToHex(inputB), expectedB);
+    EXPECT_EQ(Glisseo::unsignedShortToHex(inputC), expectedB);
 }

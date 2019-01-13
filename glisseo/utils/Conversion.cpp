@@ -94,76 +94,42 @@ unsigned long long Conversion::binToUnsigned(const std::string& bin)
 
 unsigned long long Conversion::binToUnsigned(char character)
 {
-    return binToUnsigned(std::string(1, character));
+    return Glisseo::binToUnsigned(character);
 }
 
 signed long long Conversion::binToSigned(const std::string& bin)
 {
-    std::string paddedBin { bin };
-
-    if (!paddedBin.empty())
-    {
-        // if the most significant bit is set, pad the input with 0xff until its 8 bytes long
-        if (static_cast<unsigned char>(paddedBin[paddedBin.size() - 1]) & 0x80)
-        {
-            while (paddedBin.size() < 8)
-            {
-                paddedBin += '\xff';
-            }
-        }
-    }
-
-    return static_cast<signed long long>(binToUnsigned(paddedBin));
+    return Glisseo::binToSignedLe(bin);
 }
 
 signed long long Conversion::binToSigned(char character)
 {
-    return binToSigned(std::string(1, character));
+    return Glisseo::binToSigned(character);
 }
 
 std::string Conversion::unsignedToBin(unsigned long long value, int digits)
 {
-    std::string bin;
-
-    for (; digits > 0; --digits)
-    {
-        bin.push_back(value & 0xff);
-        value >>= 8;
-    }
-
-    return bin;
+    return Glisseo::unsignedToBinLe(value, digits);
 }
 
 std::string Conversion::unsignedCharToBin(unsigned long long value)
 {
-    return unsignedToBin(value, 1);
+    return Glisseo::unsignedCharToBin(value);
 }
 
 std::string Conversion::unsignedShortToBin(unsigned long long value)
 {
-    return unsignedToBin(value, 2);
+    return Glisseo::unsignedShortToBinLe(value);
 }
 
 std::string Conversion::unsignedCharToHex(unsigned int value)
 {
-    value &= 0xff;
-    char buffer[4];
-
-    bzero(buffer, sizeof(buffer));
-    snprintf(buffer,sizeof(buffer), "%02x", value);
-
-    return buffer;
+    return Glisseo::unsignedCharToHex(value);
 }
 
 std::string Conversion::unsignedShortToHex(unsigned int value)
 {
-    value &= 0xffff;
-    char buffer[6];
-
-    bzero(buffer, sizeof(buffer));
-    snprintf(buffer,sizeof(buffer), "%04x", value);
-
-    return buffer;
+    return Glisseo::unsignedShortToHex(value);
 }
 
 unsigned char Conversion::decodeHexDigit(const char& digit)
@@ -215,6 +181,11 @@ std::string reverse(const std::string& text)
     return reversedText;
 }
 
+unsigned long long binToUnsigned(char character)
+{
+    return binToUnsignedLe(std::string(1, character));
+}
+
 unsigned long long binToUnsignedLe(const std::string& bin)
 {
     if (bin.size() > 8)
@@ -236,6 +207,80 @@ unsigned long long binToUnsignedLe(const std::string& bin)
 unsigned long long binToUnsignedBe(const std::string& bin)
 {
     return binToUnsignedLe(reverse(bin));
+}
+
+signed long long binToSigned(char character)
+{
+    return binToSignedLe(std::string(1, character));
+}
+
+signed long long binToSignedLe(const std::string& bin)
+{
+    std::string paddedBin { bin };
+
+    if (!paddedBin.empty())
+    {
+        // if the most significant bit is set, pad the input with 0xff until its 8 bytes long
+        if (static_cast<unsigned char>(paddedBin[paddedBin.size() - 1]) & 0x80)
+        {
+            while (paddedBin.size() < 8)
+            {
+                paddedBin += '\xff';
+            }
+        }
+    }
+
+    return static_cast<signed long long>(binToUnsignedLe(paddedBin));
+}
+
+signed long long binToSignedBe(const std::string& bin)
+{
+    return binToSignedLe(reverse(bin));
+}
+
+std::string unsignedToBinLe(unsigned long long value, int digits)
+{
+    std::string bin;
+
+    for (; digits > 0; --digits)
+    {
+        bin.push_back(value & 0xff);
+        value >>= 8;
+    }
+
+    return bin;
+}
+
+std::string unsignedCharToBin(unsigned long long value)
+{
+    return unsignedToBinLe(value, 1);
+}
+
+std::string unsignedShortToBinLe(unsigned long long value)
+{
+    return unsignedToBinLe(value, 2);
+}
+
+std::string unsignedCharToHex(unsigned int value)
+{
+    value &= 0xff;
+    char buffer[4];
+
+    bzero(buffer, sizeof(buffer));
+    snprintf(buffer,sizeof(buffer), "%02x", value);
+
+    return buffer;
+}
+
+std::string unsignedShortToHex(unsigned int value)
+{
+    value &= 0xffff;
+    char buffer[6];
+
+    bzero(buffer, sizeof(buffer));
+    snprintf(buffer,sizeof(buffer), "%04x", value);
+
+    return buffer;
 }
 
 } /* namespace Glisseo */

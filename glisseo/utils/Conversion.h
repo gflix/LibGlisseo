@@ -32,22 +32,30 @@ public:
     [[deprecated]]
     static unsigned long long binToUnsigned(const std::string& bin);
     /// Converts a character to a unsigned number
+    [[deprecated]]
     static unsigned long long binToUnsigned(char character);
     /// Converts a binary message to a signed number
+    [[deprecated]]
     static signed long long binToSigned(const std::string& bin);
     /// Converts a character to a signed number
+    [[deprecated]]
     static signed long long binToSigned(char character);
 
     /// Converts a unsigned number to a binary message with a given length in bytes
+    [[deprecated]]
     static std::string unsignedToBin(unsigned long long value, int digits);
     /// Converts a unsigned character (8 bit) to a binary message
+    [[deprecated]]
     static std::string unsignedCharToBin(unsigned long long value);
     /// Converts a unsigned short (16 bit) to a binary message
+    [[deprecated]]
     static std::string unsignedShortToBin(unsigned long long value);
 
     /// Converts a unsigned character (8 bit) to a hex string with leading zeroes
+    [[deprecated]]
     static std::string unsignedCharToHex(unsigned int value);
     /// Converts a unsigned short (16 bit) to a hex string with leading zeroes
+    [[deprecated]]
     static std::string unsignedShortToHex(unsigned int value);
 
 private:
@@ -56,8 +64,18 @@ private:
 
 std::string binToAscii(const std::string& bin);
 std::string reverse(const std::string& text);
+unsigned long long binToUnsigned(char character);
 unsigned long long binToUnsignedLe(const std::string& bin);
 unsigned long long binToUnsignedBe(const std::string& bin);
+signed long long binToSigned(char character);
+signed long long binToSignedLe(const std::string& bin);
+signed long long binToSignedBe(const std::string& bin);
+
+std::string unsignedToBinLe(unsigned long long value, int digits);
+std::string unsignedCharToBin(unsigned long long value);
+std::string unsignedShortToBinLe(unsigned long long value);
+std::string unsignedCharToHex(unsigned int value);
+std::string unsignedShortToHex(unsigned int value);
 
 } /* namespace Glisseo */
 
