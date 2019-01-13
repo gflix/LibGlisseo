@@ -7,17 +7,17 @@ TEST(Conversion, BinToHex)
     std::string expectedLower { "0123456789abcdef" };
     std::string expectedUpper { "0123456789ABCDEF" };
 
-    EXPECT_EQ(Glisseo::Conversion::binToHex(bin),
+    EXPECT_EQ(Glisseo::binToHex(bin),
         expectedLower);
-    EXPECT_EQ(Glisseo::Conversion::binToHex(bin, Glisseo::HexDigitCase::LOWER),
+    EXPECT_EQ(Glisseo::binToHex(bin, Glisseo::HexDigitCase::LOWER),
         expectedLower);
-    EXPECT_EQ(Glisseo::Conversion::binToHex(bin, Glisseo::HexDigitCase::UPPER),
+    EXPECT_EQ(Glisseo::binToHex(bin, Glisseo::HexDigitCase::UPPER),
         expectedUpper);
 }
 
 TEST(Conversion, BinToHexInvalidArgument)
 {
-    EXPECT_ANY_THROW(Glisseo::Conversion::binToHex(std::string(),
+    EXPECT_ANY_THROW(Glisseo::binToHex(std::string(),
         static_cast<Glisseo::HexDigitCase>(-1)));
 }
 
@@ -28,22 +28,22 @@ TEST(Conversion, HexToBin)
     std::string hexMixed { "0123456789aBcDeF" };
     std::string expected { "\x01\x23\x45\x67\x89\xab\xcd\xef" };
 
-    EXPECT_EQ(Glisseo::Conversion::hexToBin(hexLower), expected);
-    EXPECT_EQ(Glisseo::Conversion::hexToBin(hexUpper), expected);
-    EXPECT_EQ(Glisseo::Conversion::hexToBin(hexMixed), expected);
+    EXPECT_EQ(Glisseo::hexToBin(hexLower), expected);
+    EXPECT_EQ(Glisseo::hexToBin(hexUpper), expected);
+    EXPECT_EQ(Glisseo::hexToBin(hexMixed), expected);
 }
 
 TEST(Conversion, HexToBinInvalidArgument)
 {
-    EXPECT_ANY_THROW(Glisseo::Conversion::hexToBin("123"));
-    EXPECT_ANY_THROW(Glisseo::Conversion::hexToBin("01234z"));
+    EXPECT_ANY_THROW(Glisseo::hexToBin("123"));
+    EXPECT_ANY_THROW(Glisseo::hexToBin("01234z"));
 }
 
 TEST(Conversion, HexToBinToHex)
 {
     std::string hex { "0123456789abcdef" };
 
-    EXPECT_EQ(Glisseo::Conversion::binToHex(Glisseo::Conversion::hexToBin(hex)),
+    EXPECT_EQ(Glisseo::binToHex(Glisseo::hexToBin(hex)),
         hex);
 }
 

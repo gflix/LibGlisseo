@@ -11,44 +11,16 @@ const char hexDigits[2][16] = {
       '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'},
 };
 
+unsigned char decodeHexDigit(const char& digit);
+
 std::string Conversion::binToHex(const std::string& bin, HexDigitCase hexDigitCase)
 {
-    std::string hex;
-
-    int hexDigitSet;
-    switch (hexDigitCase)
-    {
-    case HexDigitCase::LOWER:
-        hexDigitSet = 0;
-        break;
-    case HexDigitCase::UPPER:
-        hexDigitSet = 1;
-        break;
-    default:
-        throw std::invalid_argument("invalid argument for hexDigitCase");
-    }
-
-    for (auto& element: bin)
-    {
-        hex += hexDigits[hexDigitSet][(element >> 4) & 0x0f];
-        hex += hexDigits[hexDigitSet][element & 0x0f];
-    }
-
-    return hex;
+    return Glisseo::binToHex(bin, hexDigitCase);
 }
 
 std::string Conversion::binToHexEscaped(const std::string& bin)
 {
-    std::string hex;
-
-    for (auto& element: bin)
-    {
-        hex += "\\x";
-        hex += hexDigits[0][(element >> 4) & 0x0f];
-        hex += hexDigits[0][element & 0x0f];
-    }
-
-    return hex;
+    return Glisseo::binToHexEscaped(bin);
 }
 
 std::string Conversion::binToAscii(const std::string& bin)
@@ -58,28 +30,7 @@ std::string Conversion::binToAscii(const std::string& bin)
 
 std::string Conversion::hexToBin(const std::string& hex)
 {
-    if (hex.size() % 2)
-    {
-        throw std::invalid_argument("invalid character count in input");
-    }
-
-    std::string bin;
-
-    auto iterator = hex.cbegin();
-
-    while (iterator != hex.cend())
-    {
-        unsigned char byte;
-
-        byte = decodeHexDigit(*iterator) << 4;
-        ++iterator;
-        byte |= decodeHexDigit(*iterator);
-        ++iterator;
-
-        bin += byte;
-    }
-
-    return bin;
+    return Glisseo::hexToBin(hex);
 }
 
 std::string Conversion::reverse(const std::string& text)
@@ -132,21 +83,44 @@ std::string Conversion::unsignedShortToHex(unsigned int value)
     return Glisseo::unsignedShortToHex(value);
 }
 
-unsigned char Conversion::decodeHexDigit(const char& digit)
+std::string binToHex(const std::string& bin, HexDigitCase hexDigitCase)
 {
-    if (digit >= '0' && digit <= '9')
+    std::string hex;
+
+    int hexDigitSet;
+    switch (hexDigitCase)
     {
-        return digit - '0';
+    case HexDigitCase::LOWER:
+        hexDigitSet = 0;
+        break;
+    case HexDigitCase::UPPER:
+        hexDigitSet = 1;
+        break;
+    default:
+        throw std::invalid_argument("invalid argument for hexDigitCase");
     }
-    else if (digit >= 'A' && digit <= 'F')
+
+    for (auto& element: bin)
     {
-        return digit - 'A' + 10;
+        hex += hexDigits[hexDigitSet][(element >> 4) & 0x0f];
+        hex += hexDigits[hexDigitSet][element & 0x0f];
     }
-    else if (digit >= 'a' && digit <= 'f')
+
+    return hex;
+}
+
+std::string binToHexEscaped(const std::string& bin)
+{
+    std::string hex;
+
+    for (auto& element: bin)
     {
-        return digit - 'a' + 10;
+        hex += "\\x";
+        hex += hexDigits[0][(element >> 4) & 0x0f];
+        hex += hexDigits[0][element & 0x0f];
     }
-    throw std::invalid_argument("invalid hex digit");
+
+    return hex;
 }
 
 std::string binToAscii(const std::string& bin)
@@ -167,6 +141,32 @@ std::string binToAscii(const std::string& bin)
     }
 
     return ascii;
+}
+
+std::string hexToBin(const std::string& hex)
+{
+    if (hex.size() % 2)
+    {
+        throw std::invalid_argument("invalid character count in input");
+    }
+
+    std::string bin;
+
+    auto iterator = hex.cbegin();
+
+    while (iterator != hex.cend())
+    {
+        unsigned char byte;
+
+        byte = decodeHexDigit(*iterator) << 4;
+        ++iterator;
+        byte |= decodeHexDigit(*iterator);
+        ++iterator;
+
+        bin += byte;
+    }
+
+    return bin;
 }
 
 std::string reverse(const std::string& text)
@@ -281,6 +281,23 @@ std::string unsignedShortToHex(unsigned int value)
     snprintf(buffer,sizeof(buffer), "%04x", value);
 
     return buffer;
+}
+
+unsigned char decodeHexDigit(const char& digit)
+{
+    if (digit >= '0' && digit <= '9')
+    {
+        return digit - '0';
+    }
+    else if (digit >= 'A' && digit <= 'F')
+    {
+        return digit - 'A' + 10;
+    }
+    else if (digit >= 'a' && digit <= 'f')
+    {
+        return digit - 'a' + 10;
+    }
+    throw std::invalid_argument("invalid hex digit");
 }
 
 } /* namespace Glisseo */

@@ -14,15 +14,18 @@ enum class HexDigitCase {
 class Conversion {
 public:
     /// Convert a binary message to hexadecimal
+    [[deprecated]]
     static std::string binToHex(
         const std::string& bin,
         HexDigitCase hexDigitCase = HexDigitCase::LOWER);
     /// Convert a binary message to an escaped hexadecimal string which could be used in C code
+    [[deprecated]]
     static std::string binToHexEscaped(const std::string& bin);
     /// Converts a binary message to an ASCII string where unprintable characters are replaced with a dot '.'
     [[deprecated]]
     static std::string binToAscii(const std::string& bin);
     /// Converts a hexadecimal string back to a binary message
+    [[deprecated]]
     static std::string hexToBin(const std::string& hex);
     /// Reverse a string
     [[deprecated]]
@@ -57,13 +60,16 @@ public:
     /// Converts a unsigned short (16 bit) to a hex string with leading zeroes
     [[deprecated]]
     static std::string unsignedShortToHex(unsigned int value);
-
-private:
-    static unsigned char decodeHexDigit(const char& digit);
 };
 
+std::string binToHex(
+    const std::string& bin,
+    HexDigitCase hexDigitCase = HexDigitCase::LOWER);
+std::string binToHexEscaped(const std::string& bin);
 std::string binToAscii(const std::string& bin);
+std::string hexToBin(const std::string& hex);
 std::string reverse(const std::string& text);
+
 unsigned long long binToUnsigned(char character);
 unsigned long long binToUnsignedLe(const std::string& bin);
 unsigned long long binToUnsignedBe(const std::string& bin);
