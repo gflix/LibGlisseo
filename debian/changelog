@@ -1,3 +1,9 @@
+libglisseo (0.8.0) bionic; urgency=medium
+
+  * New: Clean up closed client connections periodically.
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Thu, 30 Jan 2020 17:27:56 +0100
+
 libglisseo (0.7.1) bionic; urgency=medium
 
   * Modified: moved static class methods from Conversion to the namespace level and
