@@ -59,6 +59,7 @@ protected:
     {
         if (!select.readDescriptorIsSet(tcpServer.getDescriptor()))
         {
+            cleanupClosedClientConnections();
             return;
         }
 
@@ -101,6 +102,11 @@ protected:
             connectionThreads.push_back(connectionThread);
         }
 
+        cleanupClosedClientConnections();
+    }
+
+    virtual void cleanupClosedClientConnections(void)
+    {
         std::lock_guard<std::mutex> lock(connectionThreadsMutex);
 
         auto checkConnectionThread = connectionThreads.begin();
@@ -120,7 +126,7 @@ protected:
     }
 
     /// Overriden method to add the TCP server descriptor to the Select instance
-    virtual void updateDescriptors(Select& select) override
+    void updateDescriptors(Select& select) override
     {
         select.addReadDescriptor(tcpServer.getDescriptor());
     }
