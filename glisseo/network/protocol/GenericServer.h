@@ -53,13 +53,19 @@ protected:
         return true;
     }
 
+    bool periodicTask(void) override
+    {
+        cleanupClosedClientConnections();
+
+        return true;
+    }
+
     /// Templated wrapper to manage active and new client connections
     template<typename U>
     void manageClientConnections(const Select& select, U newConnectionThread)
     {
         if (!select.readDescriptorIsSet(tcpServer.getDescriptor()))
         {
-            cleanupClosedClientConnections();
             return;
         }
 
