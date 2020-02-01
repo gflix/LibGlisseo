@@ -1,3 +1,9 @@
+libglisseo (0.8.1) bionic; urgency=medium
+
+  * Fix: Clear jsonMessages before receiving new messages
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sat, 01 Feb 2020 13:37:36 +0100
+
 libglisseo (0.8.0) bionic; urgency=medium
 
   * New: Clean up closed client connections periodically.
