@@ -1,4 +1,4 @@
-#include <glisseo/network/udp/GenericUdp.h>
+#include <glisseo/utils/ByteArray.h>
 
 namespace Glisseo
 {

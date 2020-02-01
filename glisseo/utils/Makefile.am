@@ -4,6 +4,8 @@ AM_CPPFLAGS = \
 noinst_LTLIBRARIES = libglisseo-utils.la
 
 libglisseo_utils_la_SOURCES = \
+    ByteArray.cpp \
+    ByteArray.h \
     Conversion.cpp \
     Conversion.h \
     EnumMapper.cpp \
@@ -42,6 +44,7 @@ libglisseo_utils_la_LDFLAGS = \
 
 headerdir = $(includedir)/glisseo/utils
 header_HEADERS = \
+    ByteArray.h \
     Conversion.h \
     EnumMapper.h \
     GenericDescriptor.h \

@@ -1,18 +1,11 @@
 #ifndef GLISSEO_NETWORK_UDP_GENERICUDP_H_
 #define GLISSEO_NETWORK_UDP_GENERICUDP_H_
 
-#include <glisseo/network/udp/UdpSocket.h>
+#define UDP_PORT_MIN (1)
+#define UDP_PORT_MAX (65536)
 
-namespace Glisseo {
-
-class GenericUdp {
-public:
-    GenericUdp(void);
-    virtual ~GenericUdp() = default;
-
-protected:
-    UdpSocket socket;
-};
+namespace Glisseo
+{
 
 } /* namespace Glisseo */
 

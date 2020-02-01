@@ -8,14 +8,14 @@ libglisseo_network_udp_la_SOURCES = \
     GenericUdp.h \
     UdpClient.cpp \
     UdpClient.h \
-    UdpSocket.cpp \
-    UdpSocket.h
+    UdpServer.cpp \
+    UdpServer.h
 
 headerdir = $(includedir)/glisseo/network/udp
 header_HEADERS = \
     GenericUdp.h \
     UdpClient.h \
-    UdpSocket.h
+    UdpServer.h
 
 MAINTAINERCLEANFILES = \
     Makefile.in
