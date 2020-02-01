@@ -83,3 +83,83 @@ TEST(Split, SplitDifferentSeparators)
     EXPECT_EQ(Glisseo::split(inputB, " / "), expectedA);
     EXPECT_EQ(Glisseo::split(inputC, ":"), expectedA);
 }
+
+TEST(Split, SplitPeerWithoutPort)
+{
+    std::string inputPeerA { "localhost" };
+    int inputDefaultPortA = 4711;
+
+    std::string expectedHostA { "localhost" };
+    std::string hostA;
+    int expectedPortA = 4711;
+    int portA = 0;
+
+    Glisseo::splitHostPort(inputPeerA, inputDefaultPortA, hostA, portA);
+
+    EXPECT_EQ(hostA, expectedHostA);
+    EXPECT_EQ(portA, expectedPortA);
+}
+
+TEST(Split, SplitPeerWithPort)
+{
+    std::string inputPeerA { "localhost:815" };
+    int inputDefaultPortA = 4711;
+
+    std::string expectedHostA { "localhost" };
+    std::string hostA;
+    int expectedPortA = 815;
+    int portA = 0;
+
+    Glisseo::splitHostPort(inputPeerA, inputDefaultPortA, hostA, portA);
+
+    EXPECT_EQ(hostA, expectedHostA);
+    EXPECT_EQ(portA, expectedPortA);
+}
+
+TEST(Split, SplitEmptyPeer)
+{
+    std::string inputPeerA;
+    int inputDefaultPortA = 4711;
+
+    std::string hostA;
+    int portA = 0;
+
+    EXPECT_THROW(Glisseo::splitHostPort(inputPeerA, inputDefaultPortA, hostA, portA), std::invalid_argument);
+}
+
+TEST(Split, SplitDefaultPortOutOfRange)
+{
+    std::string inputPeer { "localhost" };
+    int inputDefaultPortA = 0;
+    int inputDefaultPortB = 65536;
+
+    std::string host;
+    int port = 0;
+
+    EXPECT_THROW(Glisseo::splitHostPort(inputPeer, inputDefaultPortA, host, port), std::out_of_range);
+    EXPECT_THROW(Glisseo::splitHostPort(inputPeer, inputDefaultPortB, host, port), std::out_of_range);
+}
+
+TEST(Split, SplitEmptyHost)
+{
+    std::string inputPeerA { ":815" };
+    int inputDefaultPortA = 4711;
+
+    std::string hostA;
+    int portA = 0;
+
+    EXPECT_THROW(Glisseo::splitHostPort(inputPeerA, inputDefaultPortA, hostA, portA), std::invalid_argument);
+}
+
+TEST(Split, SplitPortOutOfRange)
+{
+    std::string inputPeerA { "localhost:0" };
+    std::string inputPeerB { "localhost:65536" };
+    int inputDefaultPort = 4711;
+
+    std::string host;
+    int port = 0;
+
+    EXPECT_THROW(Glisseo::splitHostPort(inputPeerA, inputDefaultPort, host, port), std::out_of_range);
+    EXPECT_THROW(Glisseo::splitHostPort(inputPeerB, inputDefaultPort, host, port), std::out_of_range);
+}
