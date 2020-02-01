@@ -16,6 +16,7 @@ void GenericJsonOverNetstringClient::receiveJsonMessages(JsonMessages& jsonMessa
     Messages messages;
     receiveMessages(messages);
 
+    jsonMessages.clear();
     for (auto& message: messages)
     {
         Json::Reader jsonReader;
