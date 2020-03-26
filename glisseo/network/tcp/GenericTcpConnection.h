@@ -15,7 +15,7 @@ public:
     virtual ~GenericTcpConnection() = default;
 
     /// Close the connection
-    void disconnect(void);
+    virtual void disconnect(void);
 
     /// Send a message through the connection, blocking operation
     void send(const std::string& data) const;

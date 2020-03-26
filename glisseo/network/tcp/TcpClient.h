@@ -14,6 +14,14 @@ public:
 
     /// Tries to connect to a given host on a given default TCP port, if hostname:port is given the default is overridden
     virtual void connect(std::string host, int port);
+    void disconnect(void) override;
+
+    const std::string& getOwnAddress(void) const;
+    const std::string& getPeerAddress(void) const;
+
+protected:
+    std::string ownAddress;
+    std::string peerAddress;
 };
 
 } /* namespace Glisseo */

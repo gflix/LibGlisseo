@@ -1,3 +1,9 @@
+libglisseo (0.10.0) focal; urgency=medium
+
+  * New: Added methods getOwnAddress() and getPeerAddress() to the TcpClient
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Thu, 26 Mar 2020 19:35:33 +0100
+
 libglisseo (0.9.0) bionic; urgency=medium
 
   * New: Implemented UDP client and UDP server
