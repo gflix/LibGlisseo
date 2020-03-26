@@ -3,7 +3,7 @@ Priority: optional
 Maintainer: Felix Mellmann <felix.mellmann@funkwerk-itk.com>
 Build-Depends: debhelper (>= 10),
                autotools-dev,
-               libjsoncpp-dev (>= 1.7.7),
+               libjsoncpp-dev (>= 1.7.4),
                libsystemd-dev
 Standards-Version: 4.1.2
 Section: libs
