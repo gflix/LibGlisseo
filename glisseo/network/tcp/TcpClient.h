@@ -2,6 +2,7 @@
 #define TCPCLIENT_TCPCLIENT_H_
 
 #include <string>
+#include <glisseo/network/Protocol.h>
 #include <glisseo/network/tcp/GenericTcpConnection.h>
 
 namespace Glisseo {
@@ -18,10 +19,12 @@ public:
 
     const std::string& getOwnAddress(void) const;
     const std::string& getPeerAddress(void) const;
+    Protocol getProtocol(void) const;
 
 protected:
     std::string ownAddress;
     std::string peerAddress;
+    Protocol protocol;
 };
 
 } /* namespace Glisseo */

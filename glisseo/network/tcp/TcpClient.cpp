@@ -10,7 +10,8 @@
 namespace Glisseo {
 
 TcpClient::TcpClient(void):
-    GenericTcpConnection()
+    GenericTcpConnection(),
+    protocol(Protocol::UNDEFINED)
 {
 }
 
@@ -69,9 +70,10 @@ void TcpClient::connect(std::string peer, int defaultPort)
             ownAddress = std::string(socketAddressBuffer) + ":" + std::to_string(ntohs(clientAddressInfo.sin_port));
 
             bzero(socketAddressBuffer, sizeof(socketAddressBuffer));
-            sockaddr_in* peerAddressInfo = (sockaddr_in*)addressInfo;
+            sockaddr_in* peerAddressInfo = (sockaddr_in*)addressInfo->ai_addr;
             inet_ntop(addressInfo->ai_family, &peerAddressInfo->sin_addr, socketAddressBuffer, sizeof(socketAddressBuffer));
             peerAddress = std::string(socketAddressBuffer) + ":" + std::to_string(ntohs(peerAddressInfo->sin_port));
+            protocol = Protocol::IPV4;
         }
         else if (addressInfo->ai_family == AF_INET6)
         {
@@ -88,9 +90,10 @@ void TcpClient::connect(std::string peer, int defaultPort)
             ownAddress = std::string(socketAddressBuffer) + ":" + std::to_string(ntohs(clientAddressInfo.sin6_port));
 
             bzero(socketAddressBuffer, sizeof(socketAddressBuffer));
-            sockaddr_in6* peerAddressInfo = (sockaddr_in6*)addressInfo;
+            sockaddr_in6* peerAddressInfo = (sockaddr_in6*)addressInfo->ai_addr;
             inet_ntop(addressInfo->ai_family, &peerAddressInfo->sin6_addr, socketAddressBuffer, sizeof(socketAddressBuffer));
             peerAddress = std::string(socketAddressBuffer) + ":" + std::to_string(ntohs(peerAddressInfo->sin6_port));
+            protocol = Protocol::IPV6;
         }
 
         break;
@@ -117,6 +120,11 @@ const std::string& TcpClient::getOwnAddress(void) const
 const std::string& TcpClient::getPeerAddress(void) const
 {
     return peerAddress;
+}
+
+Protocol TcpClient::getProtocol(void) const
+{
+    return protocol;
 }
 
 } /* namespace Glisseo */
