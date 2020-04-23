@@ -1,3 +1,9 @@
+libglisseo (0.10.1) focal; urgency=medium
+
+  * New: Allow retrieving selected protocol for TCP clients (IPv4 or IPv6)
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Thu, 23 Apr 2020 19:44:30 +0200
+
 libglisseo (0.10.0) focal; urgency=medium
 
   * New: Added methods getOwnAddress() and getPeerAddress() to the TcpClient
