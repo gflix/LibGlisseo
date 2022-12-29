@@ -2,6 +2,7 @@
 #include <glisseo/Glisseo.h>
 
 #ifndef PACKAGE_STRING
+#warning PACKAGE_STRING not defined
 #define PACKAGE_STRING "unknown"
 #endif
 
