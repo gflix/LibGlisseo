@@ -17,7 +17,8 @@ GenericThread::GenericThread(const std::string& identifier, bool silent):
     periodicTaskInterval(PERIODIC_TASK_INTERVAL_DEFAULT_SECONDS)
 {
     bzero(controlPipe, sizeof(controlPipe));
-    assert(pipe(controlPipe) == 0);
+    auto result = pipe(controlPipe);
+    assert(result == 0);
 }
 
 GenericThread::~GenericThread()
@@ -140,7 +141,8 @@ void GenericThread::run(void)
         if (select.execute() > 0) {
             if (select.readDescriptorIsSet(controlPipe[CONTROL_PIPE_IN])) {
                 ThreadControl threadControl = ThreadControl::UNKNOWN;
-                ssize_t readBytes = read(controlPipe[CONTROL_PIPE_IN], &threadControl, sizeof(ThreadControl));
+                auto result = read(controlPipe[CONTROL_PIPE_IN], &threadControl, sizeof(ThreadControl));
+                assert(result);
                 if (threadControl == ThreadControl::QUIT) {
                     if (!silent) LOG_DEBUG("Thread \"" << identifier << "\" received quit signal.");
                     break;

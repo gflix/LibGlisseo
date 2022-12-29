@@ -1,11 +1,11 @@
-prefix=@prefix@
-exec_prefix=@exec_prefix@
-libdir=@libdir@
-includedir=@includedir@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@
+includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
 
-Name: glisseo
+Name: @PROJECT_NAME@
 Description: Slim library for providing common and re-usable solutions
-Version: @VERSION@
-Requires: jsoncpp >= 1.6.0
+Version: @PROJECT_VERSION@
+Requires: jsoncpp >= 1.7
 Libs: -L${libdir} -lglisseo -pthread
 Cflags: -I${includedir}

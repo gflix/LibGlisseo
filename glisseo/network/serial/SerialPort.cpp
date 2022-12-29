@@ -99,7 +99,7 @@ void SerialPort::receive(std::string& data, size_t bufferSize) const
         throw std::runtime_error("read from socket timed out");
     }
 
-    std::unique_ptr<char> buffer { static_cast<char*>(malloc(bufferSize)) };
+    std::unique_ptr<char> buffer { new char[bufferSize] };
     ssize_t bytesRead = read(descriptor, buffer.get(), bufferSize);
 
     data = std::move(std::string(buffer.get(), bytesRead));

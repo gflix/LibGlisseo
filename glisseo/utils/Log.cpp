@@ -4,10 +4,6 @@
 #include <iostream>
 #include <glisseo/utils/Log.h>
 
-#ifdef HAVE_CONFIG_H
-#include <glisseo/Autoconf.h>
-#endif
-
 #ifdef HAVE_SYSTEMD_SD_DAEMON_H
 #include <systemd/sd-daemon.h>
 #endif
