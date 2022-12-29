@@ -41,7 +41,7 @@ void GenericTcpConnection::send(const std::string& data) const
     size_t dataSize = data.size();
     ssize_t bytesWritten = write(descriptor, data.c_str(), data.size());
 
-    if (dataSize != bytesWritten)
+    if ((ssize_t) dataSize != bytesWritten)
     {
         throw std::runtime_error("could not write to socket");
     }
@@ -63,7 +63,7 @@ void GenericTcpConnection::receive(std::string& data, size_t bufferSize) const
         throw std::runtime_error("read from socket timed out");
     }
 
-    std::unique_ptr<char> buffer { static_cast<char*>(malloc(bufferSize)) };
+    std::unique_ptr<char> buffer { new char[bufferSize] };
     ssize_t bytesRead = read(descriptor, buffer.get(), bufferSize);
 
     data = std::move(std::string(buffer.get(), bytesRead));

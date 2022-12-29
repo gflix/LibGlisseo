@@ -20,7 +20,7 @@ void hexdump(std::ostream& stream, const std::string& data, unsigned int address
     if (!data.empty())
     {
         bool firstLine = true;
-        for (auto dataIndex = 0; dataIndex < data.size(); dataIndex += BYTES_PER_LINE, addressOffset += BYTES_PER_LINE)
+        for (size_t dataIndex = 0; dataIndex < data.size(); dataIndex += BYTES_PER_LINE, addressOffset += BYTES_PER_LINE)
         {
             if (firstLine)
             {
