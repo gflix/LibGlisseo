@@ -1,0 +1,11 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@
+includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
+
+Name: @PROJECT_NAME@
+Description: Slim library for providing common and re-usable solutions
+Version: @PROJECT_VERSION@
+Requires: jsoncpp >= 1.7
+Libs: -L${libdir} -lglisseo -pthread
+Cflags: -I${includedir}
