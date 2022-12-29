@@ -1,3 +1,9 @@
+libglisseo (0.10.2) jammy; urgency=medium
+
+  * New: Explicitly added libjsoncpp-dev to libglisseo-dev
+
+ -- Felix Mellmann <felix.mellmann@funkwerk.com>  Thu, 29 Dec 2022 22:49:51 +0100
+
 libglisseo (0.10.1) focal; urgency=medium
 
   * New: Allow retrieving selected protocol for TCP clients (IPv4 or IPv6)
