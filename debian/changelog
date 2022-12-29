@@ -1,0 +1,89 @@
+libglisseo (0.10.1) focal; urgency=medium
+
+  * New: Allow retrieving selected protocol for TCP clients (IPv4 or IPv6)
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Thu, 23 Apr 2020 19:44:30 +0200
+
+libglisseo (0.10.0) focal; urgency=medium
+
+  * New: Added methods getOwnAddress() and getPeerAddress() to the TcpClient
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Thu, 26 Mar 2020 19:35:33 +0100
+
+libglisseo (0.9.0) bionic; urgency=medium
+
+  * New: Implemented UDP client and UDP server
+  * New: Provide new data type ByteArray (std::string derivate using uint8_t)
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sat, 01 Feb 2020 18:44:37 +0100
+
+libglisseo (0.8.1) bionic; urgency=medium
+
+  * Fix: Clear jsonMessages before receiving new messages
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sat, 01 Feb 2020 13:37:36 +0100
+
+libglisseo (0.8.0) bionic; urgency=medium
+
+  * New: Clean up closed client connections periodically.
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Thu, 30 Jan 2020 17:27:56 +0100
+
+libglisseo (0.7.1) bionic; urgency=medium
+
+  * Modified: moved static class methods from Conversion to the namespace level and
+              marked the static methods as deprecated
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sun, 13 Jan 2019 15:21:17 +0100
+
+libglisseo (0.7.0) bionic; urgency=medium
+
+  * New: Added classes for handling dates and times
+  * New: Added hexdump utility
+  * New: Added JsonRpcResponse and JsonRpcErrorResponse structures
+  * New: Added JsonRpcNotification structure
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sun, 13 Jan 2019 15:20:38 +0100
+
+libglisseo (0.6.0) cosmic; urgency=medium
+
+  * New: Added enumeration mapper
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sat, 10 Nov 2018 16:41:13 +0100
+
+libglisseo (0.5.5) bionic; urgency=medium
+
+  * Removed unneccessary destructors
+  * Require at least libjsoncpp 1.7.7
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sat, 27 Oct 2018 07:16:37 +0200
+
+libglisseo (0.5.4) bionic; urgency=medium
+
+  * Implemented beginsWith and endsWith functions
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Wed, 18 Jul 2018 18:52:30 +0200
+
+libglisseo (0.5.3) bionic; urgency=medium
+
+  * Fixed potential errors
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sun, 15 Jul 2018 16:03:34 +0200
+
+libglisseo (0.5.2) bionic; urgency=medium
+
+  * A lot of new features
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Sun, 15 Jul 2018 16:03:19 +0200
+
+libglisseo (0.3.1) bionic; urgency=medium
+
+  * New: Implemented convinience wrapper around getopt.
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Fri, 01 Jun 2018 09:51:58 +0200
+
+libglisseo (0.3.0) unstable; urgency=medium
+
+  * Initial Release.
+
+ -- Felix Mellmann <felix.mellmann@funkwerk-itk.com>  Thu, 31 May 2018 16:29:00 +0200
