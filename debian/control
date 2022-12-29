@@ -4,7 +4,7 @@ Maintainer: Felix Mellmann <felix.mellmann@gmail.com>
 Build-Depends: debhelper-compat (= 13),
                cmake,
                libjsoncpp-dev (>= 1.7),
-               libsystemd-dev (>= 0.29)
+               libsystemd-dev (>= 249)
 Standards-Version: 4.6.0
 Section: libs
 #Homepage: <insert the upstream URL, if relevant>

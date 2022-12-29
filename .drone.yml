@@ -1,0 +1,17 @@
+kind: pipeline
+type: docker
+name: ubuntu-jammy
+
+steps:
+- name: build packages
+  image: nx.benfm.de:5000/drone-container:22.04
+  environment:
+    DEBIAN_FRONTEND: noninteractive
+  commands:
+  - dpkg-buildpackage -uc -us -b -j2
+  - cp -v ../*.deb debian/
+
+- name: push packages
+  image: nx.benfm.de:5000/drone-push-ubuntu
+  settings:
+    repository: ubuntu-jammy
